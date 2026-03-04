@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<!-- PREVIEW ONLY — not for production. Live page = page-workshop-he.php in the theme. -->
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>סדנת AI-SHIPR: תצוגה מקדימה</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            verve: {
+              purple:      '#7B2D8E',
+              dark:        '#2A0E3A',
+              pink:        '#FF1493',
+              'pink-light':'#FF69B4',
+              lavender:    '#D8BFD8',
+              'bg-alt':    '#F8F4FB',
+              text:        '#1F2023',
+            }
+          },
+          fontFamily: { sans: ['Inter','system-ui','-apple-system','sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>body{font-family:'Inter',sans-serif;}</style>
+</head>
+<body class="text-verve-text antialiased" style="text-align: right;">
+
+  <!-- ── הירו: שלושה שכבות purple / white / purple ── -->
+
+  <!-- 1. Purple top — badge -->
+  <section style="background: linear-gradient(135deg, #2A0E3A 0%, #7B2D8E 100%); padding-top: 2.5rem; padding-bottom: 2.5rem;">
+    <div class="max-w-5xl mx-auto px-6" style="text-align: center;">
+      <span class="inline-block border-2 border-verve-pink text-verve-pink text-sm font-black uppercase tracking-widest px-5 py-3">
+        סדנת קלוד קוד לניהול מוצר. 95 דק. בזום
+      </span>
+    </div>
+  </section>
+
+  <!-- 2. White middle — title image -->
+  <section style="background: #ffffff; padding-top: 3rem; padding-bottom: 3rem;">
+    <div class="max-w-5xl mx-auto px-6" style="text-align: center;">
+      <img
+        src="../../Verve-PM/verve-pm-theme/assets/images/claude-code-pm.png"
+        alt="Claude Code לניהול מוצר. הסדנא."
+        class="max-w-xl w-full mx-auto"
+        onerror="this.style.display='none'"
+      >
+      <!-- Fallback shown in preview if image not yet saved -->
+      <h1 class="text-5xl md:text-6xl font-black text-gray-900 leading-tight" style="display:none;" id="title-fallback">
+        Claude Code<br><span style="color:#FF1493;">לניהול מוצר. הסדנא.</span>
+      </h1>
+    </div>
+  </section>
+
+  <!-- 3. Purple bottom — text + CTA -->
+  <section style="background: linear-gradient(135deg, #2A0E3A 0%, #7B2D8E 100%); padding-top: 5rem; padding-bottom: 6rem;">
+    <div class="max-w-5xl mx-auto px-6">
+
+      <!-- הפסקה הספציפית -->
+      <div class="max-w-3xl mb-8">
+        <p class="text-2xl font-black text-white leading-snug mb-5">
+          תפקיד ניהול המוצר משתנה במהירות.
+        </p>
+        <p class="text-lg text-gray-300 leading-relaxed mb-4">
+          זה השינוי הכי מהיר שראיתי מאז מובייל, רק שהוא מהיר הרבה יותר, והוא ישנה את כל מה שאנחנו יודעים על התפקיד. ואת איך שאנחנו יכולים להצליח בו.
+        </p>
+        <p class="text-gray-300 text-base leading-relaxed mb-4">
+          בחזית השינוי נמצא Claude Code עם הסוכנים (agents) ועם היכולות (skills) שלו.
+        </p>
+        <p class="text-gray-300 text-base leading-relaxed mb-4">
+          מתוך עבודה עם מנהלי מוצר רבים - כיועץ, כמנטור וכמוביל מוצר בעצמי - ועל בסיס מחקר, ניסוי ויישום בפועל, בניתי את AI-SHIPR.
+        </p>
+        <div class="border-r-4 border-verve-pink pr-6 mb-4">
+          <p class="text-white font-black text-xl leading-snug">הכלי שיעזור לכם To Ship עם Claude Code.</p>
+        </div>
+        <p class="text-gray-300 text-base leading-relaxed mb-4">
+          זה לא רק לדלבר. זה גם לנהל את היום-יום שלכם מהטיקטים ועד האסטרטגיה. את מה בונים, ואת איך משכנעים. את ההחלטות הטכניות, ואת החלקים הבינאישיים של התפקיד.
+        </p>
+        <p class="text-gray-300 text-base leading-relaxed">
+          זו סדנה שמתחילה בשיעורי בית וממשיכה בקבוצה פעילה של מנהלי ומנהלות מוצר שעובדים עם AI-SHIPR וחולקים טיפים וידע.
+        </p>
+      </div>
+
+      <!-- לוגו Claude Code -->
+      <div class="inline-flex items-center gap-3 mb-10 bg-white/5 border border-white/10 px-5 py-3">
+        <img
+          src="../../Verve-PM/verve-pm-theme/assets/images/claude-code-logo.png"
+          alt="Claude Code"
+          class="h-10 w-auto"
+          onerror="this.style.display='none'"
+        >
+        <span class="text-gray-300 text-sm">Built on <strong class="text-white font-black">Claude Code</strong></span>
+      </div>
+
+      <!-- Price + CTA -->
+      <div class="flex flex-wrap items-center gap-6 mb-6" style="flex-direction: row-reverse; justify-content: flex-end;">
+        <a href="#register" class="bg-verve-pink text-white font-black text-lg uppercase tracking-wider px-10 py-5 hover:opacity-90 transition-opacity" style="text-decoration:none;">שמרו מקום</a>
+        <div style="text-align: right;">
+          <div class="text-white font-black text-3xl">&#8362;700</div>
+          <div class="text-gray-400 text-sm">תשלום חד-פעמי</div>
+        </div>
+      </div>
+      <p class="text-verve-pink text-sm font-black">95 דקות &nbsp;&middot;&nbsp; זום לייב &nbsp;&middot;&nbsp; מעשי לחלוטין</p>
+
+      <!-- Format bar -->
+      <div class="mt-14 pt-8 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div><div class="text-xs font-black uppercase tracking-widest text-gray-400 mb-1">משך</div><div class="text-base font-bold text-white">95 דקות</div></div>
+        <div><div class="text-xs font-black uppercase tracking-widest text-gray-400 mb-1">פורמט</div><div class="text-base font-bold text-white">זום לייב</div></div>
+        <div><div class="text-xs font-black uppercase tracking-widest text-gray-400 mb-1">קבוצה</div><div class="text-base font-bold text-white">הרשמה פתוחה</div></div>
+        <div><div class="text-xs font-black uppercase tracking-widest text-gray-400 mb-1">עבודה</div><div class="text-base font-bold text-white">עושים בעצמכם</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── הבעיה האמיתית ── -->
+  <section class="bg-white py-24 border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6">
+      <span class="inline-block border-2 border-verve-pink text-verve-pink text-xs font-black uppercase tracking-widest px-4 py-2 mb-8">הבעיה האמיתית</span>
+      <div class="text-lg text-gray-500 leading-relaxed space-y-6 max-w-3xl">
+        <p class="text-2xl font-black text-gray-900 leading-snug">
+          תפקיד ניהול המוצר משתנה במהירות.
+        </p>
+        <p>
+          זה השינוי הכי מהיר שראיתי מאז מובייל, רק שהוא מהיר הרבה יותר, והוא ישנה את כל מה שאנחנו יודעים על התפקיד. ואת איך שאנחנו יכולים להצליח בו.
+        </p>
+        <p>
+          בחזית השינוי נמצא Claude Code עם הסוכנים (agents) ועם היכולות (skills) שלו.
+        </p>
+        <p>
+          מתוך עבודה עם מנהלי מוצר רבים - כיועץ, כמנטור וכמוביל מוצר בעצמי - ועל בסיס מחקר, ניסוי ויישום בפועל, בניתי את AI-SHIPR.
+        </p>
+        <div class="border-r-4 border-verve-pink pr-6">
+          <p class="text-gray-900 font-black text-xl leading-snug">הכלי שיעזור לכם To Ship עם Claude Code.</p>
+        </div>
+        <p>
+          זה לא רק לדלבר. זה גם לנהל את היום-יום שלכם מהטיקטים ועד האסטרטגיה. את מה בונים, ואת איך משכנעים. את ההחלטות הטכניות, ואת החלקים הבינאישיים של התפקיד.
+        </p>
+        <p>
+          זו סדנה שמתחילה בשיעורי בית וממשיכה בקבוצה פעילה של מנהלי ומנהלות מוצר שעובדים עם AI-SHIPR וחולקים טיפים וידע.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── מה זה AI-SHIPR ── -->
+  <section class="bg-verve-bg-alt py-24 border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6">
+      <span class="inline-block border-2 border-verve-pink text-verve-pink text-xs font-black uppercase tracking-widest px-4 py-2 mb-8">המערכת</span>
+      <h2 class="text-4xl font-black text-gray-900 leading-tight mb-6">מה זה AI-SHIPR</h2>
+      <div class="max-w-3xl text-lg text-gray-500 leading-relaxed space-y-5">
+        <p>AI-SHIPR היא מערכת הפעלה למוצר. היא נבנית בתוך Obsidian ו-Claude Code. אבל העיקר הוא לא הכלי. העיקר הוא המודל.</p>
+        <p>זו לא ספריית תבניות. לא רשימת פרומפטים. לא טריקים ל-AI. זו דרך קבועה שבה החשיבה המוצרית שלכם מופיעה ב-AI, בכל ספרינט.</p>
+        <p>המערכת מחזיקה Strategic Bets, יוזמות פעילות, היפותזות פתוחות, החלטות מתועדות, ו-Agile Loop מלא. מפסיקים להסביר ל-AI מה המוצר שלכם בכל שיחה. הוא כבר יודע.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── מה משתנה כשיש מערכת ── -->
+  <section class="bg-white py-24 border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6">
+      <span class="inline-block border-2 border-verve-pink text-verve-pink text-xs font-black uppercase tracking-widest px-4 py-2 mb-8">מה משתנה</span>
+      <h2 class="text-4xl font-black text-gray-900 leading-tight mb-4">כך נראה הבוקר שלך, רגע אחרי הסדנה, עם AI-SHIPR עובד</h2>
+      <p class="text-gray-500 text-lg mb-14 max-w-2xl">לא יוצאים עם שקופיות. יוצאים עם המערכת פועלת על המחשב.</p>
+
+      <!-- Loop section -->
+      <div class="bg-gray-900 p-8 max-w-4xl mb-14">
+        <p class="text-xs font-black uppercase tracking-widest text-gray-500 mb-6">במקום שיחה-שיחה, יש לופ</p>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div class="text-gray-300 text-sm pr-5 relative"><span class="absolute right-0 text-verve-pink font-black">&larr;</span>הקשר מוצר קבוע</div>
+          <div class="text-gray-300 text-sm pr-5 relative"><span class="absolute right-0 text-verve-pink font-black">&larr;</span>Strategic Bets מוגדרים</div>
+          <div class="text-gray-300 text-sm pr-5 relative"><span class="absolute right-0 text-verve-pink font-black">&larr;</span>יוזמות פעילות מתועדות</div>
+          <div class="text-gray-300 text-sm pr-5 relative"><span class="absolute right-0 text-verve-pink font-black">&larr;</span>היפותזות פתוחות מנוהלות</div>
+          <div class="text-gray-300 text-sm pr-5 relative"><span class="absolute right-0 text-verve-pink font-black">&larr;</span>החלטות נשמרות</div>
+          <div class="text-gray-300 text-sm pr-5 relative"><span class="absolute right-0 text-verve-pink font-black">&larr;</span>כל ספרינט מתחיל מאותו מודל</div>
+        </div>
+        <p class="text-gray-400 text-sm mt-6">אתם כבר יודעים לכתוב פרומפטים ו-CustomGPT. הסדנה תיקח אתכם לשלב הבא.</p>
+      </div>
+
+      <!-- Take home -->
+      <div class="max-w-2xl">
+        <p class="text-xs font-black uppercase tracking-widest text-gray-400 mb-6">מה לוקחים הביתה</p>
+        <ul class="flex flex-col gap-4">
+          <li class="flex items-start gap-4 text-gray-600">
+            <span class="text-verve-pink font-black text-lg flex-shrink-0 mt-0.5">✔</span>
+            <span>מערכת AI-SHIPR מלאה מותקנת ופועלת ב-Obsidian</span>
+          </li>
+          <li class="flex items-start gap-4 text-gray-600">
+            <span class="text-verve-pink font-black text-lg flex-shrink-0 mt-0.5">✔</span>
+            <span>21 כישורי AI מכוילים לעבודת PM אמיתית לאורך כל ה-Agile Loop</span>
+          </li>
+          <li class="flex items-start gap-4 text-gray-600">
+            <span class="text-verve-pink font-black text-lg flex-shrink-0 mt-0.5">✔</span>
+            <span>8 פלייבוקים לפי מצב: רעיון חדש, קיקאוף ספרינט, לאונץ', אירוע, 1:1, ריביו שבועי, פיץ', פוסט-לאונץ'</span>
+          </li>
+          <li class="flex items-start gap-4 text-gray-600">
+            <span class="text-verve-pink font-black text-lg flex-shrink-0 mt-0.5">✔</span>
+            <span>מוצר לדוגמה מוכן מראש עם Strategic Bets, יוזמות והיפותזות לתרגול</span>
+          </li>
+          <li class="flex items-start gap-4 text-gray-600">
+            <span class="text-verve-pink font-black text-lg flex-shrink-0 mt-0.5">✔</span>
+            <span>מדריך החצי-ספרינט, תוכנית 5 ימים להעביר את המערכת למוצר האמיתי שלכם</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── מה יש בפנים: סוכנים וכישורים ── -->
+  <section class="bg-gray-900 py-24">
+    <div class="max-w-5xl mx-auto px-6">
+      <span class="inline-block border-2 border-verve-pink text-verve-pink text-xs font-black uppercase tracking-widest px-4 py-2 mb-8">מה יש בפנים</span>
+      <h2 class="text-4xl font-black text-white leading-tight mb-4">5 סוכנים. 21 כישורים. 8 פלייבוקים.</h2>
+      <p class="text-gray-400 text-lg mb-14 max-w-2xl">לא שיחה אחת עם AI. מערכת שעובדת כמו צוות חשיבה. כל סוכן מחזיק חלק אחר בעבודה המוצרית.</p>
+
+      <!-- Agents -->
+      <div class="mb-16">
+        <p class="text-xs font-black uppercase tracking-widest text-gray-500 mb-8">5 סוכנים מתמחים</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+          <div class="bg-white/5 border border-white/10 p-6 flex gap-5 items-start">
+            <div class="w-10 h-10 border-2 border-verve-pink flex items-center justify-center text-verve-pink font-black text-xl flex-shrink-0">+</div>
+            <div>
+              <h3 class="font-black text-white mb-2">מסגר הבעיה</h3>
+              <p class="text-gray-400 text-sm leading-relaxed">מבהיר בעיות עמומות לפני שמתחילים לפתור. מבדיל בין תסמין לשורש.</p>
+            </div>
+          </div>
+
+          <div class="bg-white/5 border border-white/10 p-6 flex gap-5 items-start">
+            <div class="w-10 h-10 border-2 border-verve-pink flex items-center justify-center text-verve-pink font-black text-xl flex-shrink-0">+</div>
+            <div>
+              <h3 class="font-black text-white mb-2">ארכיטקט ההחלטות</h3>
+              <p class="text-gray-400 text-sm leading-relaxed">מנהל החלטות מורכבות עם אפשרויות מתחרות. מבנה, טריידאופים, קריטריונים.</p>
+            </div>
+          </div>
+
+          <div class="bg-white/5 border border-white/10 p-6 flex gap-5 items-start">
+            <div class="w-10 h-10 border-2 border-verve-pink flex items-center justify-center text-verve-pink font-black text-xl flex-shrink-0">+</div>
+            <div>
+              <h3 class="font-black text-white mb-2">מתרגם הסטייקהולדרים</h3>
+              <p class="text-gray-400 text-sm leading-relaxed">מכין לפגישות יישור, מנסח עדכונים, ומשמר החלטות פתוחות גלויות.</p>
+            </div>
+          </div>
+
+          <div class="bg-white/5 border border-white/10 p-6 flex gap-5 items-start">
+            <div class="w-10 h-10 border-2 border-verve-pink flex items-center justify-center text-verve-pink font-black text-xl flex-shrink-0">+</div>
+            <div>
+              <h3 class="font-black text-white mb-2">בודק שלמות מבנה</h3>
+              <p class="text-gray-400 text-sm leading-relaxed">מבקר כל ארטיפקט לפני שיוצא. מסמן פערים מבניים לפני שהופכים לבעיות.</p>
+            </div>
+          </div>
+
+          <div class="bg-white/5 border border-white/10 p-6 md:col-span-2 flex gap-5 items-start">
+            <div class="w-10 h-10 border-2 border-verve-pink flex items-center justify-center text-verve-pink font-black text-xl flex-shrink-0">+</div>
+            <div>
+              <h3 class="font-black text-white mb-2">לומד</h3>
+              <p class="text-gray-400 text-sm leading-relaxed">סורק מקורות חדשים ומציף תובנות רלוונטיות להחלטות ולהיפותזות הפעילות. ממיר קריאה לידע פעיל.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Skills -->
+      <div class="mb-16">
+        <p class="text-xs font-black uppercase tracking-widest text-gray-500 mb-8">21 כישורים, מכוילים לעבודת PM אמיתית</p>
+        <div class="flex flex-wrap gap-3">
+          <span class="bg-white/5 border border-white/10 text-gray-300 text-sm font-medium px-4 py-2">בניית היפותזות</span>
+          <span class="bg-white/5 border border-white/10 text-gray-300 text-sm font-medium px-4 py-2">מיפוי הנחות</span>
+          <span class="bg-white/5 border border-white/10 text-gray-300 text-sm font-medium px-4 py-2">מחסנית עדיפויות</span>
+          <span class="bg-white/5 border border-white/10 text-gray-300 text-sm font-medium px-4 py-2">הכנת 1:1</span>
+          <span class="bg-white/5 border border-white/10 text-gray-300 text-sm font-medium px-4 py-2">בניית PRD</span>
+          <span class="bg-white/5 border border-white/10 text-gray-300 text-sm font-medium px-4 py-2">סיכום ספרינט</span>
+          <span class="bg-white/5 border border-white/10 text-gray-300 text-sm font-medium px-4 py-2">Business Case</span>
+          <span class="bg-white/5 border border-white/10 text-gray-300 text-sm font-medium px-4 py-2">רטרוספקטיבה</span>
+          <span class="bg-white/5 border border-white/10 text-gray-300 text-sm font-medium px-4 py-2">סינתזת מחקר</span>
+          <span class="bg-white/5 border border-white/10 text-gray-300 text-sm font-medium px-4 py-2">בניית פרסונה</span>
+          <span class="bg-white/5 border border-white/10 text-gray-300 text-sm font-medium px-4 py-2">מיפוי טריידאופים</span>
+          <span class="bg-white/5 border border-white/10 text-gray-300 text-sm font-medium px-4 py-2">שותף OKR</span>
+          <span class="bg-white/5 border border-white/10 text-gray-300 text-sm font-medium px-4 py-2">עיצוב נרטיב</span>
+          <span class="bg-white/5 border border-white/10 text-gray-300 text-sm font-medium px-4 py-2">מיפוי בין-צוותי</span>
+          <span class="bg-white/5 border border-white/10 text-gray-300 text-sm font-medium px-4 py-2">ליווי בנייה</span>
+          <span class="bg-white/5 border border-white/10 text-gray-300 text-sm font-medium px-4 py-2">ריביו ספרינט</span>
+          <span class="bg-white/5 border border-white/10 text-gray-300 text-sm font-medium px-4 py-2">תגובת אירוע</span>
+          <span class="bg-white/5 border border-white/10 text-gray-300 text-sm font-medium px-4 py-2">מעקב ביצועים</span>
+          <span class="bg-white/5 border border-white/10 text-gray-300 text-sm font-medium px-4 py-2">תכנון איטרציה</span>
+          <span class="bg-white/5 border border-white/10 text-gray-300 text-sm font-medium px-4 py-2">בניית פיץ'</span>
+          <span class="bg-white/5 border border-white/10 text-gray-300 text-sm font-medium px-4 py-2">מציאת קצה-קצוות</span>
+        </div>
+      </div>
+
+      <!-- Playbooks -->
+      <div>
+        <p class="text-xs font-black uppercase tracking-widest text-gray-500 mb-8">8 פלייבוקים לפי מצב</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+          <div class="flex items-start gap-4 py-3 border-b border-white/5">
+            <span class="text-verve-pink font-black flex-shrink-0 mt-0.5">&#x25C0;</span>
+            <span class="font-black text-white text-sm">רעיון חדש מסטייקהולדר</span>
+            <span class="text-gray-400 text-sm">הופך בקשה להיפותזה מובנית לבדיקה</span>
+          </div>
+
+          <div class="flex items-start gap-4 py-3 border-b border-white/5">
+            <span class="text-verve-pink font-black flex-shrink-0 mt-0.5">&#x25C0;</span>
+            <span class="font-black text-white text-sm">פתיחת ספרינט</span>
+            <span class="text-gray-400 text-sm">פותח כל ספרינט עם הקשר מלא ועדיפויות ברורות</span>
+          </div>
+
+          <div class="flex items-start gap-4 py-3 border-b border-white/5">
+            <span class="text-verve-pink font-black flex-shrink-0 mt-0.5">&#x25C0;</span>
+            <span class="font-black text-white text-sm">לאונץ'</span>
+            <span class="text-gray-400 text-sm">צ'קליסט go/no-go לפני שחרור</span>
+          </div>
+
+          <div class="flex items-start gap-4 py-3 border-b border-white/5">
+            <span class="text-verve-pink font-black flex-shrink-0 mt-0.5">&#x25C0;</span>
+            <span class="font-black text-white text-sm">תקרית</span>
+            <span class="text-gray-400 text-sm">תגובה מובנית כשמשהו נשבר</span>
+          </div>
+
+          <div class="flex items-start gap-4 py-3 border-b border-white/5">
+            <span class="text-verve-pink font-black flex-shrink-0 mt-0.5">&#x25C0;</span>
+            <span class="font-black text-white text-sm">1:1 עם מנהל</span>
+            <span class="text-gray-400 text-sm">אג'נדה ממוקדת-החלטות בפחות משתי דקות</span>
+          </div>
+
+          <div class="flex items-start gap-4 py-3 border-b border-white/5">
+            <span class="text-verve-pink font-black flex-shrink-0 mt-0.5">&#x25C0;</span>
+            <span class="font-black text-white text-sm">סקירה שבועית</span>
+            <span class="text-gray-400 text-sm">סוגר את השבוע עם החלטות מתועדות</span>
+          </div>
+
+          <div class="flex items-start gap-4 py-3 border-b border-white/5">
+            <span class="text-verve-pink font-black flex-shrink-0 mt-0.5">&#x25C0;</span>
+            <span class="font-black text-white text-sm">בניית מצגת</span>
+            <span class="text-gray-400 text-sm">ממסגר את הטיעון לפני שיחה גדולה</span>
+          </div>
+
+          <div class="flex items-start gap-4 py-3 border-b border-white/5">
+            <span class="text-verve-pink font-black flex-shrink-0 mt-0.5">&#x25C0;</span>
+            <span class="font-black text-white text-sm">ניתוח פוסט-לאונץ'</span>
+            <span class="text-gray-400 text-sm">הופך מדדי לאונץ' לתוצאות היפותזות</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── מבנה הסדנה ── -->
+  <section class="bg-gray-50 py-24 border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6">
+      <span class="inline-block border-2 border-verve-pink text-verve-pink text-xs font-black uppercase tracking-widest px-4 py-2 mb-8">מה קורה בסדנה</span>
+      <h2 class="text-4xl font-black text-gray-900 leading-tight mb-4">מה קורה ב-95 דקות</h2>
+      <p class="text-gray-500 text-lg mb-14 max-w-2xl">מעשי לכל אורך הדרך. אתם מריצים את המערכת בעצמכם.</p>
+      <div class="divide-y divide-gray-100 max-w-3xl">
+        <div class="py-8 flex gap-6 items-start"><div class="w-10 h-10 flex-shrink-0 flex items-center justify-center font-black text-sm text-white bg-gray-900">0</div><div><h3 class="font-black text-gray-900 tracking-wide mb-2">לפני הסשן: התקנה</h3><p class="text-gray-500 leading-relaxed text-sm">מתקינים Obsidian, Claude Code ואת חבילת AI-SHIPR. מגיעים מוכנים. לא מבזבזים זמן הגדרות בסדנה.</p></div></div>
+        <div class="py-8 flex gap-6 items-start"><div class="w-10 h-10 flex-shrink-0 flex items-center justify-center font-black text-sm text-white bg-verve-purple">1</div><div><h3 class="font-black text-gray-900 tracking-wide mb-2">המסגרת (15 דק')</h3><p class="text-gray-500 leading-relaxed text-sm">איך מודל SHIPR ממפה את ה-Agile Loop ולמה הוא בנוי סביב זיכרון קבוע, ולא פרומפטים שנעלמים.</p></div></div>
+        <div class="py-8 flex gap-6 items-start"><div class="w-10 h-10 flex-shrink-0 flex items-center justify-center font-black text-sm text-white bg-verve-purple">2</div><div><h3 class="font-black text-gray-900 tracking-wide mb-2">מוצר לדוגמה (10 דק')</h3><p class="text-gray-500 leading-relaxed text-sm">עובדים על הקשר אמיתי עם Bets ויוזמות. זה ההקשר שהמערכת תפעל ממנו בסימולציה.</p></div></div>
+        <div class="py-8 flex gap-6 items-start"><div class="w-10 h-10 flex-shrink-0 flex items-center justify-center font-black text-sm text-white bg-verve-purple">3</div><div><h3 class="font-black text-gray-900 tracking-wide mb-2">סימולציית יום בחיים, שלושה תרחישים (35 דק')</h3><p class="text-gray-500 leading-relaxed text-sm">מריצים שלושה תרחישי PM אמיתיים בעצמכם: בריפינג בוקר, קבלת רעיון חדש, הכנת 1:1. שורה אחת פנימה. אאוטפוט מובנה החוצה. מרגישים את ההבדל מיד.</p></div></div>
+        <div class="py-8 flex gap-6 items-start"><div class="w-10 h-10 flex-shrink-0 flex items-center justify-center font-black text-sm text-white bg-verve-purple">4</div><div><h3 class="font-black text-gray-900 tracking-wide mb-2">תוכנית פריסה (10 דק')</h3><p class="text-gray-500 leading-relaxed text-sm">מה עושים ב-7 הימים הבאים כדי שהמערכת תעבוד על המוצר האמיתי שלכם. ביום החמישי, הבריפינג הבוקרי רץ על היוזמות שלכם.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── שלושת הרגעים ── -->
+  <section class="bg-verve-purple py-24">
+    <div class="max-w-5xl mx-auto px-6">
+      <span class="inline-block border-2 border-verve-pink text-verve-pink text-xs font-black uppercase tracking-widest px-4 py-2 mb-8">הסימולציה</span>
+      <h2 class="text-4xl font-black text-white leading-tight mb-4">שלושת הרגעים שתריצו</h2>
+      <p class="text-gray-300 text-lg mb-12 max-w-2xl">כל רגע הוא תרחיש PM אמיתי. שורה אחת פנימה. אאוטפוט מובנה על בסיס הקשר המוצר שהמערכת כבר מחזיקה.</p>
+      <div class="flex flex-col gap-4 max-w-3xl">
+
+        <div class="bg-white/5 border-r-4 border-verve-pink p-7">
+          <div class="text-xs font-black uppercase tracking-widest text-verve-pink mb-3">רגע 1, בוקר</div>
+          <h3 class="text-lg font-black text-white mb-3">בריפינג שלא כתבתם</h3>
+          <p class="text-gray-300 text-sm leading-relaxed">פקודה אחת שסורקת את כל המידע והופכת לרשימת משימות מתועדפת, להתחיל איתה את היום.</p>
+        </div>
+
+        <div class="bg-white/5 border-r-4 border-verve-pink p-7">
+          <div class="text-xs font-black uppercase tracking-widest text-verve-pink mb-3">רגע 2, רעיון חדש</div>
+          <h3 class="text-lg font-black text-white mb-3">הודעת סטייקהולדר הופכת להיפותזה לבדיקה</h3>
+          <p class="text-gray-300 text-sm leading-relaxed">סטייקהולדר כותב: "כדאי לנו להוסיף X." מדביקים את פלייבוק הרעיון החדש. המערכת ממסגרת את הבעיה, מחלצת הנחות, מדרגת סיכון, וממירה את המסוכנת ביותר להיפותזה שניתן לבדוק.</p>
+        </div>
+
+        <div class="bg-white/5 border-r-4 border-verve-pink p-7">
+          <div class="text-xs font-black uppercase tracking-widest text-verve-pink mb-3">רגע 3, הכנת פגישה</div>
+          <h3 class="text-lg font-black text-white mb-3">הכנה לפגישות ממוקדת-החלטות</h3>
+          <p class="text-gray-300 text-sm leading-relaxed">1:1 עם המנהל בעוד שעה. מדביקים את פלייבוק ה-1:1. המערכת קוראת את היוזמות, מוצאת ההחלטות הפתוחות, ובונה אג'נדה ממוקדת.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── למי זה מתאים ── -->
+  <section class="bg-gray-50 py-24 border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-4xl font-black text-gray-900 leading-tight mb-4">זה בשבילכם?</h2>
+      <p class="text-gray-500 text-lg mb-12 max-w-2xl">AI-SHIPR מיועדת למנהלי מוצר מנוסים שרוצים לבנות יתרון מקצועי, לא רק לעמוד בקצב.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="border border-verve-pink p-8 bg-white">
+          <h3 class="text-xs font-black uppercase tracking-widest text-verve-pink mb-6">מתאים אם אתם...</h3>
+          <ul class="flex flex-col gap-4">
+            <li class="text-gray-700 text-sm pr-5 relative"><span class="absolute right-0 text-verve-pink font-black">&larr;</span>PM בכיר, Lead, Group PM, או VP</li>
+            <li class="text-gray-700 text-sm pr-5 relative"><span class="absolute right-0 text-verve-pink font-black">&larr;</span>מחזיקים כמה Strategic Bets במקביל</li>
+            <li class="text-gray-700 text-sm pr-5 relative"><span class="absolute right-0 text-verve-pink font-black">&larr;</span>כבר משתמשים ב-Claude ורוצים עומק ועקביות</li>
+            <li class="text-gray-700 text-sm pr-5 relative"><span class="absolute right-0 text-verve-pink font-black">&larr;</span>רוצים לעבוד דרך היפותזות והחלטות, לא משימות</li>
+            <li class="text-gray-700 text-sm pr-5 relative"><span class="absolute right-0 text-verve-pink font-black">&larr;</span>מבינים שיתרון מקצועי נבנה ממערכת, לא מטכניקה</li>
+          </ul>
+        </div>
+        <div class="border border-gray-200 p-8 bg-white">
+          <h3 class="text-xs font-black uppercase tracking-widest text-gray-400 mb-6">לא מתאים אם...</h3>
+          <ul class="flex flex-col gap-4">
+            <li class="text-gray-400 text-sm pr-5 relative"><span class="absolute right-0 text-gray-300 font-black">&larr;</span>אתם בתחילת הדרך בניהול מוצר</li>
+            <li class="text-gray-400 text-sm pr-5 relative"><span class="absolute right-0 text-gray-300 font-black">&larr;</span>מחפשים טריקים לפרומפטים</li>
+            <li class="text-gray-400 text-sm pr-5 relative"><span class="absolute right-0 text-gray-300 font-black">&larr;</span>רוצים לצפות בהקלטה</li>
+            <li class="text-gray-400 text-sm pr-5 relative"><span class="absolute right-0 text-gray-300 font-black">&larr;</span>מפתחים שמחפשים להאיץ קוד</li>
+          </ul>
+          <p class="text-gray-400 text-xs mt-6 leading-relaxed">זו לא הרצאה. זו התקנה.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── השוואה ── -->
+  <section class="bg-white py-24 border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6">
+      <span class="inline-block border-2 border-verve-pink text-verve-pink text-xs font-black uppercase tracking-widest px-4 py-2 mb-8">למה זה שונה</span>
+      <h2 class="text-4xl font-black text-gray-900 leading-tight mb-14">לא עוד קורס &ldquo;Claude למנהלי מוצר&rdquo;</h2>
+      <div class="max-w-4xl overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead><tr class="border-b-2 border-gray-900"><th class="text-right py-3 pl-8 text-xs font-black uppercase tracking-widest text-gray-400 w-1/3"></th><th class="text-right py-3 pl-8 text-xs font-black uppercase tracking-widest text-gray-400">סדנת Claude רגילה</th><th class="text-right py-3 text-xs font-black uppercase tracking-widest text-verve-pink">סדנת AI-SHIPR</th></tr></thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr><td class="py-4 pl-8 font-black text-gray-900 tracking-wide text-xs" style="text-align:right;">מה לומדים</td><td class="py-4 pl-8 text-gray-400" style="text-align:right;">לכתוב פרומפטים טובים יותר</td><td class="py-4 text-gray-700 font-medium" style="text-align:right;">לבנות מערכת שעובדת בלי פרומפטים חוזרים</td></tr>
+            <tr><td class="py-4 pl-8 font-black text-gray-900 tracking-wide text-xs" style="text-align:right;">זיכרון בין שיחות</td><td class="py-4 pl-8 text-gray-400" style="text-align:right;">אין. מסבירים את המוצר מחדש בכל פעם</td><td class="py-4 text-gray-700 font-medium" style="text-align:right;">קבוע. אסטרטגיה, יוזמות והחלטות</td></tr>
+            <tr><td class="py-4 pl-8 font-black text-gray-900 tracking-wide text-xs" style="text-align:right;">היקף</td><td class="py-4 pl-8 text-gray-400" style="text-align:right;">משימות בודדות: סיכום, טיוטה, מחקר</td><td class="py-4 text-gray-700 font-medium" style="text-align:right;">Agile Loop מלא, מבריפינג בוקר ועד רטרוספקטיבה</td></tr>
+            <tr><td class="py-4 pl-8 font-black text-gray-900 tracking-wide text-xs" style="text-align:right;">מה לוקחים הביתה</td><td class="py-4 pl-8 text-gray-400" style="text-align:right;">רשימת פרומפטים</td><td class="py-4 text-gray-700 font-medium" style="text-align:right;">מערכת פועלת על המחשב שלכם</td></tr>
+            <tr><td class="py-4 pl-8 font-black text-gray-900 tracking-wide text-xs" style="text-align:right;">מצטבר עם הזמן</td><td class="py-4 pl-8 text-gray-400" style="text-align:right;">לא</td><td class="py-4 text-gray-700 font-medium" style="text-align:right;">כן, כל שיחה בונה על הקודמת</td></tr>
+            <tr><td class="py-4 pl-8 font-black text-gray-900 tracking-wide text-xs" style="text-align:right;">פורמט</td><td class="py-4 pl-8 text-gray-400" style="text-align:right;">וובינר, צופים בהדגמה</td><td class="py-4 text-gray-700 font-medium" style="text-align:right;">מעשי, מריצים בעצמכם, לא צופים</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── שאלות ── -->
+  <section class="bg-gray-50 py-24 border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-4xl font-black text-gray-900 leading-tight mb-14">שאלות נפוצות</h2>
+      <div class="max-w-3xl divide-y divide-gray-100">
+        <div class="py-8"><h3 class="font-black text-gray-900 mb-3">צריך לדעת לתכנת?</h3><p class="text-gray-500 leading-relaxed text-sm">לא. עובדים בטקסט רגיל ו-Markdown. ללא קוד. אם אפשר להשתמש ב-Notion, אפשר להשתמש במערכת הזו.</p></div>
+        <div class="py-8"><h3 class="font-black text-gray-900 mb-3">כבר משתמש ב-Claude. זה רלוונטי?</h3><p class="text-gray-500 leading-relaxed text-sm">כן. רוב ה-PMים משתמשים בלי מבנה קבוע. כאן בונים את המבנה. ההבדל באיכות האאוטפוט הוא משמעותי.</p></div>
+        <div class="py-8"><h3 class="font-black text-gray-900 mb-3">יש הקלטה?</h3><p class="text-gray-500 leading-relaxed text-sm">לא. הערך הוא בהרצה בזמן אמת. זו לא הרצאה.</p></div>
+        <div class="py-8"><h3 class="font-black text-gray-900 mb-3">מה צריך להתקין לפני הסדנה?</h3><p class="text-gray-500 leading-relaxed text-sm">Obsidian, Claude Code ואת חבילת AI-SHIPR, נשלחת 48 שעות לפני. ההגדרה לוקחת כ-20 דקות. מגיעים עם המערכת כבר פועלת.</p></div>
+        <div class="py-8"><h3 class="font-black text-gray-900 mb-3">מה אם לא אוכל להגיע?</h3><p class="text-gray-500 leading-relaxed text-sm">צרו קשר לפני התאריך ונעביר אתכם למחזור הבא.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── על יניב ── -->
+  <section class="bg-white py-24 border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-4xl font-black text-gray-900 leading-tight mb-12">על יניב</h2>
+      <div class="flex gap-8 items-start max-w-3xl" style="flex-direction: row-reverse;">
+        <div class="w-20 h-20 bg-verve-purple flex items-center justify-center text-white font-black text-xl flex-shrink-0">יי</div>
+        <div>
+          <h3 class="text-xl font-black text-gray-900 mb-1">יניב יעקובוביץ'</h3>
+          <p class="text-xs font-black uppercase tracking-widest text-gray-400 mb-5">יועץ ניהול מוצר</p>
+          <p class="text-gray-500 leading-relaxed mb-3">מלווה חברות Seed עד Series B באסטרטגיית מוצר, דיסקברי ובניית מנועי צמיחה.</p>
+          <p class="text-gray-500 leading-relaxed mb-5">AI-SHIPR הוא מודל העבודה שבנה לעצמו. הסדנה היא הדרך שבה הוא מלמד אותו.</p>
+          <a href="https://www.verve-pm.com" class="text-verve-pink font-black text-sm uppercase tracking-wider hover:underline">verve-pm.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section id="register" style="background: linear-gradient(135deg, #2A0E3A 0%, #7B2D8E 100%); padding-top: 7rem; padding-bottom: 7rem;">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <p class="text-gray-400 text-sm font-black uppercase tracking-widest mb-8">בשנתיים הקרובות הפער בין מנהלי מוצר ייפתח</p>
+      <h2 class="text-5xl font-black text-white leading-tight mb-5">לא בגלל מי שמשתמש יותר ב-AI.<br><span class="text-verve-pink">אלא בגלל מי שבונה סביבו מערכת.</span></h2>
+      <p class="text-gray-300 text-lg mb-10 max-w-lg mx-auto leading-relaxed">AI-SHIPR היא המערכת.<br>95 דקות. התקנה מלאה.</p>
+      <div class="mb-8">
+        <div class="text-white font-black text-4xl mb-1">&#8362;700</div>
+        <div class="text-gray-400 text-sm">תשלום חד-פעמי</div>
+      </div>
+      <a href="#" class="inline-block bg-verve-pink text-white font-black text-lg uppercase tracking-widest px-14 py-5 hover:opacity-90 transition-opacity" style="text-decoration:none;">שמרו מקום</a>
+      <p class="mt-6 text-verve-pink text-sm font-black">95 דקות &nbsp;&middot;&nbsp; זום לייב &nbsp;&middot;&nbsp; מעשי לחלוטין</p>
+      <p class="mt-3 text-xs text-gray-500 italic">&#8593; מחיר ותאריך מוגדרים בממשק הניהול של WordPress, זהו קובץ תצוגה מקדימה</p>
+    </div>
+  </section>
+
+  <footer class="bg-verve-dark py-8 text-center">
+    <p class="text-gray-600 text-xs">קובץ תצוגה מקדימה, <strong class="text-gray-400">לא האתר החי.</strong> הדף החי: page-workshop-he.php בת'מה של Verve-PM.</p>
+  </footer>
+
+</body>
+</html>

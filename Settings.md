@@ -51,9 +51,10 @@ Set to `off` to use default AI-SHIPR neutral tone.
 slack: active          # reads from I-Information/Integrations/Slack/
 email: active          # reads from I-Information/Integrations/Email/
 teams: inactive        # reads from I-Information/Integrations/Teams/
-tickets: inactive      # reads from I-Information/Integrations/Tickets/
+tickets: inactive      # reads from I-Information/Integrations/Tickets/ — Linear workspace: https://linear.app/aishipr/settings/teams
 miro: inactive         # reads from I-Information/Integrations/Miro/
 excalidraw: inactive   # reads from I-Information/Integrations/Excalidraw/
+figma: active          # reads from I-Information/Integrations/Figma/ — run figma-sync.js to populate
 github: inactive       # shows git status at the start of /today — activate once git repo is set up
 ```
 
@@ -61,6 +62,19 @@ Options: `active` | `inactive`
 
 When `inactive`, agents skip that integration folder.
 When `active`, agents may reference latest files in that folder for context.
+
+---
+
+## Mode
+
+```
+team_mode: solo
+```
+
+Options: `solo` | `lead`
+
+`solo`: Standard AI-SHIPR — individual PM operating model. Team layer is inactive.
+`lead`: Team lead mode — activates team management layer. `/today` aggregates across team, `/team-review` and `/portfolio` become available. Agents read `R-Relationships/Team/` in addition to standard files.
 
 ---
 
@@ -77,5 +91,6 @@ learner_depth: focused   # focused | broad
 ---
 
 _Last updated: 2026-03-04_
-> **© Yaniv Yaakubovich**
-> Product Management & AI Consulting: [www.verve-pm.com](www.verve-pm.com)
+> Part of the **AI-SHIPR** product management system
+> Built by **Yaniv Yaakubovich**
+> Product Management & AI Consulting: www.verve-pm.com

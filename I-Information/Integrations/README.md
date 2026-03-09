@@ -17,6 +17,7 @@ This keeps integrations stable and replaceable — swap the pipe without touchin
 |--------------|---------------------|----------|------------------------------------------------------|
 | Slack/       | Slack channels      | Active   | MCP server or n8n → drops .md thread files           |
 | Email/       | Email client        | Active   | Manual export or n8n → drops .md summaries           |
+| Figma/       | Figma files         | Optional | `node figma-sync.js <url>` → drops .md design snapshots |
 | Miro/        | Miro boards         | Optional | Manual export or Miro API + n8n → drops .md summaries |
 | Excalidraw/  | Excalidraw MCP      | Optional | Claude generates diagrams on demand via MCP — generative, not a pipe |
 | Teams/       | MS Teams            | Inactive | MCP (not yet available) or n8n                       |

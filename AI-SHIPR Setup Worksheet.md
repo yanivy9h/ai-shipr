@@ -142,6 +142,33 @@ Stakeholder 3 — Name, role:
 
 ---
 
+---
+
+## Part 7 — Your Team *(complete only if team_mode: lead)*
+
+**What is your team structure? (how many PMs, what do they each own)**
+
+
+**What bets does each PM own? (name the PM and the bet)**
+
+
+**What is the biggest challenge you face as a team lead right now?**
+
+
+**Which PM needs the most support right now, and why?**
+
+
+**What is the biggest gap in your team — skill, capacity, or coverage?**
+
+
+**Are there any open headcount needs? If so, what bet would the new PM own?**
+
+
+**How do you prefer to run 1:1s? (what structure works best for you)**
+
+
+---
+
 ## When You Are Done
 
 Run the `Populate-Strategy.md` prompt and paste this entire worksheet as input.
@@ -160,5 +187,6 @@ Then run `Structural-Integrity-Auditor` on the Strategy layer before moving to D
 
 ---
 
-> **© Yaniv Yaakubovich**
-> Product Management & AI Consulting: [www.verve-pm.com](www.verve-pm.com)
+> Part of the **AI-SHIPR** product management system
+> Built by **Yaniv Yaakubovich**
+> Product Management & AI Consulting: www.verve-pm.com

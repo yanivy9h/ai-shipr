@@ -51,6 +51,7 @@ processed: false
 
 **Option 1 — Linear MCP (recommended for Linear)**
 Linear has an official MCP server. Connect it to Claude Code.
+Workspace: https://linear.app/aishipr/settings/teams
 Build a daily skill that reads the active sprint and writes a snapshot here.
 
 **Option 2 — Jira MCP**

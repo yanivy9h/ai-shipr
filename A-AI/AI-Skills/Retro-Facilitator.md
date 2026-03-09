@@ -100,5 +100,6 @@ Based on this retro, the following should be true going into the next sprint:
 
 ---
 
-> **© Yaniv Yaakubovich**
-> Product Management & AI Consulting: [www.verve-pm.com](www.verve-pm.com)
+> Part of the **AI-SHIPR** product management system
+> Built by **Yaniv Yaakubovich**
+> Product Management & AI Consulting: www.verve-pm.com

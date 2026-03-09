@@ -59,5 +59,6 @@ Update initiative Stage to `Launched` once we confirm GO.
 
 ---
 
-> **© Yaniv Yaakubovich**
-> Product Management & AI Consulting: [www.verve-pm.com](www.verve-pm.com)
+> Part of the **AI-SHIPR** product management system
+> Built by **Yaniv Yaakubovich**
+> Product Management & AI Consulting: www.verve-pm.com

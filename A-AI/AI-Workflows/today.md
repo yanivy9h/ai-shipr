@@ -7,6 +7,12 @@ Replace inbox-driven mornings with strategy-driven ones.
 ## When to Use
 Every morning. Takes 5 minutes. Replaces 30 minutes of figuring out what to work on.
 
+## Lead Mode
+If `team_mode: lead` in Settings.md, `/today` runs in team lead mode:
+- Reads `R-Relationships/Team/Roster.md` and all PM profile + 1:1 log files
+- Adds a **Team Pulse** section to the briefing (blocked PMs, decisions needed from lead, 1:1 queue)
+- Priority Stack reflects the lead's agenda — unblocking team, decisions to make, portfolio gaps — not personal initiatives
+
 ## What It Reads
 - `S-Strategy/Strategic-Bets.md`
 - `S-Strategy/KPIs.md`
@@ -142,6 +148,23 @@ If no clear match: "No strong match today — browse pm-resources.md for curated
 
 ---
 
+#### Team Pulse *(only if `team_mode: lead` in Settings.md)*
+
+Read `R-Relationships/Team/Roster.md`, all PM profiles, and most recent 1:1 log entries.
+
+**PMs with blockers requiring lead action:**
+- [PM] — [Initiative] — needs: [specific]
+
+**Decisions waiting from lead:**
+- [PM] — [Initiative] — decision: [what]
+
+**1:1 queue today:**
+- [PM] — last: [date] — suggested focus: [from log]
+
+If no flags: "Team is clear. No lead action required today."
+
+---
+
 #### Today's Open Question
 
 One question the system cannot answer — that only the PM can resolve through judgment, conversation, or discovery.
@@ -154,5 +177,6 @@ One question the system cannot answer — that only the PM can resolve through j
 
 ---
 
-> **© Yaniv Yaakubovich**
-> Product Management & AI Consulting: [www.verve-pm.com](www.verve-pm.com)
+> Part of the **AI-SHIPR** product management system
+> Built by **Yaniv Yaakubovich**
+> Product Management & AI Consulting: www.verve-pm.com

@@ -45,5 +45,6 @@ For each High or Medium risk assumption:
 - High risk: [N]
 - Recommend testing first: [Assumption #]
 
-> **© Yaniv Yaakubovich**
-> Product Management & AI Consulting: [www.verve-pm.com](www.verve-pm.com)
+> Part of the **AI-SHIPR** product management system
+> Built by **Yaniv Yaakubovich**
+> Product Management & AI Consulting: www.verve-pm.com

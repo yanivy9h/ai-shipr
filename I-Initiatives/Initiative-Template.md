@@ -1,7 +1,7 @@
 # Initiative: [Name]
 
 ## Strategic Link
-- [[Strategic-Bets]]: Bet #
+- [[ABC-TOM/AI-SHIPR/S-Strategy/Strategic-Bets]]: Bet #
 - Why this bet now:
 
 ## Outcome (must be measurable)
@@ -12,8 +12,12 @@
 ## Linked Hypotheses
 - [[HYP - ...]]
 
+## Ownership
+- PM Owner: (name — for team lead mode)
+- Team: (product area / squad)
+
 ## Stakeholders
-- [[Stakeholders]]: (names)
+- [[ABC-TOM/AI-SHIPR/R-Relationships/Stakeholders/Stakeholders]]: (names)
 
 ## Stage
 Defined | In Sprint | In Development | Testing | Launched | Monitoring | Iterating
@@ -33,5 +37,6 @@ Yes | No
 ## Last Updated
 YYYY-MM-DD
 
-> **© Yaniv Yaakubovich**
-> Product Management & AI Consulting: [www.verve-pm.com](www.verve-pm.com)
+> Part of the **AI-SHIPR** product management system
+> Built by **Yaniv Yaakubovich**
+> Product Management & AI Consulting: www.verve-pm.com

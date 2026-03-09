@@ -46,5 +46,6 @@ Optional:
 - [Any content that was too vague to refine cleanly — identify specifically]
 (Omit if none)
 
-> **© Yaniv Yaakubovich**
-> Product Management & AI Consulting: [www.verve-pm.com](www.verve-pm.com)
+> Part of the **AI-SHIPR** product management system
+> Built by **Yaniv Yaakubovich**
+> Product Management & AI Consulting: www.verve-pm.com

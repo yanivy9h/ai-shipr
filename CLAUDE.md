@@ -71,7 +71,7 @@ Core philosophy: AI makes documentation cheap. Judgment is expensive. AI-SHIPR e
 
 Always start your reply with the agent or skill used, in CAPS.
 
-- Used an agent → `PROBLEM FRAMER`, `DECISION ARCHITECT`, `STAKEHOLDER TRANSLATOR`, `STRUCTURAL INTEGRITY AUDITOR`, `PM COACH`
+- Used an agent → `PROBLEM FRAMER`, `DECISION ARCHITECT`, `STAKEHOLDER TRANSLATOR`, `STRUCTURAL INTEGRITY AUDITOR`, `PM COACH`, `LEAN CANVAS`, `PRODUCT STRATEGIST`, `PORTFOLIO STRATEGIST`, `TEAM MANAGER`
 - Used a skill → skill name in CAPS (e.g. `HYPOTHESIS BUILDER`, `FIRE RESPONDER`)
 - No agent or skill used → `AI-SHIPR`
 
@@ -89,6 +89,15 @@ Always start your reply with the agent or skill used, in CAPS.
 | `Structural-Integrity-Auditor` | Auditing any artifact for structural gaps |
 | `Learner` | Scanning new resources and surfacing relevant insights |
 | `PM-Coach` | Interpersonal challenges, stuck on options, post-situation debrief |
+| `Lean-Product-Canvas` | Build, review, or export a Lean Product Canvas — orchestrates Persona-Builder, Hypothesis-Builder, Experiment-Designer and more |
+| `Product-Strategist` | Build complete product strategy using JTBD, OST, and OKR — one level above initiative work, feeds into Lean-Product-Canvas |
+
+**Lead Mode Only** *(active when `team_mode: lead` in Settings.md)*
+
+| Agent | When to Invoke |
+|-------|---------------|
+| `Portfolio-Strategist` | Portfolio view, bet coverage gaps, resource allocation, exec portfolio update |
+| `Team-Manager` | 1:1 prep, PM struggling, difficult feedback, team health check |
 
 ---
 
@@ -98,11 +107,14 @@ Always start your reply with the agent or skill used, in CAPS.
 
 | Skill | When to Invoke |
 |-------|---------------|
+| `JTBD-Mapper` | Produce a structured JTBD analysis — job statement, dimensions, unmet needs |
+| `Opportunity-Tree` | Map desired outcome to ranked opportunities, solutions, and next experiment |
 | `Assumption-Extractor` | Surface hidden assumptions in an initiative |
 | `Hypothesis-Builder` | Convert assumption into a falsifiable hypothesis |
 | `Research-Synthesizer` | Convert raw research into structured signals |
 | `Persona-Builder` | Build a structured user persona |
 | `Edge-Case-Finder` | Stress-test an initiative or experiment |
+| `Experiment-Designer` | Design the minimum viable experiment for a riskiest assumption |
 
 **Prioritization & Decisions**
 
@@ -112,13 +124,14 @@ Always start your reply with the agent or skill used, in CAPS.
 | `Tradeoff-Mapper` | Compare two or more options structurally |
 | `OKR-Partner` | Set metrics with specificity and bet linkage |
 
-**Communication & Alignment**
+**Stakeholder & Communication**
 
 | Skill | When to Invoke |
 |-------|---------------|
 | `Narrative-Refiner` | Adapt structured thinking for a specific stakeholder audience |
 | `Cross-Team-Mapper` | Map dependencies, handoffs, owners across teams |
 | `1on1-Prep` | Build a decision-first agenda for a 1:1 |
+| `Board-Update-Builder` | Generate a structured product update for exec, board, or investor audiences |
 
 **Build Phase**
 
@@ -127,12 +140,7 @@ Always start your reply with the agent or skill used, in CAPS.
 | `PRD-Builder` | Generate a PRD from a validated initiative |
 | `Build-Companion` | Structure in-sprint PM decisions during development |
 | `Build-Review` | Prepare the sprint review — shipped vs committed |
-
-**Fire & Response**
-
-| Skill | When to Invoke |
-|-------|---------------|
-| `Fire-Responder` | Classify and respond to an active incident |
+| `Fire-Responder` | Classify and respond to an active incident or unplanned work |
 
 **Post-Launch & Learning**
 
@@ -140,14 +148,7 @@ Always start your reply with the agent or skill used, in CAPS.
 |-------|---------------|
 | `Performance-Tracker` | Validate or invalidate the hypothesis with data |
 | `Retro-Facilitator` | Structure the sprint retro into actionable process improvements |
-| `Iteration-Planner` | Close one cycle, plan the next |
 | `Sprint-Summarizer` | Generate sprint summary (internal or stakeholder mode) |
-
-**Setup & Voice**
-
-| Skill | When to Invoke |
-|-------|---------------|
-| `Create-PM-Voice` | Generate PM-Voice.md from your writing samples |
 
 **Pitch**
 
@@ -155,6 +156,23 @@ Always start your reply with the agent or skill used, in CAPS.
 |-------|---------------|
 | `Business-Case-Builder` | Structure the initiative pitch with quantified impact |
 | `Pitch-Deck-Builder` | Convert business case into leadership presentation narrative |
+
+**Setup**
+
+| Skill | When to Invoke |
+|-------|---------------|
+| `Create-PM-Voice` | Generate PM-Voice.md from your writing samples |
+
+**Lead Mode Only** *(active when `team_mode: lead` in Settings.md)*
+
+| Skill | When to Invoke |
+|-------|---------------|
+| `Resource-Allocation-Mapper` | Map PM capacity to bets — surface gaps and overload risks |
+| `Portfolio-Priority-Stack` | Rank initiatives across PMs and product areas |
+| `Org-Design-Framer` | Structure a team design decision with explicit tradeoffs |
+| `Team-Health-Check` | Read team state — blockers, overload, relationship risks |
+| `PM-Performance-Review` | Structure a performance conversation grounded in outcomes |
+| `Hiring-Brief-Builder` | Build a PM job brief linked to current strategy |
 
 ---
 
@@ -208,8 +226,8 @@ AI-SHIPR/
 │   ├── Templates/       — Reusable document structures (PRDs, updates, agendas)
 │   └── Integrations/    — Data piped in from Slack, Email, Teams, Tickets, Miro
 ├── A-AI/
-│   ├── AI-Agents/       — Agent definitions (6: + Learner, PM-Coach)
-│   ├── AI-Skills/       — Skill definitions (21)
+│   ├── AI-Agents/       — Agent definitions (8)
+│   ├── AI-Skills/       — Skill definitions (25)
 │   ├── AI-Workflows/    — Repeatable workflows (9)
 │   └── AI-Playbooks/    — Situation-based paste-and-run prompts (10)
 ├── Learning.md          — Loop memory (update after every session)
@@ -273,6 +291,8 @@ Defined → In Sprint → In Development → Testing → Launched → Monitoring
 | `/learn` | Run Learner — scan Resources and surface relevant insights |
 | `/voice` | Run Create-PM-Voice — generate PM-Voice.md from writing samples |
 | `/coach [situation]` | Run PM-Coach — soft skills, stuck on options, or post-situation debrief |
+| `/canvas [idea or canvas]` | Run Lean-Product-Canvas — build, review, or export a Lean Product Canvas |
+| `/strategize` | Run Product-Strategist — build or refresh full product strategy using JTBD, OST, and OKR |
 
 ---
 

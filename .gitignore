@@ -1,12 +1,16 @@
+# Private workshop materials — not for distribution
+00-NOT-For-Distribution/
+
 # macOS
 .DS_Store
-**/.DS_Store
-__MACOSX/
+.AppleDouble
+.LSOverride
 
-# Obsidian cache
-.obsidian/
+# Obsidian workspace files (local only)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+.trash/
 
-# Temp/build
-build-temp/
-*.tmp
-.env
+# Local environment
+*.env

@@ -212,7 +212,7 @@ AI-SHIPR came out of his own consulting practice. He built it because he was tir
 - Workshop: **English** [verve-pm.com/ai-shipr](https://verve-pm.com/ai-shipr) | **Hebrew** [verve-pm.com/ai-shipr-he](https://verve-pm.com/ai-shipr-he)
 - Resources: [verve-pm.com/ai-shipr-resources](https://verve-pm.com/ai-shipr-resources/)
 - Consulting: [verve-pm.com](https://verve-pm.com)
-- LinkedIn: [linkedin.com/in/yanivyaakubovich](https://linkedin.com/in/yanivyaakubovich)
+- LinkedIn: [linkedin.com/in/yanivy9h](https://linkedin.com/in/yanivy9h)
 
 ---
 

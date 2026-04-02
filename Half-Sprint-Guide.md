@@ -36,6 +36,18 @@ That is not onboarding. That is a productive half-sprint.
 
 ---
 
+## Three Things to Know Before You Start
+
+**Agents** are persistent AI personas with broad judgment. You describe a situation and they think through it — Problem-Framer, Decision-Architect, Stakeholder-Translator are all agents. They read your strategy files before responding.
+
+**Skills** are single-task tools you invoke on demand. You give them an input and they produce a specific structured output — Assumption-Extractor, Hypothesis-Builder, Tradeoff-Mapper are all skills. They do one thing well.
+
+**Slash commands** are the triggers that run a skill or workflow. Type `/today`, `/sprint`, or `/weekly` and Claude runs the full workflow for that command. You don't need to remember which skills to call — the command handles that.
+
+That's the whole vocabulary. Everything in this guide is one of those three things.
+
+---
+
 ## Before Day 1
 
 One rule: use real current work. Not a hypothetical. Not a sample problem.
@@ -55,7 +67,7 @@ If you use real problems, you will get a working operating system.
 
 **Actions:**
 1. Complete `Setup-Worksheet.md` — raw answers, plain language, 30 minutes max
-2. Run the Populate Strategy prompt — fills Vision, Product, KPIs, Strategic-Bets
+2. Run `01-Populate-Strategy` — paste the prompt into Claude Code and it will read your worksheet automatically
 3. Run `Structural-Integrity-Auditor` on S-Strategy only
 4. Fix every gap it flags before moving on
 
@@ -139,7 +151,7 @@ If you use real problems, you will get a working operating system.
 4. Adjust your preparation based on the output
 
 **End of Day — Full Audit + Loop Close:**
-1. Run `Structural-Integrity-Auditor` across all artifacts created this week
+1. Run `02-Structural-Integrity-Auditor` across all artifacts created this week
 2. Fix every flagged gap
 3. Update `Learning.md`:
    - Which agents saved the most time
@@ -183,7 +195,7 @@ The second half-sprint runs the system on a full week of real work.
 By then you are not setting up. You are operating.
 
 The `/today` workflow replaces your Monday morning chaos.
-The `Structural-Integrity-Auditor` becomes your weekly discipline.
+The `02-Structural-Integrity-Auditor` becomes your weekly discipline.
 `Learning.md` starts compounding.
 
 That is when the system earns its place permanently.
@@ -194,11 +206,15 @@ That is when the system earns its place permanently.
 
 Filing outputs in chat instead of in the folder structure.
 
-Hypotheses that live in a Claude conversation do not persist.
-Decisions structured in chat do not get audited.
-Assumptions extracted in chat do not become hypotheses.
+Here is why this matters structurally: Claude has no memory between conversations. When a session ends, everything said in that conversation is gone. The only thing that persists is what was written to a file. CLAUDE.md is read at the start of every new session — that is how Claude knows your product, your agents, your context. Everything else resets.
 
-Every output that matters goes into a file. That is the whole system.
+This means:
+
+- A hypothesis that exists only in chat is gone tomorrow.
+- A decision structured in chat cannot be audited next sprint.
+- Assumptions extracted in chat never become filed hypotheses.
+
+The folder is not where you store things. The folder is the system. Every output that matters goes into a file — that is what makes sessions compound instead of reset.
 
 ---
 

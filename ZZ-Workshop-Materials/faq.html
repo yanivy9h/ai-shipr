@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI-SHIPR — FAQ</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #e8e0f0;
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 48px 24px;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 760px;
+      background: #F8F4FB;
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      padding: 56px 48px 48px;
+      box-shadow: 0 8px 48px rgba(123, 45, 142, 0.10);
+    }
+
+    /* Background accents */
+    .page::before {
+      content: '';
+      position: absolute;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #FF69B415 0%, transparent 70%);
+      top: -120px; right: -120px;
+      pointer-events: none;
+    }
+    .page::after {
+      content: '';
+      position: absolute;
+      width: 320px; height: 320px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #D8BFD830 0%, transparent 70%);
+      bottom: -80px; left: -80px;
+      pointer-events: none;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      margin-bottom: 44px;
+      position: relative;
+      z-index: 1;
+    }
+    .header-tag {
+      display: inline-block;
+      background: #FF69B4;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 3px 12px;
+      border-radius: 100px;
+      margin-bottom: 12px;
+    }
+    .header h1 {
+      font-size: 30px;
+      font-weight: 800;
+      color: #7B2D8E;
+      line-height: 1.2;
+    }
+    .header p {
+      font-size: 14px;
+      color: #9B7BAE;
+      margin-top: 6px;
+    }
+
+    /* FAQ list */
+    .faq-list {
+      list-style: none;
+      position: relative;
+      z-index: 1;
+    }
+
+    .faq-item {
+      border: 1.5px solid #D8BFD8;
+      border-radius: 12px;
+      margin-bottom: 12px;
+      background: #fff;
+      overflow: hidden;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .faq-item:hover {
+      border-color: #7B2D8E40;
+      box-shadow: 0 2px 12px rgba(123, 45, 142, 0.08);
+    }
+    .faq-item.open {
+      border-color: #7B2D8E;
+      box-shadow: 0 4px 20px rgba(123, 45, 142, 0.12);
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px 20px;
+      text-align: left;
+    }
+
+    .faq-num {
+      min-width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #F8F4FB;
+      border: 1.5px solid #D8BFD8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+      color: #9B7BAE;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+      flex-shrink: 0;
+    }
+    .faq-item.open .faq-num {
+      background: #7B2D8E;
+      border-color: #7B2D8E;
+      color: #fff;
+    }
+
+    .faq-question-text {
+      font-size: 15px;
+      font-weight: 600;
+      color: #2A0E3A;
+      flex: 1;
+      line-height: 1.4;
+    }
+    .faq-item.open .faq-question-text {
+      color: #7B2D8E;
+    }
+
+    .faq-chevron {
+      width: 20px;
+      height: 20px;
+      color: #D8BFD8;
+      transition: transform 0.25s, color 0.2s;
+      flex-shrink: 0;
+    }
+    .faq-item.open .faq-chevron {
+      transform: rotate(180deg);
+      color: #FF69B4;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+      padding: 0 20px 0 62px;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 600px;
+      padding: 0 20px 20px 62px;
+    }
+
+    .faq-answer p {
+      font-size: 14px;
+      color: #4A3058;
+      line-height: 1.75;
+    }
+    .faq-answer p + p {
+      margin-top: 10px;
+    }
+
+    .faq-answer .highlight {
+      display: inline-block;
+      background: #F8F4FB;
+      border: 1px solid #D8BFD8;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #7B2D8E;
+      padding: 2px 8px;
+      margin: 2px 2px;
+    }
+
+    .faq-answer .tip {
+      margin-top: 12px;
+      background: #F8F4FB;
+      border-left: 3px solid #FF69B4;
+      border-radius: 0 8px 8px 0;
+      padding: 10px 14px;
+      font-size: 13px;
+      color: #7B2D8E;
+      font-weight: 500;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #9B7BAE;
+      position: relative;
+      z-index: 1;
+    }
+    .footer span { color: #7B2D8E; }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <div class="header-tag">AI-SHIPR</div>
+    <h1>Frequently Asked Questions</h1>
+    <p>Common questions from workshop participants — click any question to expand.</p>
+  </div>
+
+  <ul class="faq-list">
+
+    <li class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        <span class="faq-num">1</span>
+        <span class="faq-question-text">What do I set up and what are the folders?</span>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer">
+        <p>AI-SHIPR has a clear folder structure. The core folders are:</p>
+        <p>
+          <span class="highlight">S-Strategy/</span> — your vision, KPIs, and strategic bets<br>
+          <span class="highlight">I-Initiatives/</span> — active work items linked to bets<br>
+          <span class="highlight">H-Hypotheses/</span> — falsifiable hypotheses<br>
+          <span class="highlight">P-Proof/</span> — experiments, launches, performance reads<br>
+          <span class="highlight">R-Relationships/</span> — your PM profile, personas, stakeholders<br>
+          <span class="highlight">I-Information/</span> — resources, templates, integrations<br>
+          <span class="highlight">A-AI/</span> — agents, skills, workflows, playbooks
+        </p>
+        <p>Start with the <strong>Setup Worksheet</strong> — it walks you through filling in each section in the right order. Then run the <strong>Half-Sprint Guide</strong> for a 5-day activation plan.</p>
+        <div class="tip">First move: open <code>Half-Sprint-Guide.md</code> and follow Day 1. It takes about 30 minutes.</div>
+      </div>
+    </li>
+
+    <li class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        <span class="faq-num">2</span>
+        <span class="faq-question-text">How do I set up AI-SHIPR if I have multiple teams?</span>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer">
+        <p>If you manage multiple teams, enable <strong>Lead Mode</strong> by setting <span class="highlight">team_mode: lead</span> in your <code>Settings.md</code>. This activates portfolio-level agents and skills.</p>
+        <p>Use the <span class="highlight">Portfolio-Strategist</span> agent for cross-team bet coverage and resource allocation, and the <span class="highlight">Team-Manager</span> agent for 1:1 prep and team health.</p>
+        <p>Each team can have its own initiatives folder or sub-folder. The <span class="highlight">Portfolio-Priority-Stack</span> skill lets you rank initiatives across PMs and product areas from a single view.</p>
+        <div class="tip">Tip: keep one shared <code>S-Strategy/</code> layer for the portfolio, and separate <code>I-Initiatives/</code> sub-folders per team.</div>
+      </div>
+    </li>
+
+    <li class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        <span class="faq-num">3</span>
+        <span class="faq-question-text">I'm managing different products in my company. What is the right way to set up AI-SHIPR?</span>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer">
+        <p>There are two common approaches depending on how separate the products are:</p>
+        <p><strong>Option A — One vault, multiple strategy folders.</strong> Keep a shared AI-SHIPR root, but create separate <span class="highlight">S-Strategy/</span> sub-folders per product (e.g. <code>S-Strategy/ProductA/</code>, <code>S-Strategy/ProductB/</code>). Best when you own both products personally.</p>
+        <p><strong>Option B — Separate vaults per product.</strong> Each product gets its own Obsidian vault and AI-SHIPR setup. Best when different PMs manage each product or the products are fully independent business lines.</p>
+        <div class="tip">When in doubt, start with Option A. You can always split later once you feel where the friction is.</div>
+      </div>
+    </li>
+
+    <li class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        <span class="faq-num">4</span>
+        <span class="faq-question-text">How do I use AI-SHIPR for design?</span>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer">
+        <p>AI-SHIPR has a built-in <strong>Figma integration</strong>. Once you add your Figma token to the integrations config, you can run <span class="highlight">/figma</span> to pull your design assets directly into the session.</p>
+        <p>This lets you use design context inside PRD generation, edge case analysis, and hypothesis building — Claude can reference actual component names and flows from your Figma files.</p>
+        <p>You can also add a <strong>Designer agent</strong> to your <span class="highlight">A-AI/AI-Agents/</span> folder. Design it around your specific use case — UI review, accessibility checks, or design critique.</p>
+        <div class="tip">See <code>I-Information/Integrations/Figma/</code> for setup instructions and the <code>/figma</code> skill for usage.</div>
+      </div>
+    </li>
+
+    <li class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        <span class="faq-num">5</span>
+        <span class="faq-question-text">How do I create a new agent?</span>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer">
+        <p>Open the playbook <span class="highlight">When-Creating-an-Agent</span> from your <code>A-AI/AI-Playbooks/</code> folder and paste it into Claude Code. It walks you through the full agent definition step by step.</p>
+        <p>An agent file lives in <code>A-AI/AI-Agents/</code> and defines: the agent's name, its purpose, when to invoke it, how it thinks, and what it produces. You can also use the <strong>create-agent script</strong> to scaffold the file automatically.</p>
+        <div class="tip">Good agents have a single, specific purpose. If you're tempted to give it more than one job, split it into two agents.</div>
+      </div>
+    </li>
+
+    <li class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        <span class="faq-num">6</span>
+        <span class="faq-question-text">How do I create a new skill?</span>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer">
+        <p>Open the playbook <span class="highlight">When-Creating-a-Skill</span> from your <code>A-AI/AI-Playbooks/</code> folder. Skills live in <code>A-AI/AI-Skills/</code> and are triggered by slash commands like <code>/skill-name</code>.</p>
+        <p>A skill is a single-task prompt file: it receives an input, applies a structured thinking process, and produces a specific output. Use the <strong>create-skill script</strong> to generate the boilerplate.</p>
+        <div class="tip">The difference between an agent and a skill: agents are persistent personas with broad judgment; skills are single-task tools you invoke on demand.</div>
+      </div>
+    </li>
+
+    <li class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        <span class="faq-num">7</span>
+        <span class="faq-question-text">Why Obsidian and not VS Code?</span>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer">
+        <p>Obsidian is built around <strong>local markdown files</strong> — which is exactly how AI-SHIPR stores everything. There's no database, no sync lock-in, no proprietary format. Your files are yours.</p>
+        <p>Obsidian also makes it easy to navigate between files, see your folder structure, and open the system alongside Claude Code in a split view. VS Code works too, but it's optimized for code — Obsidian is optimized for knowledge and documents.</p>
+        <p>The deeper reason: files are the right interface for Claude Code. Claude reads and writes files natively. Obsidian lets you see and manage those files without friction.</p>
+        <div class="tip">You can use VS Code if you prefer. The system works the same — Obsidian is a recommendation, not a requirement.</div>
+      </div>
+    </li>
+
+    <li class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        <span class="faq-num">8</span>
+        <span class="faq-question-text">How do I import skills from other frameworks?</span>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer">
+        <p>Skills from other frameworks (like <code>awesome-pm-skills</code> or community repos) are not drop-in compatible — they need to be rewrapped into the AI-SHIPR skill format before they will work correctly inside the system.</p>
+        <p>The process: copy the skill's prompt content, open <span class="highlight">When-Creating-a-Skill</span>, and ask Claude to reformat it using the AI-SHIPR skill structure. This takes about 20–30 minutes per skill and ensures it integrates properly with your strategy context and other workflows.</p>
+        <div class="tip">Don't import skills blindly. Each skill you add has a maintenance cost. Prioritize the ones that solve a real gap in your current workflow.</div>
+      </div>
+    </li>
+
+    <li class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        <span class="faq-num">9</span>
+        <span class="faq-question-text">How do I update AI-SHIPR once there is a new version?</span>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer">
+        <p>New versions of AI-SHIPR are distributed as a <strong>zip file</strong>. When a new version arrives, unzip it into a temporary folder alongside your existing vault — then let Claude handle the merge.</p>
+        <p>Paste this prompt into Claude Code, with the correct paths filled in:</p>
+        <pre style="background:#F0EBF6;border:1.5px solid #D8BFD8;border-radius:10px;padding:16px 18px;font-size:12.5px;line-height:1.75;color:#2A0E3A;white-space:pre-wrap;margin:12px 0;font-family:'Inter',monospace;">I have two versions of AI-SHIPR:
+- My current vault: [path to your current AI-SHIPR folder]
+- New version (unzipped): [path to the new version folder]
+
+Compare the system files and update my current vault. Follow these rules:
+
+UPDATE only these folders:
+- A-AI/ (agents, skills, workflows, playbooks)
+- Root CLAUDE.md
+
+DO NOT touch or overwrite:
+- S-Strategy/, I-Initiatives/, H-Hypotheses/, P-Proof/
+- R-Relationships/, Learning.md, Settings.md
+- Any file I have customised
+
+For each file you update, tell me what changed.
+If a new system file conflicts with a customisation I've made, flag it and ask before overwriting.
+
+When done, give me a summary: files added, files updated, files skipped.</pre>
+        <p>Claude will diff the two versions, apply only the system-level changes, and leave your personal data untouched. It will also flag any conflicts before acting on them.</p>
+        <div class="tip">Your data files (Strategy, Initiatives, Learning.md) should never be overwritten by an update. If Claude flags a conflict on one of those, choose "skip" — your version wins.</div>
+      </div>
+    </li>
+
+    <li class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        <span class="faq-num">10</span>
+        <span class="faq-question-text">What's the difference between Claude Code and Claude Cowork?</span>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer">
+        <p>Both are agentic — they can take multi-step actions autonomously — but they're built for different contexts.</p>
+        <p><strong>Claude Cowork</strong> runs inside <strong>Claude Desktop</strong>. It's designed for general knowledge work: organizing files, creating Excel spreadsheets, writing documents, running scheduled tasks. No terminal, no code. You describe an outcome, step away, and come back to finished work.</p>
+        <p><strong>Claude Code</strong> runs in the <strong>terminal</strong>. It has full access to your file system, can run commands, execute scripts, and operate deeply inside a structured folder system like AI-SHIPR. It's designed for technical and systems-level work.</p>
+        <p>AI-SHIPR is built for Claude Code because it relies on reading <code>CLAUDE.md</code> files, running slash commands and skills, and working inside a structured folder hierarchy — none of which Cowork supports today.</p>
+        <div class="tip">Think of it this way: Cowork is great for one-off tasks you'd describe in plain language. Claude Code is the right tool when you want a persistent, structured system that compounds over time.</div>
+      </div>
+    </li>
+
+    <li class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        <span class="faq-num">11</span>
+        <span class="faq-question-text">What's the difference between an agent, a skill, and a slash command?</span>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer">
+        <p><strong>Agents</strong> are persistent AI personas with broad judgment. You describe a situation and they think through it. They read your strategy files before responding, so their output is specific to your product context. Examples: <span class="highlight">Problem-Framer</span> <span class="highlight">Decision-Architect</span> <span class="highlight">Stakeholder-Translator</span></p>
+        <p><strong>Skills</strong> are single-task tools you invoke on demand. You give them an input and they produce one specific structured output. They do one thing well and stop. Examples: <span class="highlight">Assumption-Extractor</span> <span class="highlight">Hypothesis-Builder</span> <span class="highlight">Tradeoff-Mapper</span></p>
+        <p><strong>Slash commands</strong> are triggers that run a skill or full workflow. Type the command and Claude executes the whole sequence — you don't need to know which skills are involved. Examples: <span class="highlight">/today</span> <span class="highlight">/sprint</span> <span class="highlight">/weekly</span></p>
+        <div class="tip">Quick rule: if you want to think through a complex situation → agent. If you want a specific structured output → skill. If you want to run a repeatable routine → slash command.</div>
+      </div>
+    </li>
+
+    <li class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        <span class="faq-num">12</span>
+        <span class="faq-question-text">I'm adding a new skill — how do I ensure it has the right priority and doesn't override existing skills?</span>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer">
+        <p>Skills in AI-SHIPR are invoked explicitly by slash command — they don't run automatically or compete with each other. So "priority" is really about two things: <strong>naming</strong> and <strong>scope</strong>.</p>
+        <p><strong>1. Avoid naming conflicts.</strong> Each skill maps to a unique command name. Before adding a new skill, check <code>A-AI/AI-Skills/</code> and the skills table in <code>CLAUDE.md</code> to confirm no existing skill uses the same name or a very similar one. A conflict won't cause a crash — Claude will just get confused about which definition to follow.</p>
+        <p><strong>2. Define a tight scope.</strong> Each skill file should describe exactly what it does <em>and what it does not do</em>. If your new skill overlaps with an existing one (e.g. both structure a document), add an explicit line like: <em>"This skill does not replace [Skill-Name] — use that for X."</em> This tells Claude when to use which tool.</p>
+        <p><strong>3. Don't redefine system behavior.</strong> Skills should not override voice, tone, or format rules set in <code>CLAUDE.md</code> or <code>Settings.md</code>. Those files have the highest priority in the context hierarchy. A skill that says "always respond in bullet points" will fight the system-level settings and produce inconsistent results.</p>
+        <p><strong>4. Register it in CLAUDE.md.</strong> Add the new skill to the skills table in <code>CLAUDE.md</code> under the right category. This is how Claude knows the skill exists and when to suggest it. An unregistered skill still works if you call it directly — but Claude won't surface it proactively.</p>
+        <div class="tip">The safest test: after adding the skill, run it once, then run an adjacent skill you're worried it might affect. If both produce clean output, the scope is well-defined.</div>
+      </div>
+    </li>
+
+    <li class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        <span class="faq-num">13</span>
+        <span class="faq-question-text">How do I decide if the default agents and skills are right for me — and how do I change them?</span>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer">
+        <p>Don't try to evaluate them before you've used them. The right approach is to <strong>use the defaults for 2–4 weeks</strong> first. Run the workflows, use the agents on real decisions, generate real artifacts. Generic assessment is useless — you need signal from your actual work.</p>
+        <p>After that, notice the friction. If you're adding the same context every time you invoke an agent, the agent file is missing it — add it. If an agent's output structure doesn't match how you think, edit the output section. If a skill asks for inputs you never have, rewrite the input expectations.</p>
+        <p>Changing them is just editing a markdown file. Open the agent or skill in <code>A-AI/AI-Agents/</code> or <code>A-AI/AI-Skills/</code>, make your edit, and the next invocation picks up the change immediately. You can also ask Claude to rewrite a section: <em>"Rewrite the Behavior Rules section of Problem-Framer to be less aggressive about blocking vague statements."</em></p>
+        <div class="tip">The defaults are a starting point, not a standard. The agents that work best for you will be ones you've shaped to your context over time.</div>
+      </div>
+    </li>
+
+    <li class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        <span class="faq-num">14</span>
+        <span class="faq-question-text">I already have my own agents and skills — how do I add them to AI-SHIPR?</span>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer">
+        <p>The process is straightforward — AI-SHIPR is just a folder structure, so adding your own pieces takes two steps:</p>
+        <p><strong>1. Place the file in the right folder.</strong> Agent files go in <span class="highlight">A-AI/AI-Agents/</span>. Skill files go in <span class="highlight">A-AI/AI-Skills/</span>. The file format is markdown — your existing agents and skills will work as-is, or you can reformat them to match the AI-SHIPR structure for tighter integration.</p>
+        <p><strong>2. Register it in CLAUDE.md.</strong> Open <code>CLAUDE.md</code> at the root of your AI-SHIPR folder and add the agent or skill to the relevant table (Agents or Skills section). This tells Claude it exists, what it does, and when to suggest it. Without this step the file still works if you call it directly — Claude just won't surface it proactively.</p>
+        <p>If your agent or skill references specific inputs or file paths that don't match the AI-SHIPR folder structure, update those references so it reads from the right places (e.g. <code>S-Strategy/</code> instead of wherever you had them before).</p>
+        <div class="tip">Don't import everything at once. Add the one agent or skill that closes the biggest gap in your current workflow, test it for a week, then decide what else to bring in.</div>
+      </div>
+    </li>
+
+    <li class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        <span class="faq-num">15</span>
+        <span class="faq-question-text">What is the relationship between agents and the skills they call?</span>
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer">
+        <p>An agent is <strong>who is thinking</strong>. A skill is <strong>how the thinking gets done</strong>. The relationship only goes one way: agents use skills — skills never call agents.</p>
+        <p>Concretely: when the <span class="highlight">Lean-Product-Canvas</span> agent reaches Box 6 (Hypotheses), it doesn't write the hypothesis itself. It invokes <span class="highlight">Assumption-Extractor</span> first to surface the hidden assumptions, then invokes <span class="highlight">Hypothesis-Builder</span> to convert each assumption into a falsifiable hypothesis. The agent orchestrates the sequence; the skills do the precise work.</p>
+        <p>Most agents in AI-SHIPR operate without calling any skills — they work through dialogue and judgment: <span class="highlight">Problem-Framer</span>, <span class="highlight">Decision-Architect</span>, <span class="highlight">Stakeholder-Translator</span>. Only the two orchestrator agents — <span class="highlight">Product-Strategist</span> and <span class="highlight">Lean-Product-Canvas</span> — explicitly invoke skills as part of their sequence.</p>
+        <p>Skills are stateless: they receive input, produce output, and stop. They have no memory of previous invocations and no awareness of the agent calling them. This makes them reusable — the same <span class="highlight">OKR-Partner</span> skill is called by both Product-Strategist and Lean-Product-Canvas at different points in the flow.</p>
+        <div class="tip">If you're building a new agent that needs to do multiple structured steps, consider whether each step should be its own skill. That way the steps stay reusable and testable independently.</div>
+      </div>
+    </li>
+
+  </ul>
+
+  <div class="footer">
+    <span>AI-SHIPR</span> by Yaniv Yaakubovich &nbsp;·&nbsp; verve-pm.com
+  </div>
+
+</div>
+
+<script>
+  function toggle(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    // close all
+    document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+    // open clicked if it wasn't already open
+    if (!isOpen) item.classList.add('open');
+  }
+</script>
+</body>
+</html>

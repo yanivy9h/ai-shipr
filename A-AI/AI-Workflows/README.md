@@ -8,7 +8,7 @@ Most workflows have a corresponding `/command` you can run directly in Claude Co
 
 ---
 
-## Current Workflows (9)
+## Current Workflows (10)
 
 ### Daily
 
@@ -43,6 +43,12 @@ Most workflows have a corresponding `/command` you can run directly in Claude Co
 |---|---|---|---|
 | `Launch-Coordinator.md` | `/launch` | Pre-launch go/no-go checklist: criteria, content, experiments, stakeholder sign-off, rollback conditions | 3–5 days before launch |
 | `Iteration-Planner.md` | `/iterate` | Post-data loop re-entry: read proof, close one cycle, open the next bet | After data comes in post-launch |
+
+### Quality & Auditing
+
+| Workflow | Command | Purpose | When |
+|---|---|---|---|
+| `Gap-Analyzer.md` | `/gap [file]` | Run Structural Integrity Auditor (Rex) on any artifact — PRD, initiative, hypothesis, business case | Before any artifact moves forward |
 
 ---
 

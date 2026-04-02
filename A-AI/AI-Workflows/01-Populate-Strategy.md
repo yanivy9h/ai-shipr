@@ -8,14 +8,12 @@ Day 1 of the Half-Sprint Guide, after completing the Setup Worksheet.
 Also use when onboarding a new product or resetting strategy after a significant pivot.
 
 ## How to Run
-1. Open this file
-2. Copy the full prompt below
-3. Paste it into a new Claude session
-4. Paste your completed `Setup-Worksheet.md` immediately after
-5. Claude will generate all 8 output files
-6. Review each output — correct anything that misses your intent
-7. Paste each output into its corresponding file in the folder structure
-8. Run `Structural-Integrity-Auditor` on S-Strategy before moving to Day 2
+1. Open a new Claude Code session in your AI-SHIPR vault
+2. Copy the full prompt below and paste it in
+3. Claude will read `Setup-Worksheet.md` automatically and generate all 8 output files
+4. Review each output — correct anything that misses your intent
+5. Paste each output into its corresponding file in the folder structure
+6. Run Structural-Integrity-Auditor` on S-Strategy before moving to Day 2
 
 ---
 
@@ -25,7 +23,7 @@ Also use when onboarding a new product or resetting strategy after a significant
 
 You are helping a product manager populate their AI-SHIPR operating system.
 
-They have completed a Setup Worksheet with raw answers about their product, strategy, role, stakeholders, and users.
+Start by reading the file `Setup-Worksheet.md` from the current directory. Use its contents as the worksheet answers for everything below. Do not ask the user to paste anything — read the file directly.
 
 Your job is to convert those raw answers into 8 structured files, ready to be filed into AI-SHIPR.
 
@@ -215,11 +213,7 @@ After generating all 8 files:
 List any fields you had to mark as "[Missing — add manually]" and explain briefly what the PM needs to add.
 
 Then write:
-> "Run Structural-Integrity-Auditor on S-Strategy before moving to Day 2 of your Half-Sprint."
-
----
-
-*End of prompt. Paste your completed Setup-Worksheet.md below this line.*
+> "Run 02-Structural-Integrity-Auditor on S-Strategy before moving to Day 2 of your Half-Sprint."
 
 ---
 

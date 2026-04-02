@@ -4,8 +4,28 @@
 
 Before responding to any request, read these files in order:
 
+### 0. Team Context (if applicable)
+
+Check `Settings.md` first. If `team_mode: individual`:
+Read these files BEFORE local strategy files — they represent org-level decisions that take precedence:
+- `../vp/shared/Vision.md`
+- `../vp/shared/Strategy.md`
+- `../vp/shared/OKRs.md`
+- `../vp/shared/Strategic-Bets.md`
+- `../vp/shared/Portfolio-Roadmap.md`
+- `../vp/shared/Constraints.md`
+- `../vp/shared/I-Information/` (if present — org-wide templates and integrations)
+
+Any product decision that conflicts with org-level OKRs or strategic bets must be flagged explicitly before proceeding.
+
+If `team_mode: lead`:
+Read these files BEFORE local files:
+- `shared/` — your org strategy layer (the source of truth for the whole team)
+- `../pm-*/S-Strategy/` — all PM product strategies (for portfolio view)
+- `R-Relationships/Team/` — team roster, PM profiles, 1:1 logs
+
 ### 1. Settings
-- `Settings.md` — voice mode, PM voice toggle, active integrations, learner config
+- `Settings.md` — voice mode, PM voice toggle, active integrations, team mode, learner config
 
 ### 2. Strategy Context
 - `S-Strategy/Vision.md` — what is being built and what is out of scope
@@ -185,6 +205,7 @@ Always start your reply with the agent or skill used, in CAPS.
 | `/sprint` | `Sprint-Planner` | Start of each sprint |
 | `/review-initiative` | `Initiative-Review` | Weekly initiative health check |
 | `/review-experiment` | `Experiment-Review` | Weekly experiment status |
+| `/gap [file]` | `Gap-Analyzer` | Audit any artifact for structural gaps before it moves forward |
 | `/launch` | `Launch-Coordinator` | 3–5 days before any launch |
 | `/iterate` | `Iteration-Planner` | After data comes in post-launch |
 | `/weekly` | `Weekly-Review` | Friday loop close |
@@ -213,9 +234,11 @@ Pre-written prompts. Paste the relevant file into Claude Code to trigger a full 
 
 ## Folder Structure
 
+### Solo / Individual PM
+
 ```
 AI-SHIPR/
-├── Settings.md          — Voice, PM voice toggle, integrations, learner config
+├── Settings.md          — Voice, PM voice toggle, integrations, team mode, learner config
 ├── S-Strategy/          — Vision, Product, KPIs, Strategic Bets, Constraints
 ├── H-Hypotheses/        — Filed, falsifiable hypotheses
 ├── I-Initiatives/       — Active initiatives linked to bets
@@ -226,14 +249,42 @@ AI-SHIPR/
 │   ├── Templates/       — Reusable document structures (PRDs, updates, agendas)
 │   └── Integrations/    — Data piped in from Slack, Email, Teams, Tickets, Miro
 ├── A-AI/
-│   ├── AI-Agents/       — Agent definitions (8)
-│   ├── AI-Skills/       — Skill definitions (25)
-│   ├── AI-Workflows/    — Repeatable workflows (9)
-│   └── AI-Playbooks/    — Situation-based paste-and-run prompts (10)
+│   ├── AI-Agents/       — Agent definitions
+│   ├── AI-Skills/       — Skill definitions
+│   ├── AI-Workflows/    — Repeatable workflows
+│   └── AI-Playbooks/    — Situation-based paste-and-run prompts
 ├── Learning.md          — Loop memory (update after every session)
 ├── Setup-Worksheet.md   — Raw input collector for initial setup
 ├── Half-Sprint-Guide.md — 5-day activation plan
 └── Roadmap.md           — System roadmap and tool coverage map
+```
+
+### Team Setup (individual mode + lead mode)
+
+```
+AI-SHIPR-ORG/                        — Google Shared Drive root
+├── vp/                              — VP's AI-SHIPR instance (team_mode: lead)
+│   ├── shared/                      — Org layer: VP writes, all PMs read
+│   │   ├── Vision.md
+│   │   ├── Strategy.md
+│   │   ├── OKRs.md
+│   │   ├── Strategic-Bets.md
+│   │   ├── Portfolio-Roadmap.md
+│   │   ├── Constraints.md
+│   │   └── I-Information/           — Org-wide templates and integrations
+│   │       ├── Templates/           — Shared PRD, stakeholder update, OKR formats
+│   │       ├── Integrations/        — Company-level tool configs (Linear workspace, Slack)
+│   │       └── Resources/           — Org-wide research, market context
+│   ├── R-Relationships/Team/        — Roster, PM profiles, 1:1 logs
+│   ├── A-AI/                        — Includes Portfolio-Strategist + Team-Manager
+│   └── Learning.md
+├── pm-alice/                        — Alice's AI-SHIPR instance (team_mode: individual)
+│   ├── CLAUDE.md                    — reads ../vp/shared/ first, then local
+│   ├── Settings.md                  — team_mode: individual
+│   ├── S-Strategy/                  — Alice's product strategy (aligned to shared/)
+│   ├── I-Information/               — Alice's personal resources and integrations
+│   └── ...rest of AI-SHIPR structure
+└── pm-bob/                          — Same structure as pm-alice
 ```
 
 ---
@@ -258,6 +309,38 @@ Defined → In Sprint → In Development → Testing → Launched → Monitoring
 - If a decision is needed but criteria are undefined, flag it before proceeding
 - When producing file-worthy output, offer to write it directly to the correct folder
 - Update `Learning.md` at the end of any session where something was learned
+
+## Learning Capture
+
+After completing any agent or skill run, check: was something worth keeping surfaced?
+
+A learning is any of:
+- A pattern that worked or didn't
+- A decision made and the reasoning behind it
+- A surprise finding from data or process
+- An assumption that was confirmed or broken
+
+If yes, present a Learning Candidate before closing the response:
+
+```
+Learning Candidate
+What: [1 sentence — the insight or pattern]
+Why it matters: [1 sentence — how it connects to strategy or future decisions]
+Source: [which skill/agent produced this]
+
+Save to Learning.md? (yes / no / edit)
+```
+
+If confirmed, append to `Learning.md` under today's date:
+
+```
+## [YYYY-MM-DD] — [Skill/Agent name]
+**Insight:** [what was learned]
+**Source:** [context — which initiative, decision, or session]
+**Implications:** [what this should change or inform going forward]
+```
+
+If nothing meaningful was surfaced, skip silently. Do not force a Learning Candidate when there is nothing worth keeping.
 
 ---
 
@@ -293,6 +376,7 @@ Defined → In Sprint → In Development → Testing → Launched → Monitoring
 | `/coach [situation]` | Run PM-Coach — soft skills, stuck on options, or post-situation debrief |
 | `/canvas [idea or canvas]` | Run Lean-Product-Canvas — build, review, or export a Lean Product Canvas |
 | `/strategize` | Run Product-Strategist — build or refresh full product strategy using JTBD, OST, and OKR |
+| `/gap [file]` | Run Structural Integrity Auditor (Rex) on a PRD, initiative, hypothesis, or any artifact — flags gaps against AI-SHIPR standards |
 
 ---
 

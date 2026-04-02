@@ -71,10 +71,16 @@ When `active`, agents may reference latest files in that folder for context.
 team_mode: solo
 ```
 
-Options: `solo` | `lead`
+Options: `solo` | `individual` | `lead`
 
-`solo`: Standard AI-SHIPR — individual PM operating model. Team layer is inactive.
-`lead`: Team lead mode — activates team management layer. `/today` aggregates across team, `/team-review` and `/portfolio` become available. Agents read `R-Relationships/Team/` in addition to standard files.
+`solo`: Standard AI-SHIPR — individual PM, no shared org layer.
+
+`individual`: Part of a product team running on a shared Google Drive structure.
+Reads org-level context from `../vp/shared/` before local strategy files.
+Use this when your VP has set up a shared team folder. See verve-pm.com/ai-shipr-resources/google-drive-setup/ for setup instructions.
+
+`lead`: VP / Team Lead mode — activates portfolio agents and team management layer.
+Reads `shared/` (your org layer) and `../pm-*/S-Strategy/` (all PM product strategies) in addition to standard files. `/today` aggregates across team. Portfolio-Strategist and Team-Manager agents become available.
 
 ---
 
@@ -90,7 +96,7 @@ learner_depth: focused   # focused | broad
 
 ---
 
-_Last updated: 2026-03-04_
+_Last updated: 2026-03-25_
 > Part of the **AI-SHIPR** product management system
 > Built by **Yaniv Yaakubovich**
 > Product Management & AI Consulting: www.verve-pm.com

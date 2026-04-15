@@ -104,7 +104,21 @@ examples/Duolingo/
 ```
 
 ---
+## Requirements
 
+- **Claude Code** — [claude.ai/code](https://claude.ai/code) (requires Claude Pro account or higher)
+- A product you're managing. That's it.
+- (Optional) **Obsidian** (free) — [obsidian.md](https://obsidian.md/)
+
+The system runs in three modes, configured in `Settings.md`:
+
+- `solo` — individual PM, no shared layer. Start here.
+- `individual` — part of a product team. Reads org-level context (Vision, OKRs, Strategic Bets) from a shared VP folder before loading your own files. Use this when your team lead has set up a shared org layer.
+- `lead` — VP or Team Lead mode. Activates portfolio agents (Portfolio-Strategist) and team management tools (Team-Manager). `/today` aggregates across the whole team. The shared folder you maintain becomes the org layer all individual PMs read from.
+
+Most people start in `solo` and move to `individual` or `lead` when their team adopts the system.
+
+---
 ## Try this (2 minutes)
 
 Open Claude and paste this:
@@ -119,40 +133,24 @@ That's what AI-SHIPR enables.
 
 ---
 
-## Why most people won't get this to work alone
+## The AI-SHIPR workshop
 
-You can clone this repo and start filling files.
-
-But most PMs get stuck in one of three places:
-
-- They don't know what a good hypothesis actually looks like (vs. a feature idea with a label on it)
-- They fill the strategy files once and never close the loop — the system stops compounding
-- They fall back to using AI as a writing tool, not a thinking partner
-
-That's not a willpower problem. It's a setup problem.
-
-That's where the workshop comes in.
-
----
-
-## The workshop
-
-You don't need another framework.
+The repo is a great starting point. You can enhance it with the AI-SHIPR workshop
 
 You need this running on your actual product.
 
 In 95 minutes:
 
-- You install AI-SHIPR
+- You define AI-SHIPR to best fit your product
 - You run it on your own product during the session
 - You leave with a working system — not a blank template
 
-By Monday, your AI sessions will stop starting from zero.
+And then, magic happens: Your AI sessions will stop starting from zero.
 
 **What you'll walk away with:**
 - A fully set up AI-SHIPR system on your machine
 - Your product mapped into it — strategy, bets, first hypotheses
-- Repeatable daily workflows (`/today`, `/sprint`, `/weekly`) running against your context
+- Repeatable daily workflows (`/today`, `/hand-off`, `/sprint`, `/weekly`) running against your context
 - A system that gets smarter every session you run
 
 **Who it's for:** Product managers already using Claude or ChatGPT who feel the gap between "helpful outputs" and "real thinking partner." You're good at prompting. The AI just doesn't know your product yet.
@@ -184,22 +182,6 @@ Before filling your own files, read through `examples/Duolingo/` in order:
 Then open your own `S-Strategy/Vision.md` and write yours.
 
 For setup guides, Google Drive team configuration, and additional resources: [verve-pm.com/ai-shipr-resources](https://verve-pm.com/ai-shipr-resources/)
-
----
-
-## Requirements
-
-- **Claude Code** — [claude.ai/code](https://claude.ai/code) (requires Claude Pro account or higher)
-- A product you're managing. That's it.
-- (Optional) **Obsidian** (free) — [obsidian.md](https://obsidian.md/)
-
-The system runs in three modes, configured in `Settings.md`:
-
-- `solo` — individual PM, no shared layer. Start here.
-- `individual` — part of a product team. Reads org-level context (Vision, OKRs, Strategic Bets) from a shared VP folder before loading your own files. Use this when your team lead has set up a shared org layer.
-- `lead` — VP or Team Lead mode. Activates portfolio agents (Portfolio-Strategist) and team management tools (Team-Manager). `/today` aggregates across the whole team. The shared folder you maintain becomes the org layer all individual PMs read from.
-
-Most people start in `solo` and move to `individual` or `lead` when their team adopts the system.
 
 ---
 

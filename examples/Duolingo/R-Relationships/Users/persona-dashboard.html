@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Duolingo — User Personas</title>
+<style>
+  :root {
+    --green:        #47a600;
+    --green-light:  #7ac70b;
+    --green-dark:   #2d6a00;
+    --blue:         #1cb0f5;
+    --blue-mid:     #1899d5;
+    --blue-dark:    #1254a9;
+    --yellow:       #ffc300;
+    --orange:       #ff9600;
+    --red:          #ff4b4b;
+    --peach:        #ffce8e;
+    --dark:         #4b4b4b;
+    --light-gray:   #eeeeee;
+    --white:        #ffffff;
+    --bg:           #f5f5f5;
+    --card-bg:      #ffffff;
+    --border:       #e0e0e0;
+    --text:         #3c3c3c;
+    --text-light:   #6b7280;
+    --text-muted:   #9ca3af;
+    --shadow:       0 2px 12px rgba(0,0,0,0.08);
+    --shadow-hover: 0 8px 28px rgba(0,0,0,0.14);
+    --radius:       14px;
+    --radius-sm:    8px;
+
+    /* Per-persona accent colors */
+    --maya:         #1cb0f5;
+    --alex:         #ff9600;
+    --carol:        #47a600;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 60%, var(--green-light) 100%);
+    color: var(--white);
+    position: sticky; top: 0; z-index: 100;
+    box-shadow: 0 3px 20px rgba(0,0,0,0.22);
+  }
+  .header-top {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 36px;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+  }
+  .duo-logo {
+    display: flex; align-items: center; gap: 12px;
+    font-size: 20px; font-weight: 800; letter-spacing: -0.4px;
+  }
+  .duo-owl {
+    width: 40px; height: 40px;
+    background: var(--yellow);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+  .header-center { text-align: center; }
+  .header-center h1 { font-size: 20px; font-weight: 800; letter-spacing: -0.3px; }
+  .header-center span { font-size: 12px; color: rgba(255,255,255,0.65); letter-spacing: 0.5px; text-transform: uppercase; }
+
+  /* Stats bar */
+  .stats-bar {
+    background: rgba(0,0,0,0.15);
+    padding: 10px 36px;
+    display: flex; gap: 36px; align-items: center;
+  }
+  .stat-item { display: flex; align-items: center; gap: 8px; }
+  .stat-value { color: var(--yellow); font-weight: 800; font-size: 17px; }
+  .stat-label { color: rgba(255,255,255,0.65); font-size: 12px; }
+
+  /* ── TABS ── */
+  .tab-bar {
+    background: var(--white);
+    border-bottom: 2px solid var(--border);
+    padding: 0 36px;
+    display: flex; gap: 0;
+  }
+  .tab-btn {
+    padding: 14px 28px;
+    font-size: 14px; font-weight: 700;
+    border: none; background: none;
+    cursor: pointer; color: var(--text-light);
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    transition: all 0.2s;
+    font-family: inherit;
+    letter-spacing: 0.2px;
+  }
+  .tab-btn:hover { color: var(--green); }
+  .tab-btn.active { color: var(--green); border-bottom-color: var(--green); }
+
+  /* ── MAIN ── */
+  .main { padding: 30px 36px; }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  /* ── PERSONA GRID ── */
+  .personas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+
+  /* ── CARD BASE ── */
+  .persona-card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    border: 1.5px solid var(--border);
+    transition: box-shadow 0.2s, transform 0.2s;
+    display: flex; flex-direction: column;
+  }
+  .persona-card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-3px);
+  }
+
+  /* Card header accent by persona */
+  .persona-card.maya .card-header   { background: linear-gradient(135deg, #0e7ab5 0%, var(--maya) 100%); }
+  .persona-card.alex .card-header   { background: linear-gradient(135deg, #c46a00 0%, var(--alex) 100%); }
+  .persona-card.carol .card-header  { background: linear-gradient(135deg, var(--green-dark) 0%, var(--carol) 100%); }
+
+  .card-header {
+    padding: 20px 20px 16px;
+    display: flex; align-items: center; gap: 14px;
+    position: relative;
+  }
+  .avatar {
+    width: 54px; height: 54px; border-radius: 50%;
+    background: rgba(255,255,255,0.25);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; font-weight: 900; color: var(--white);
+    flex-shrink: 0;
+    border: 2.5px solid rgba(255,255,255,0.4);
+    letter-spacing: -1px;
+  }
+  .card-name-area { flex: 1; }
+  .card-name { color: var(--white); font-size: 16px; font-weight: 800; line-height: 1.2; }
+  .card-subtitle { color: rgba(255,255,255,0.75); font-size: 12px; margin-top: 2px; }
+  .type-badge {
+    position: absolute; right: 14px; top: 14px;
+    background: rgba(255,255,255,0.2);
+    color: var(--white);
+    font-size: 10px; font-weight: 700;
+    padding: 3px 10px; border-radius: 20px;
+    letter-spacing: 0.5px; text-transform: uppercase;
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+
+  .card-body { padding: 18px 20px; flex: 1; }
+
+  /* Demographic fields */
+  .demo-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 8px; margin-bottom: 14px;
+  }
+  .demo-item {
+    background: var(--bg);
+    border-radius: var(--radius-sm);
+    padding: 8px 10px;
+  }
+  .demo-label { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+  .demo-value { font-size: 13px; font-weight: 700; color: var(--text); margin-top: 2px; }
+
+  .metric-row {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 8px; margin-bottom: 14px;
+  }
+  .metric-box {
+    background: var(--bg); border-radius: var(--radius-sm);
+    padding: 10px 8px; text-align: center;
+  }
+  .metric-val {
+    font-size: 17px; font-weight: 800;
+    color: var(--green); line-height: 1;
+  }
+  .metric-lbl { font-size: 10px; color: var(--text-muted); margin-top: 3px; }
+
+  .quote-box {
+    background: #f9fafb;
+    border-left: 3px solid var(--yellow);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    padding: 10px 14px;
+    font-size: 12px; color: var(--text-light);
+    font-style: italic; line-height: 1.55;
+    margin-bottom: 12px;
+  }
+  .pain-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .pain-tag {
+    background: #fff0f0; color: var(--red);
+    font-size: 11px; padding: 3px 10px;
+    border-radius: 20px; border: 1px solid #ffd0d0;
+    font-weight: 600;
+  }
+
+  /* Functional fields */
+  .func-section { margin-bottom: 14px; }
+  .func-label {
+    font-size: 10px; font-weight: 700; color: var(--text-muted);
+    text-transform: uppercase; letter-spacing: 0.8px;
+    margin-bottom: 5px;
+  }
+  .func-text {
+    font-size: 13px; color: var(--text); line-height: 1.55;
+  }
+  .func-highlight {
+    background: #f0fdf4; border-left: 3px solid var(--green);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    padding: 8px 12px;
+    font-size: 13px; color: var(--text); line-height: 1.55;
+  }
+  .driver-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+  .driver-tag {
+    font-size: 11px; padding: 3px 10px;
+    border-radius: 20px; font-weight: 600;
+  }
+  .maya .driver-tag   { background: #e8f6fd; color: #0d7ab3; border: 1px solid #b3e2f7; }
+  .alex .driver-tag   { background: #fff4e5; color: #c46a00; border: 1px solid #ffd494; }
+  .carol .driver-tag  { background: #f0fdf4; color: var(--green-dark); border: 1px solid #b6e5b0; }
+
+  .session-bar {
+    margin-top: 12px; padding: 10px;
+    background: var(--bg); border-radius: var(--radius-sm);
+    display: flex; align-items: center; gap: 10px;
+  }
+  .session-bar-label { font-size: 11px; color: var(--text-muted); white-space: nowrap; }
+  .bar-track {
+    flex: 1; height: 6px;
+    background: var(--border); border-radius: 3px; overflow: hidden;
+  }
+  .bar-fill { height: 100%; border-radius: 3px; }
+  .maya  .bar-fill { background: var(--maya); }
+  .alex  .bar-fill { background: var(--alex); }
+  .carol .bar-fill { background: var(--carol); }
+
+  /* ── SECTION INTRO ── */
+  .view-intro {
+    background: var(--white); border-radius: var(--radius);
+    border: 1.5px solid var(--border);
+    padding: 16px 22px; margin-bottom: 22px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .intro-icon { font-size: 28px; }
+  .intro-title { font-size: 14px; font-weight: 700; color: var(--text); }
+  .intro-desc  { font-size: 12px; color: var(--text-light); margin-top: 2px; line-height: 1.4; }
+
+  @media (max-width: 1100px) { .personas-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 700px) {
+    .personas-grid { grid-template-columns: 1fr; }
+    .main { padding: 16px; }
+    .header-top, .stats-bar, .tab-bar { padding-left: 16px; padding-right: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-top">
+    <div class="duo-logo">
+      <div class="duo-owl">🦉</div>
+      <span>Duolingo</span>
+    </div>
+    <div class="header-center">
+      <h1>User Personas</h1>
+      <span>Retention &amp; Engagement Research</span>
+    </div>
+    <div style="width:140px"></div>
+  </div>
+  <div class="stats-bar">
+    <div class="stat-item"><span class="stat-value">3</span><span class="stat-label">Personas</span></div>
+    <div class="stat-item"><span class="stat-value">3</span><span class="stat-label">User Segments</span></div>
+    <div class="stat-item"><span class="stat-value">Retention</span><span class="stat-label">Core Theme</span></div>
+    <div class="stat-item"><span class="stat-value">Streak</span><span class="stat-label">Key Mechanic</span></div>
+  </div>
+</div>
+
+<!-- TABS -->
+<div class="tab-bar">
+  <button class="tab-btn active" onclick="switchTab('demographic', this)">Demographic View</button>
+  <button class="tab-btn" onclick="switchTab('functional', this)">Functional View</button>
+</div>
+
+<div class="main">
+
+  <!-- ══════════════ DEMOGRAPHIC TAB ══════════════ -->
+  <div class="tab-panel active" id="tab-demographic">
+    <div class="view-intro">
+      <div class="intro-icon">👤</div>
+      <div>
+        <div class="intro-title">Demographic Personas</div>
+        <div class="intro-desc">Who they are — age, location, life context, usage patterns, and the numbers that define their relationship with the product.</div>
+      </div>
+    </div>
+    <div class="personas-grid">
+
+      <!-- MAYA -->
+      <div class="persona-card maya">
+        <div class="card-header">
+          <div class="avatar">M</div>
+          <div class="card-name-area">
+            <div class="card-name">Maya</div>
+            <div class="card-subtitle">The Casual Learner</div>
+          </div>
+          <div class="type-badge">Casual</div>
+        </div>
+        <div class="card-body">
+          <div class="demo-grid">
+            <div class="demo-item">
+              <div class="demo-label">Age</div>
+              <div class="demo-value">28</div>
+            </div>
+            <div class="demo-item">
+              <div class="demo-label">Location</div>
+              <div class="demo-value">London, UK</div>
+            </div>
+            <div class="demo-item">
+              <div class="demo-label">Occupation</div>
+              <div class="demo-value">Marketing Manager</div>
+            </div>
+            <div class="demo-item">
+              <div class="demo-label">Learning</div>
+              <div class="demo-value">Spanish 🇲🇽</div>
+            </div>
+            <div class="demo-item">
+              <div class="demo-label">Device</div>
+              <div class="demo-value">Phone only</div>
+            </div>
+            <div class="demo-item">
+              <div class="demo-label">Motivation</div>
+              <div class="demo-value">Upcoming trip</div>
+            </div>
+          </div>
+          <div class="metric-row">
+            <div class="metric-box">
+              <div class="metric-val" style="color:var(--red)">~10</div>
+              <div class="metric-lbl">Avg. days before churn</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-val">3×</div>
+              <div class="metric-lbl">Previous attempts</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-val">4 min</div>
+              <div class="metric-lbl">Ideal session</div>
+            </div>
+          </div>
+          <div class="quote-box">"I open it with good intentions at 7pm, get interrupted, and by 8pm the reminder feels annoying. I miss a day. Then two. The streak breaking feels final."</div>
+          <div class="pain-tags">
+            <span class="pain-tag">Guilt loops</span>
+            <span class="pain-tag">Streak anxiety</span>
+            <span class="pain-tag">Poor timing</span>
+            <span class="pain-tag">No offline mode</span>
+          </div>
+          <div class="session-bar" style="margin-top:12px">
+            <span class="session-bar-label">Session windows</span>
+            <div style="flex:1;font-size:11px;color:var(--text-light)">Commute · Lunch · 9–10pm couch</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ALEX -->
+      <div class="persona-card alex">
+        <div class="card-header">
+          <div class="avatar">A</div>
+          <div class="card-name-area">
+            <div class="card-name">Alex</div>
+            <div class="card-subtitle">The Motivated Returnee</div>
+          </div>
+          <div class="type-badge">Serious</div>
+        </div>
+        <div class="card-body">
+          <div class="demo-grid">
+            <div class="demo-item">
+              <div class="demo-label">Age</div>
+              <div class="demo-value">35</div>
+            </div>
+            <div class="demo-item">
+              <div class="demo-label">Location</div>
+              <div class="demo-value">Berlin, DE</div>
+            </div>
+            <div class="demo-item">
+              <div class="demo-label">Occupation</div>
+              <div class="demo-value">Software Engineer</div>
+            </div>
+            <div class="demo-item">
+              <div class="demo-label">Learning</div>
+              <div class="demo-value">Japanese 🇯🇵</div>
+            </div>
+            <div class="demo-item">
+              <div class="demo-label">Device</div>
+              <div class="demo-value">Desktop + phone</div>
+            </div>
+            <div class="demo-item">
+              <div class="demo-label">Attempt #</div>
+              <div class="demo-value">3rd try</div>
+            </div>
+          </div>
+          <div class="metric-row">
+            <div class="metric-box">
+              <div class="metric-val" style="color:var(--orange)">14</div>
+              <div class="metric-lbl">Current streak (days)</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-val">250</div>
+              <div class="metric-lbl">Strava run streak</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-val">2–3×</div>
+              <div class="metric-lbl">Trips/year (churn risk)</div>
+            </div>
+          </div>
+          <div class="quote-box">"I know the first 2 weeks are the easy part — I've been here before. My fear is the first streak loss. Last time, a work trip to Amsterdam killed it. I never came back."</div>
+          <div class="pain-tags">
+            <span class="pain-tag">Kanji wall</span>
+            <span class="pain-tag">Travel disruption</span>
+            <span class="pain-tag">No safety net</span>
+            <span class="pain-tag">Habit fragility</span>
+          </div>
+          <div class="session-bar" style="margin-top:12px">
+            <span class="session-bar-label">Session windows</span>
+            <div style="flex:1;font-size:11px;color:var(--text-light)">7:00–7:30am desktop · Lunch backup</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CAROL -->
+      <div class="persona-card carol">
+        <div class="card-header">
+          <div class="avatar">C</div>
+          <div class="card-name-area">
+            <div class="card-name">Carol</div>
+            <div class="card-subtitle">The Streak Purist</div>
+          </div>
+          <div class="type-badge">Power user</div>
+        </div>
+        <div class="card-body">
+          <div class="demo-grid">
+            <div class="demo-item">
+              <div class="demo-label">Age</div>
+              <div class="demo-value">48</div>
+            </div>
+            <div class="demo-item">
+              <div class="demo-label">Location</div>
+              <div class="demo-value">Toronto, CA</div>
+            </div>
+            <div class="demo-item">
+              <div class="demo-label">Occupation</div>
+              <div class="demo-value">High School Teacher</div>
+            </div>
+            <div class="demo-item">
+              <div class="demo-label">Learning</div>
+              <div class="demo-value">French 🇫🇷</div>
+            </div>
+            <div class="demo-item">
+              <div class="demo-label">Device</div>
+              <div class="demo-value">iPad (in bed)</div>
+            </div>
+            <div class="demo-item">
+              <div class="demo-label">Subscription</div>
+              <div class="demo-value">Super Duolingo</div>
+            </div>
+          </div>
+          <div class="metric-row">
+            <div class="metric-box">
+              <div class="metric-val" style="color:var(--green)">412</div>
+              <div class="metric-lbl">Current streak (days)</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-val">LTV+</div>
+              <div class="metric-lbl">Subscriber value</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-val">9:30pm</div>
+              <div class="metric-lbl">Daily session time</div>
+            </div>
+          </div>
+          <div class="quote-box">"I do my lesson every day. Alone. I mentioned Duolingo to a colleague who laughed it off. I'd love to see that a friend is also learning something."</div>
+          <div class="pain-tags">
+            <span class="pain-tag">Social isolation</span>
+            <span class="pain-tag">No visibility</span>
+            <span class="pain-tag">Quiet pride</span>
+            <span class="pain-tag">Streak is identity</span>
+          </div>
+          <div class="session-bar" style="margin-top:12px">
+            <span class="session-bar-label">Session windows</span>
+            <div style="flex:1;font-size:11px;color:var(--text-light)">9:30pm every night · Extremely consistent</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══════════════ FUNCTIONAL TAB ══════════════ -->
+  <div class="tab-panel" id="tab-functional">
+    <div class="view-intro">
+      <div class="intro-icon">🎯</div>
+      <div>
+        <div class="intro-title">Functional Personas</div>
+        <div class="intro-desc">What they're trying to do — job-to-be-done, emotional drivers, biggest pain, and what success actually looks like for each user.</div>
+      </div>
+    </div>
+    <div class="personas-grid">
+
+      <!-- MAYA — Functional -->
+      <div class="persona-card maya">
+        <div class="card-header">
+          <div class="avatar">M</div>
+          <div class="card-name-area">
+            <div class="card-name">Maya</div>
+            <div class="card-subtitle">The Casual Learner</div>
+          </div>
+          <div class="type-badge">Casual</div>
+        </div>
+        <div class="card-body">
+          <div class="func-section">
+            <div class="func-label">Job to be done</div>
+            <div class="func-highlight">Learn enough Spanish to order food and not feel helpless in markets — without it feeling like homework after a long day.</div>
+          </div>
+          <div class="func-section">
+            <div class="func-label">Biggest pain</div>
+            <div class="func-text">The streak breaking feels <strong>final</strong>. Missing one day spirals into guilt, not motivation. She doesn't think of herself as "a language person" — any failure confirms that belief.</div>
+          </div>
+          <div class="func-section">
+            <div class="func-label">Emotional drivers</div>
+            <div class="driver-tags">
+              <span class="driver-tag">Fear of embarrassment abroad</span>
+              <span class="driver-tag">Small visible wins</span>
+              <span class="driver-tag">Avoids guilt</span>
+              <span class="driver-tag">Progress bars</span>
+            </div>
+          </div>
+          <div class="func-section" style="margin-top:14px">
+            <div class="func-label">What success looks like</div>
+            <div class="func-highlight" style="border-left-color:var(--maya); background:#e8f6fd;">
+              She finishes a 4-min lesson on the tube with no WiFi. A notification lands at 9:15pm — the exact moment she'd open the app. She doesn't associate Duolingo with guilt.
+            </div>
+          </div>
+          <div class="func-section" style="margin-top:14px">
+            <div class="func-label">Key product hypothesis</div>
+            <div class="func-text" style="font-size:12px;color:var(--text-muted)">If we remove the permanence of streak loss (soft reset, grace period), Maya's churn on day 10–14 will drop significantly.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ALEX — Functional -->
+      <div class="persona-card alex">
+        <div class="card-header">
+          <div class="avatar">A</div>
+          <div class="card-name-area">
+            <div class="card-name">Alex</div>
+            <div class="card-subtitle">The Motivated Returnee</div>
+          </div>
+          <div class="type-badge">Serious</div>
+        </div>
+        <div class="card-body">
+          <div class="func-section">
+            <div class="func-label">Job to be done</div>
+            <div class="func-highlight">Build a Japanese habit that actually sticks this time — not just survive week two, but build the consistency he has with his morning run.</div>
+          </div>
+          <div class="func-section">
+            <div class="func-label">Biggest pain</div>
+            <div class="func-text">He knows the first two weeks are the easy part. His fear is the <strong>first streak loss during travel</strong> — it happened before and he never came back. He needs a safety net, not perfection.</div>
+          </div>
+          <div class="func-section">
+            <div class="func-label">Emotional drivers</div>
+            <div class="driver-tags">
+              <span class="driver-tag">System & process</span>
+              <span class="driver-tag">Progress visibility</span>
+              <span class="driver-tag">Compares to past self</span>
+              <span class="driver-tag">Consistency pride</span>
+            </div>
+          </div>
+          <div class="func-section" style="margin-top:14px">
+            <div class="func-label">What success looks like</div>
+            <div class="func-highlight" style="border-left-color:var(--alex); background:#fff4e5;">
+              He loses his streak during a work trip to Amsterdam. The app offers a one-time repair. He takes it, completes a lesson from the hotel, and the habit survives. He reaches day 90.
+            </div>
+          </div>
+          <div class="func-section" style="margin-top:14px">
+            <div class="func-label">Key product hypothesis</div>
+            <div class="func-text" style="font-size:12px;color:var(--text-muted)">If we offer a streak-repair mechanism triggered specifically by travel detection or multi-day gap, Alex-type users will retain past day 30 at a measurably higher rate.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CAROL — Functional -->
+      <div class="persona-card carol">
+        <div class="card-header">
+          <div class="avatar">C</div>
+          <div class="card-name-area">
+            <div class="card-name">Carol</div>
+            <div class="card-subtitle">The Streak Purist</div>
+          </div>
+          <div class="type-badge">Power user</div>
+        </div>
+        <div class="card-body">
+          <div class="func-section">
+            <div class="func-label">Job to be done</div>
+            <div class="func-highlight">Maintain her streak and feel validated that she is the kind of person who follows through on things.</div>
+          </div>
+          <div class="func-section">
+            <div class="func-label">Biggest pain</div>
+            <div class="func-text">She doesn't have a product problem — she has a <strong>social one</strong>. She does her lesson every day but does it alone. A colleague laughed it off. She'd love to know a friend is also on a streak.</div>
+          </div>
+          <div class="func-section">
+            <div class="func-label">Emotional drivers</div>
+            <div class="driver-tags">
+              <span class="driver-tag">Streak = identity</span>
+              <span class="driver-tag">Quiet pride</span>
+              <span class="driver-tag">No competition</span>
+              <span class="driver-tag">Belonging</span>
+            </div>
+          </div>
+          <div class="func-section" style="margin-top:14px">
+            <div class="func-label">What success looks like</div>
+            <div class="func-highlight" style="border-left-color:var(--carol); background:#f0fdf4;">
+              She can see a friend's streak next to hers. No leaderboard, no competition — just awareness. It gives her something to mention at lunch: "Did you do your French today?"
+            </div>
+          </div>
+          <div class="func-section" style="margin-top:14px">
+            <div class="func-label">Key product hypothesis</div>
+            <div class="func-text" style="font-size:12px;color:var(--text-muted)">If we surface a friend's streak in a low-pressure, non-competitive format, Carol-type users will increase word-of-mouth referrals and extend their own LTV.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+function switchTab(name, btn) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>

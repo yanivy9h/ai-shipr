@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI-SHIPR — Multi-Product Structure</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --dark:         #2A0E3A;
+    --purple:       #7B2D8E;
+    --purple-mid:   #9b3aad;
+    --purple-light: #F5EDF8;
+    --pink:         #FF1493;
+    --pink-light:   #FF69B4;
+    --yellow:       #FFD600;
+    --yellow-soft:  #FFF3B0;
+    --mint:         #E8F8F0;
+    --cyan:         #00D4C8;
+    --bg-alt:       #F8F4FB;
+    --white:        #ffffff;
+    --text:         #1F2023;
+    --text-mid:     #4B5563;
+    --text-light:   #9CA3AF;
+    --border:       #e8dff3;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-alt);
+    color: var(--text);
+    min-height: 100vh;
+  }
+
+  /* Pink top rule */
+  body::before {
+    content: '';
+    display: block;
+    height: 4px;
+    background: linear-gradient(90deg, #FF1493, #9b3aad);
+  }
+
+  header {
+    background: linear-gradient(160deg, #fdf8ff 0%, #f3e8fc 40%, #e8d0f5 100%);
+    padding: 48px 48px 40px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .pill {
+    display: inline-block;
+    background: var(--purple-light);
+    color: var(--purple);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 100px;
+    margin-bottom: 16px;
+  }
+
+  header h1 {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--dark);
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+
+  header p {
+    font-size: 15px;
+    color: var(--text-mid);
+    max-width: 560px;
+    line-height: 1.6;
+  }
+
+  .layout {
+    padding: 40px 48px 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    max-width: 1100px;
+  }
+
+  /* ── SECTION LABELS ── */
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 12px;
+  }
+
+  /* ── SHARED LAYER ── */
+  .shared-block {
+    background: var(--dark);
+    border-radius: 12px;
+    padding: 28px 32px;
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shared-block::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at top right, rgba(255,20,147,0.12), transparent 60%);
+    pointer-events: none;
+  }
+
+  .shared-block .block-title {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--pink-light);
+    margin-bottom: 6px;
+  }
+
+  .shared-block h2 {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 4px;
+  }
+
+  .shared-block .subtitle {
+    font-size: 13px;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 24px;
+  }
+
+  .shared-files {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .shared-file {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.85);
+    font-family: 'SF Mono', 'Fira Code', monospace;
+  }
+
+  .shared-file.highlight {
+    background: rgba(255,20,147,0.18);
+    border-color: rgba(255,20,147,0.35);
+    color: #ffb3d9;
+  }
+
+  /* ── CONNECTOR ── */
+  .connector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 4px 0;
+  }
+
+  .connector-line {
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+  }
+
+  .connector-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-light);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  /* ── PRODUCTS ROW ── */
+  .products-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  /* ── PRODUCT CARD ── */
+  .product-card {
+    background: var(--white);
+    border: 2px solid var(--text);
+    border-radius: 10px;
+    box-shadow: 4px 4px 0 var(--text);
+    overflow: hidden;
+  }
+
+  .product-header {
+    padding: 20px 24px 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .product-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 100px;
+    margin-bottom: 10px;
+  }
+
+  .badge-customer {
+    background: #E8F8F0;
+    color: #065F46;
+  }
+
+  .badge-editor {
+    background: var(--yellow-soft);
+    color: #92400E;
+  }
+
+  .product-header h3 {
+    font-size: 17px;
+    font-weight: 800;
+    color: var(--dark);
+    margin-bottom: 4px;
+  }
+
+  .product-header p {
+    font-size: 12px;
+    color: var(--text-mid);
+    line-height: 1.5;
+  }
+
+  .product-folders {
+    padding: 16px 24px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  /* ── FOLDER ROW ── */
+  .folder-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 8px 10px;
+    border-radius: 6px;
+    transition: background 0.15s;
+  }
+
+  .folder-row:hover {
+    background: var(--bg-alt);
+  }
+
+  .folder-icon {
+    font-size: 14px;
+    line-height: 1;
+    margin-top: 1px;
+    flex-shrink: 0;
+  }
+
+  .folder-name {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--purple);
+    white-space: nowrap;
+  }
+
+  .folder-note {
+    font-size: 11px;
+    color: var(--text-light);
+    margin-top: 2px;
+    line-height: 1.4;
+  }
+
+  .folder-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 6px 0;
+  }
+
+  /* ── EXAMPLE FILES (mini examples inside each folder) ── */
+  .example-files {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 4px;
+  }
+
+  .example-file {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 10px;
+    color: var(--text-mid);
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 2px 7px;
+  }
+
+  /* ── COMPARISON TABLE ── */
+  .compare-block {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .compare-header {
+    padding: 20px 28px 16px;
+    border-bottom: 1px solid var(--border);
+    background: var(--purple-light);
+  }
+
+  .compare-header h3 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--purple);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    text-align: left;
+    padding: 12px 20px;
+    background: #faf8fc;
+    border-bottom: 1px solid var(--border);
+  }
+
+  td {
+    font-size: 12.5px;
+    color: var(--text-mid);
+    padding: 11px 20px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    line-height: 1.5;
+  }
+
+  tr:last-child td { border-bottom: none; }
+
+  td:first-child {
+    font-weight: 600;
+    color: var(--text);
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .val-solo {
+    color: var(--text-light);
+  }
+
+  .val-multi {
+    color: var(--purple);
+    font-weight: 500;
+  }
+
+  /* ── INSIGHT CARD ── */
+  .insight-card {
+    background: var(--yellow-soft);
+    border: 2px solid var(--yellow);
+    border-radius: 8px;
+    padding: 18px 24px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .insight-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .insight-card p {
+    font-size: 13px;
+    color: var(--text);
+    line-height: 1.65;
+  }
+
+  .insight-card strong {
+    font-weight: 700;
+    color: var(--dark);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 24px 48px;
+    border-top: 1px solid var(--border);
+    background: var(--white);
+    font-size: 11px;
+    color: var(--text-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  footer a {
+    color: var(--purple);
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="pill">AI-SHIPR Example</div>
+  <h1>Multi-Product Setup — Duolingo</h1>
+  <p>A solo PM managing two related products: the learner-facing Customer App and the teacher-facing Editor App. Products share stakeholders, engineering, and a shared engagement goal.</p>
+</header>
+
+<div class="layout">
+
+  <!-- SHARED LAYER -->
+  <div>
+    <div class="section-label">Shared Layer — written by you, read by all products</div>
+    <div class="shared-block">
+      <div class="block-title">shared/</div>
+      <h2>Cross-Product Strategy</h2>
+      <p class="subtitle">Lives at the root level. Represents decisions that affect both products simultaneously.</p>
+      <div class="shared-files">
+        <span class="shared-file highlight">Vision.md</span>
+        <span class="shared-file highlight">Strategy.md</span>
+        <span class="shared-file highlight">OKRs.md</span>
+        <span class="shared-file highlight">Strategic-Bets.md</span>
+        <span class="shared-file highlight">Portfolio-Roadmap.md</span>
+        <span class="shared-file">Constraints.md</span>
+        <span class="shared-file">I-Information/Templates/</span>
+        <span class="shared-file">I-Information/Integrations/</span>
+        <span class="shared-file">I-Information/Resources/</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONNECTOR -->
+  <div class="connector">
+    <div class="connector-line"></div>
+    <div class="connector-label">Each product reads shared/ first, then its own strategy</div>
+    <div class="connector-line"></div>
+  </div>
+
+  <!-- PRODUCTS -->
+  <div>
+    <div class="section-label">Product Instances — local strategy, separate AI layers</div>
+    <div class="products-row">
+
+      <!-- CUSTOMER APP -->
+      <div class="product-card">
+        <div class="product-header">
+          <div class="product-badge badge-customer">Learner-facing</div>
+          <h3>Customer App</h3>
+          <p>Streaks, lessons, habit loop, push notifications. Goal: make language learning a daily non-negotiable.</p>
+        </div>
+        <div class="product-folders">
+
+          <div class="folder-row">
+            <div class="folder-icon">⚙️</div>
+            <div>
+              <div class="folder-name">Settings.md</div>
+              <div class="folder-note">team_mode: lead · product: Customer App</div>
+            </div>
+          </div>
+
+          <div class="folder-divider"></div>
+
+          <div class="folder-row">
+            <div class="folder-icon">🎯</div>
+            <div>
+              <div class="folder-name">S-Strategy/</div>
+              <div class="folder-note">Vision, KPIs, Bets — specific to this product</div>
+              <div class="example-files">
+                <span class="example-file">KPIs: DAU · D7 retention · streak rate</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="folder-row">
+            <div class="folder-icon">🔬</div>
+            <div>
+              <div class="folder-name">H-Hypotheses/</div>
+              <div class="example-files">
+                <span class="example-file">HYP-001: Streak grace period</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="folder-row">
+            <div class="folder-icon">🚀</div>
+            <div>
+              <div class="folder-name">I-Initiatives/</div>
+              <div class="example-files">
+                <span class="example-file">INI-001: Streak Shield</span>
+                <span class="example-file">INI-002: Speed Mode</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="folder-row">
+            <div class="folder-icon">👥</div>
+            <div>
+              <div class="folder-name">R-Relationships/</div>
+              <div class="folder-note">Adult learner · commuter personas · Head of Growth · iOS Lead</div>
+            </div>
+          </div>
+
+          <div class="folder-row">
+            <div class="folder-icon">🤖</div>
+            <div>
+              <div class="folder-name">A-AI/</div>
+              <div class="folder-note">Agents · Skills · Workflows · Playbooks</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- EDITOR APP -->
+      <div class="product-card">
+        <div class="product-header">
+          <div class="product-badge badge-editor">Teacher-facing</div>
+          <h3>Editor App</h3>
+          <p>Content authoring, lesson templates, curriculum publishing. Goal: let educators publish quality lessons fast.</p>
+        </div>
+        <div class="product-folders">
+
+          <div class="folder-row">
+            <div class="folder-icon">⚙️</div>
+            <div>
+              <div class="folder-name">Settings.md</div>
+              <div class="folder-note">team_mode: lead · product: Editor App</div>
+            </div>
+          </div>
+
+          <div class="folder-divider"></div>
+
+          <div class="folder-row">
+            <div class="folder-icon">🎯</div>
+            <div>
+              <div class="folder-name">S-Strategy/</div>
+              <div class="folder-note">Vision, KPIs, Bets — specific to this product</div>
+              <div class="example-files">
+                <span class="example-file">KPIs: lessons/teacher/month · time-to-publish</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="folder-row">
+            <div class="folder-icon">🔬</div>
+            <div>
+              <div class="folder-name">H-Hypotheses/</div>
+              <div class="example-files">
+                <span class="example-file">HYP-001: Template library → time-to-first-lesson</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="folder-row">
+            <div class="folder-icon">🚀</div>
+            <div>
+              <div class="folder-name">I-Initiatives/</div>
+              <div class="example-files">
+                <span class="example-file">INI-001: Template Library</span>
+                <span class="example-file">INI-002: AI Lesson Preview</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="folder-row">
+            <div class="folder-icon">👥</div>
+            <div>
+              <div class="folder-name">R-Relationships/</div>
+              <div class="folder-note">Certified teacher · volunteer educator · iOS Lead (shared with Customer App)</div>
+            </div>
+          </div>
+
+          <div class="folder-row">
+            <div class="folder-icon">🤖</div>
+            <div>
+              <div class="folder-name">A-AI/</div>
+              <div class="folder-note">Agents · Skills · Workflows · Playbooks</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- INSIGHT -->
+  <div class="insight-card">
+    <div class="insight-icon">💡</div>
+    <p><strong>The shared/ rule:</strong> If a decision constrains or connects both products, it belongs in <code>shared/</code>. If it's local to one product, it stays in that product's folder. When the Head of Engineering says "one major platform change this quarter" — that's a Constraint in <code>shared/</code>, not in either product strategy.</p>
+  </div>
+
+  <!-- COMPARISON TABLE -->
+  <div class="compare-block">
+    <div class="compare-header">
+      <h3>Single Product vs. Multi-Product — What Changes</h3>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Setting / File</th>
+          <th>Single Product</th>
+          <th>Multi-Product</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Settings.md</td>
+          <td class="val-solo">team_mode: solo</td>
+          <td class="val-multi">team_mode: lead</td>
+        </tr>
+        <tr>
+          <td>Strategy files</td>
+          <td class="val-solo">One S-Strategy/ folder</td>
+          <td class="val-multi">One per product + shared/ layer</td>
+        </tr>
+        <tr>
+          <td>Stakeholders</td>
+          <td class="val-solo">One Stakeholders.md</td>
+          <td class="val-multi">Per product — some overlap (e.g. iOS Lead appears in both)</td>
+        </tr>
+        <tr>
+          <td>/today output</td>
+          <td class="val-solo">Single product morning brief</td>
+          <td class="val-multi">Surfaces priorities across both products + portfolio conflicts</td>
+        </tr>
+        <tr>
+          <td>Populate-Strategy</td>
+          <td class="val-solo">Fills one product</td>
+          <td class="val-multi">Fills per-product layers + generates shared/ automatically</td>
+        </tr>
+        <tr>
+          <td>Portfolio-Roadmap.md</td>
+          <td class="val-solo">Not used</td>
+          <td class="val-multi">Lives in shared/ — combined initiative timeline</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<footer>
+  <span>AI-SHIPR — Multi-Product Example · Duolingo</span>
+  <span>Built by <a href="https://www.verve-pm.com">Yaniv Yaakubovich</a> · www.verve-pm.com</span>
+</footer>
+
+</body>
+</html>

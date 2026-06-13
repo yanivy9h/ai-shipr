@@ -41,13 +41,13 @@ If strategy is vague, everything downstream is vague. Clarity here compounds acr
 | `Initiative-Review` workflow | Reads `Strategic-Bets.md` to check if active initiatives still serve the right bets |
 | `Structural-Integrity-Auditor` agent | Checks all initiatives against `Strategic-Bets.md` and `Vision.md` for drift |
 | `Business-Case-Builder` skill | Reads `KPIs.md` and `Strategic-Bets.md` to frame the pitch |
-| `Populate-Strategy` workflow | Writes initial content into all files in this folder from the Setup Worksheet |
+| `Populate-Strategy` workflow | Writes initial content into all files in this folder from the AI-SHIPR-Setup-Worksheet |
 
 ---
 
 ## Setup priority
 
-Fill in this order — `Populate-Strategy` workflow does this automatically from the Setup Worksheet:
+Fill in this order — `Populate-Strategy` workflow does this automatically from the AI-SHIPR-Setup-Worksheet:
 
 1. `Vision.md` — required before any initiative or hypothesis work
 2. `Product.md` — defines who you're building for

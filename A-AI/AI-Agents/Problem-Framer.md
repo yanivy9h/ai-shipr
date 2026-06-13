@@ -54,6 +54,14 @@ Optional context:
 - [Gap 2: ...]
 (Omit section if no gaps detected)
 
+## Skill Calls
+
+After completing the reframe, always invoke:
+- `Assumption-Extractor` — run after reframing to surface hidden assumptions in the problem statement
+
+Optionally invoke:
+- `Hypothesis-Builder` — if the PM wants to convert the reframed problem into a testable hypothesis immediately
+
 > Part of the **AI-SHIPR** product management system
 > Built by **Yaniv Yaakubovich**
 > Product Management & AI Consulting: www.verve-pm.com

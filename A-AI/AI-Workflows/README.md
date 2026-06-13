@@ -8,7 +8,13 @@ Most workflows have a corresponding `/command` you can run directly in Claude Co
 
 ---
 
-## Current Workflows (10)
+## Current Workflows (11)
+
+### Discovery
+
+| Workflow | Command | Purpose | When |
+|---|---|---|---|
+| `Discovery-Sprint.md` | `/discovery` | Orchestrate the full discovery phase — setup, sprint check-ins, and readiness gate. Three modes: setup (first run), check-in (each sprint), gate (`/discovery gate`) | Start of discovery phase; start and end of each discovery sprint |
 
 ### Daily
 
@@ -28,7 +34,7 @@ Most workflows have a corresponding `/command` you can run directly in Claude Co
 | Workflow | Command | Purpose | When |
 |---|---|---|---|
 | `Roadmap-Planner.md` | — | Translates strategic bets into a sequenced initiative stack — surfaces coverage gaps and sequencing conflicts | Quarterly / monthly planning, before leadership review |
-| `Populate-Strategy.md` | — | Converts Setup Worksheet answers into ready-to-file content for S-Strategy and R-Relationships | Day 1 of Half-Sprint, onboarding, post-pivot reset |
+| `Populate-Strategy.md` | — | Converts AI-SHIPR-Setup-Worksheet answers into ready-to-file content for S-Strategy and R-Relationships | Day 1 of Half-Sprint, onboarding, post-pivot reset |
 
 ### Weekly Reviews
 

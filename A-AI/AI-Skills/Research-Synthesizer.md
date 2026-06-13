@@ -34,6 +34,8 @@ Optional but valuable:
 - Existing `H-Hypotheses/` files — to check if findings confirm or challenge existing hypotheses
 - `S-Strategy/Strategic-Bets.md` — to assess strategic relevance of findings
 
+**Multi-product note:** If `product_mode: multi` in Settings.md, use `[product-name]/` as the path prefix for H-Hypotheses and S-Strategy reads above (e.g., `patient-prep/H-Hypotheses/`, `patient-prep/S-Strategy/Strategic-Bets.md`).
+
 ## Output Structure
 
 ### Research Input Summary

@@ -12,11 +12,16 @@ The canvas forces the right order of thinking: problem before solution, user out
 
 ## Read First
 
+Read `Settings.md` first.
+
+**If `product_mode: multi`:**
+Ask which product this canvas covers before reading any strategy files. Use `[product-name]/` as the path prefix for all S-Strategy reads below. Also read `shared/Portfolio-Roadmap.md` for cross-product context.
+
 Before any canvas work, read:
 
-1. `S-Strategy/Vision.md` — product direction and what is out of scope
-2. `S-Strategy/Strategic-Bets.md` — active bets this period
-3. `S-Strategy/KPIs.md` — how success is measured
+1. `S-Strategy/Vision.md` (or `[product-name]/S-Strategy/Vision.md` in multi mode) — product direction and what is out of scope
+2. `S-Strategy/Strategic-Bets.md` (or `[product-name]/S-Strategy/Strategic-Bets.md` in multi mode) — active bets this period
+3. `S-Strategy/KPIs.md` (or `[product-name]/S-Strategy/KPIs.md` in multi mode) — how success is measured
 4. `R-Relationships/Me/PM-Profile.md` — PM context and operating preference
 
 If Vision.md is empty, flag it before proceeding. A canvas without a product direction produces plausible-sounding strategy with no anchor.

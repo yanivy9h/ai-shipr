@@ -17,9 +17,10 @@ Optional: add `for stakeholders` to switch to stakeholder mode.
 
 ## Behavior Rules
 
-- Read `Settings.md` — check voice setting and pm_voice setting.
-- Read all files in `I-Initiatives/` — identify active, completed, blocked, and dropped initiatives this sprint.
-- Read all files in `H-Hypotheses/` — identify hypotheses opened, validated, invalidated, or still running.
+- Read `Settings.md` — check voice setting, pm_voice setting, and product_mode.
+- **If `product_mode: multi`:** Ask which product this sprint summary covers before reading any files. Use `[product-name]/` as the path prefix for I-Initiatives and H-Hypotheses reads below. Label all output with the product name.
+- Read all files in `I-Initiatives/` (or `[product-name]/I-Initiatives/` in multi mode) — identify active, completed, blocked, and dropped initiatives this sprint.
+- Read all files in `H-Hypotheses/` (or `[product-name]/H-Hypotheses/` in multi mode) — identify hypotheses opened, validated, invalidated, or still running.
 - If `pm_voice: active` in Settings.md AND `R-Relationships/Me/PM-Voice.md` exists: write the summary in the PM's voice.
   If not: use AI-SHIPR default tone (direct, structured, no fluff).
 - Apply voice setting from Settings.md to tone (coach / direct / gentle).

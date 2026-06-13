@@ -14,11 +14,27 @@ If `team_mode: lead` in Settings.md, `/today` runs in team lead mode:
 - Priority Stack reflects the lead's agenda — unblocking team, decisions to make, portfolio gaps — not personal initiatives
 
 ## What It Reads
+
+Read `Settings.md` first. Then read based on `product_mode`.
+
+**If `product_mode: single` (or not set):**
 - `S-Strategy/Strategic-Bets.md`
 - `S-Strategy/KPIs.md`
 - All files in `I-Initiatives/`
 - All files in `H-Hypotheses/` (status only)
 - All files in `P-Proof/` (status only)
+
+**If `product_mode: multi`:**
+- `shared/Portfolio-Roadmap.md`
+- `shared/Constraints.md`
+- For each product listed under `products:` in Settings.md:
+  - `[product]/S-Strategy/Strategic-Bets.md`
+  - `[product]/S-Strategy/KPIs.md`
+  - All files in `[product]/I-Initiatives/`
+  - All files in `[product]/H-Hypotheses/` (status only)
+  - All files in `[product]/P-Proof/` (status only)
+
+**Always read (both modes):**
 - `R-Relationships/Me/PM-Profile.md` (operating preference)
 - `Learning.md` (last entry)
 - `Settings.md` (github pre-flight + integration status)
@@ -65,13 +81,26 @@ Total output should be readable in under 3 minutes.
 
 #### Priority Stack
 
-Based on active initiatives, pending decisions, and PM operating preference — list the top 3 things that deserve focus today.
-
-One line each. No elaboration unless something is urgent or blocked.
+**If `product_mode: single`:**
+Based on active initiatives, pending decisions, and PM operating preference — list the top 3 things that deserve focus today. One line each. No elaboration unless something is urgent or blocked.
 
 1. [Priority] — [why it's top of stack today]
 2. [Priority] — [why]
 3. [Priority] — [why]
+
+**If `product_mode: multi`:**
+List top 1-2 priorities per product. Label each section with the product name. Keep it scannable — one line per item. Add a Cross-product section only if there is an active tension or dependency that needs attention today.
+
+**[Product A name]**
+1. [Priority] — [why]
+2. [Priority] — [why, if applicable]
+
+**[Product B name]**
+1. [Priority] — [why]
+2. [Priority] — [why, if applicable]
+
+**Cross-product** *(only if relevant)*
+- [Tension or dependency between products that requires action or decision today]
 
 ---
 

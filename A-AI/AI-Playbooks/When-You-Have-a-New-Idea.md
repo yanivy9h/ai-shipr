@@ -10,9 +10,14 @@ This playbook frames the idea, surfaces what you're assuming, and gets you to a 
 ## Instructions to Claude
 
 Read the following files before responding:
-- `S-Strategy/Strategic-Bets.md`
-- `S-Strategy/Vision.md`
-- `S-Strategy/KPIs.md`
+- `Settings.md`
+
+**If `product_mode: multi` in Settings.md:**
+Ask which product this idea is for before reading strategy files. Use `[product-name]/` as the path prefix for all S-Strategy, H-Hypotheses, and I-Initiatives reads and writes below.
+
+- `S-Strategy/Strategic-Bets.md` (or `[product-name]/S-Strategy/Strategic-Bets.md` in multi mode)
+- `S-Strategy/Vision.md` (or `[product-name]/S-Strategy/Vision.md` in multi mode)
+- `S-Strategy/KPIs.md` (or `[product-name]/S-Strategy/KPIs.md` in multi mode)
 - `AI/AI-Agents/Problem-Framer.md`
 - `AI/AI-Skills/Assumption-Extractor.md`
 - `AI/AI-Skills/Hypothesis-Builder.md`

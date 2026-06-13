@@ -10,9 +10,16 @@ This playbook classifies the fire, protects your active sprint, and prepares sta
 ## Instructions to Claude
 
 Read the following files before responding:
+- `Settings.md`
 - `AI/AI-Skills/Fire-Responder.md`
 - `R-Relationships/Stakeholders/Stakeholders.md`
-- All files in `I-Initiatives/` (scan for anything currently `In Sprint` or `In Development`)
+
+**If `product_mode: multi` in Settings.md:**
+Scan I-Initiatives across ALL products — a fire can affect initiatives on any product.
+Read all files in `[product]/I-Initiatives/` for every product listed under `products:` in Settings.md.
+Label any at-risk initiative with its product name.
+
+- All files in `I-Initiatives/` (single mode), or all `[product]/I-Initiatives/` folders (multi mode) — scan for anything currently `In Sprint` or `In Development`
 
 Then:
 

@@ -18,11 +18,26 @@ Translate portfolio state into a narrative that answers the questions leadership
 - Length: 1 page equivalent. If it can't be said in 5 bullets per section, the thinking isn't clear enough yet.
 
 ## What It Reads
+
+Read `Settings.md` first.
+
+**If `product_mode: single` (or not set):**
 - `S-Strategy/Strategic-Bets.md`
 - `S-Strategy/KPIs.md`
 - All files in `I-Initiatives/`
+
+**If `product_mode: multi`:**
+Ask: "Is this update for one product or the full portfolio?" Then:
+- `shared/Portfolio-Roadmap.md` — for cross-product overview and PM time allocation
+- For each relevant product (or all products if portfolio-level update):
+  - `[product]/S-Strategy/Strategic-Bets.md`
+  - `[product]/S-Strategy/KPIs.md`
+  - All files in `[product]/I-Initiatives/`
+- Label all output sections by product. Open with a portfolio-level headline before per-product detail.
+
+Always read (both modes):
 - `R-Relationships/Stakeholders/Stakeholders.md` (for audience context)
-- `R-Relationships/Team/Roster.md` (for team state context)
+- `R-Relationships/Team/Roster.md` (for team state context, if populated)
 - `Learning.md` (for any signals worth surfacing)
 
 ## Input Expectations

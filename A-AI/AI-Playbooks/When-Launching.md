@@ -53,6 +53,8 @@ Update initiative Stage to `Launched` once we confirm GO.
 - On-call engineer confirmed: [Yes — name / No — who to confirm with]
 - Stakeholders who need to sign off: [Names or roles]
 
+> **Multi-product note:** If `product_mode: multi`, specify the full path including product prefix for the initiative and hypothesis files (e.g., `patient-prep/I-Initiatives/[name]`, `patient-prep/H-Hypotheses/[HYP-name]`). Save the launch checklist to `[product-name]/P-Proof/Launch-[initiative-name].md`.
+
 ## Current Status
 
 > [Brief summary of where things stand. What has shipped. What is still being tested. Any known issues.]

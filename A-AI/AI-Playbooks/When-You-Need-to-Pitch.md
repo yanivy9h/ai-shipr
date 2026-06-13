@@ -10,13 +10,17 @@ This playbook builds the business case first, then converts it into a leadership
 ## Instructions to Claude
 
 Read the following files before responding:
-- `S-Strategy/Strategic-Bets.md`
-- `S-Strategy/KPIs.md`
-- `S-Strategy/Constraints.md`
+- `Settings.md`
+
+**Multi-product note:** If `product_mode: multi`, use `[product-name]/` as the path prefix for all S-Strategy and I-Initiatives reads below (e.g., `patient-prep/S-Strategy/Strategic-Bets.md`). Save output to `[product-name]/P-Proof/`.
+
+- `S-Strategy/Strategic-Bets.md` (or `[product-name]/S-Strategy/Strategic-Bets.md` in multi mode)
+- `S-Strategy/KPIs.md` (or `[product-name]/S-Strategy/KPIs.md` in multi mode)
+- `S-Strategy/Constraints.md` (or `[product-name]/S-Strategy/Constraints.md` in multi mode)
 - `R-Relationships/Stakeholders/Stakeholders.md`
 - `AI/AI-Skills/Business-Case-Builder.md`
 - `AI/AI-Skills/Pitch-Deck-Builder.md`
-- The initiative file I name below (from `I-Initiatives/`) if it exists
+- The initiative file I name below (from `I-Initiatives/`, or `[product-name]/I-Initiatives/` in multi mode) if it exists
 
 Then:
 

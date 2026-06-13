@@ -17,12 +17,17 @@ Orchestrates three frameworks in sequence:
 
 ## Read First
 
+Read `Settings.md` first.
+
+**If `product_mode: multi`:**
+Ask which product this strategy session covers before reading any files. Use `[product-name]/` as the path prefix for all S-Strategy reads below. Also read `shared/Portfolio-Roadmap.md` to understand how this product relates to others and what the unstated priority is.
+
 Before any strategy work, read:
 
-1. `S-Strategy/Vision.md` — what currently exists (validate or challenge it)
-2. `S-Strategy/Strategic-Bets.md` — active bets (build on or replace them)
-3. `S-Strategy/KPIs.md` — current success metrics (use as desired outcome input for OST)
-4. `S-Strategy/JTBD.md` — if it exists, check if it is still accurate
+1. `S-Strategy/Vision.md` (or `[product-name]/S-Strategy/Vision.md` in multi mode) — what currently exists (validate or challenge it)
+2. `S-Strategy/Strategic-Bets.md` (or `[product-name]/S-Strategy/Strategic-Bets.md` in multi mode) — active bets (build on or replace them)
+3. `S-Strategy/KPIs.md` (or `[product-name]/S-Strategy/KPIs.md` in multi mode) — current success metrics (use as desired outcome input for OST)
+4. `S-Strategy/JTBD.md` (or `[product-name]/S-Strategy/JTBD.md` in multi mode) — if it exists, check if it is still accurate
 5. `R-Relationships/Me/PM-Profile.md` — PM context and operating constraints
 
 If all S-Strategy files are empty: this is a first-run strategy session. Start with Mode 1 and build forward.

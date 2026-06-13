@@ -31,6 +31,8 @@ Optional but strongly recommended:
 - Problem-Framer output — for sharp problem statement
 - `S-Strategy/Strategic-Bets.md` — for strategic context section
 
+**Multi-product note:** If `product_mode: multi` in Settings.md, use `[product-name]/` as the path prefix for all file reads above (e.g., `patient-prep/I-Initiatives/`, `patient-prep/S-Strategy/Strategic-Bets.md`).
+
 ## Output Structure
 
 ### PRD: [Initiative Name]

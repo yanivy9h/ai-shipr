@@ -1,3 +1,8 @@
+---
+name: hypothesis
+description: Convert an assumption into a falsifiable hypothesis. Runs Assumption-Extractor then Hypothesis-Builder. Pass your assumption as an argument.
+---
+
 # Skill: Hypothesis Builder
 
 ## Purpose

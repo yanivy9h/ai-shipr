@@ -10,12 +10,21 @@ This is how the system gets smarter. Every week you close the loop, the next wee
 ## Instructions to Claude
 
 Read the following files before responding:
+- `Settings.md`
 - `Learning.md`
-- `S-Strategy/Strategic-Bets.md`
-- `S-Strategy/KPIs.md`
+
+**If `product_mode: multi` in Settings.md:**
+Ask: "Are you closing the week for one product or across all products?" Then:
+- Read `shared/Portfolio-Roadmap.md` for cross-product context
+- For the selected product(s), use `[product-name]/` as the path prefix for all I-Initiatives, H-Hypotheses, and S-Strategy reads below
+- Label all output sections by product name. Include a cross-product summary section when closing across all products.
+- Write output to `[product-name]/P-Proof/WeeklyReview-[date].md` (or `shared/P-Proof/WeeklyReview-[date].md` for a cross-product review)
+
+- `S-Strategy/Strategic-Bets.md` (or `[product-name]/S-Strategy/Strategic-Bets.md` in multi mode)
+- `S-Strategy/KPIs.md` (or `[product-name]/S-Strategy/KPIs.md` in multi mode)
 - `AI/AI-Workflows/Weekly-Review.md`
-- All files in `I-Initiatives/` (scan for Stage changes, decisions made, blockers resolved)
-- All files in `H-Hypotheses/` (scan for any status updates this week)
+- All files in `I-Initiatives/` (or `[product-name]/I-Initiatives/` in multi mode) — scan for Stage changes, decisions made, blockers resolved
+- All files in `H-Hypotheses/` (or `[product-name]/H-Hypotheses/` in multi mode) — scan for any status updates this week
 
 Then:
 

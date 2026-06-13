@@ -53,6 +53,8 @@ If yes:
 - Measurement window: [Start date → End date]
 - Time since launch: [N weeks]
 
+> **Multi-product note:** If `product_mode: multi`, specify the full path including product prefix (e.g., `patient-prep/I-Initiatives/[name]`, `patient-prep/H-Hypotheses/[HYP-name]`). Save output to `[product-name]/P-Proof/Performance-[initiative-name].md`.
+
 ## Metric Data
 
 > [Paste your actual numbers here. Include baseline and post-launch figures. Raw data is fine.]

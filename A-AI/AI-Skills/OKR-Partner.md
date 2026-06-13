@@ -31,6 +31,8 @@ Always helpful to include:
 - `S-Strategy/Strategic-Bets.md` — for alignment check
 - Current metric baselines if known
 
+**Multi-product note:** If `product_mode: multi` in Settings.md, use `[product-name]/` as the path prefix for all file reads above (e.g., `patient-prep/S-Strategy/KPIs.md`).
+
 ## Output Structure
 
 ### OKR Review

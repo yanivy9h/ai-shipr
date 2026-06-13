@@ -5,7 +5,7 @@ Build structured, actionable user personas from raw research signals, interview 
 Produce output ready to file directly into `R-Relationships/Users/Personas.md`.
 
 ## When to Use
-- Day 2 of the Half-Sprint, after filling Setup-Worksheet
+- Day 2 of the Half-Sprint, after filling AI-SHIPR-Setup-Worksheet
 - After running Research-Synthesizer on interview or survey data
 - When the current Personas.md is vague or based on assumptions rather than signals
 - When a new user segment has emerged and needs formal definition
@@ -23,7 +23,7 @@ Produce output ready to file directly into `R-Relationships/Users/Personas.md`.
 Provide one of:
 - Raw interview notes or transcripts (1 or more)
 - Survey results or feedback clusters
-- Setup-Worksheet Part 6 answers
+- AI-SHIPR-Setup-Worksheet Part 6 answers
 - A rough persona description to sharpen
 
 Optional:

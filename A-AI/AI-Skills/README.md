@@ -6,20 +6,46 @@ Unlike agents (persistent perspective) or workflows (multi-step sequences), skil
 
 ---
 
-## Solo PM Skills (25)
+## Slash Commands (9)
+
+Some skills in this folder are also registered as Claude Code slash commands.
+Any skill file with a `name:` field in its YAML frontmatter is automatically installed as a slash command when you run `setup.sh`.
+
+| File | Command | Purpose |
+|------|---------|---------|
+| `Today.md` | `/today` | Daily briefing — priority stack, decisions, stale items |
+| `Sprint.md` | `/sprint` | Sprint planning — goal, committed scope, out-of-scope list |
+| `Weekly.md` | `/weekly` | Friday loop close |
+| `Iterate.md` | `/iterate` | Iteration planner after data comes in |
+| `Plan.md` | `/plan` | Roadmap planner |
+| `Launch.md` | `/launch` | Pre-launch go/no-go checklist |
+| `Review-Initiative.md` | `/review-initiative` | Weekly initiative health check |
+| `Review-Experiment.md` | `/review-experiment` | Weekly experiment status review |
+| `Handoff.md` | `/handoff` | EOD summary or ownership transfer handoff |
+| `Figma.md` | `/figma` | Load Figma design context |
+
+To install or restore slash commands: run `bash setup.sh` from the AI-SHIPR root, then restart Claude Code.
+
+---
+
+## Solo PM Skills (39)
 
 ### Discovery & Framing
 
 | Skill | Purpose |
 |---|---|
+| `Competitive-Landscape-Mapper` | Maps the alternatives users choose today — positioning gap, differentiation signal, switching cost. Run before user research begins |
+| `Interview-Guide-Builder` | Generates a structured customer interview guide tied to a specific hypothesis and persona. Run before every round of user interviews |
+| `Interview-Synthesizer` | Converts post-interview notes into structured signals using the original guide as context. Feeds directly into Research-Synthesizer |
+| `Research-Synthesizer` | Converts raw research (interviews, surveys, notes) into structured signals for hypotheses and personas |
+| `Persona-Builder` | Builds structured, actionable user personas from research signals |
 | `JTBD-Mapper` | Produces a structured Jobs-to-be-Done analysis — job statement, functional/emotional/social dimensions, competing alternatives, and top unmet needs |
 | `Opportunity-Tree` | Builds an Opportunity Solution Tree — maps desired outcome to ranked customer opportunities, candidate solutions, and next experiment |
 | `Assumption-Extractor` | Surfaces hidden assumptions in initiatives — makes implicit risks explicit and testable |
 | `Hypothesis-Builder` | Converts assumptions into falsifiable hypotheses with metric, threshold, and time boundary |
-| `Research-Synthesizer` | Converts raw research (interviews, surveys, notes) into structured signals for hypotheses and personas |
-| `Persona-Builder` | Builds structured, actionable user personas from research signals |
 | `Edge-Case-Finder` | Stress-tests initiatives and experiments — surfaces failure scenarios, blind spots, second-order effects |
 | `Experiment-Designer` | Designs the minimum viable experiment for a riskiest assumption — selects experiment type, defines pass/fail criteria, outputs a structured experiment card |
+| `Discovery-Readiness-Checker` | Scores discovery completeness across 5 categories. Surfaces explicit blockers. Gate before moving to Definition stage or running PRD-Builder |
 
 ### Prioritization & Decisions
 
@@ -62,6 +88,12 @@ Unlike agents (persistent perspective) or workflows (multi-step sequences), skil
 | `Business-Case-Builder` | Structures a funding pitch: problem, quantified impact, cost, clear ask |
 | `Pitch-Deck-Builder` | Converts Business Case Builder output into a leadership presentation narrative |
 
+### Continuity
+
+| Skill | Purpose |
+|---|---|
+| `Handoff-Builder` | Two modes. **EOD:** structured end-of-day summary — what was done, what is in progress, what is blocked, and a 3-bullet quick-start for tomorrow. Lets you resume the next morning with zero re-orientation. **Handoff:** decision-ready ownership transfer for a named person or role — active initiatives with first actions, pending decisions with recommendations, blockers with specific asks, and key stakeholder context. Run with "EOD handoff" or "create a handoff for [name]" |
+
 ### Setup
 
 | Skill | Purpose |
@@ -94,7 +126,9 @@ Unlike agents (persistent perspective) or workflows (multi-step sequences), skil
 
 ## Skill Chains
 
-Skills compound when run in sequence. Common chains:
+Skills compound when run in sequence. Common chains.
+
+Handoff-Builder is typically the last skill run in any session — it closes the loop on whatever was done and sets up the next session.
 
 ```
 Assumption-Extractor → Hypothesis-Builder
@@ -103,6 +137,9 @@ Business-Case-Builder → Pitch-Deck-Builder
 Build-Review → Performance-Tracker → Retro-Facilitator
 Edge-Case-Finder → Experiment-Designer → Performance-Tracker
 Research-Synthesizer → Persona-Builder → JTBD-Mapper → Opportunity-Tree → OKR-Partner
+
+Discovery chain (full):
+Competitive-Landscape-Mapper → Persona-Builder → Interview-Guide-Builder → [interviews] → Interview-Synthesizer → Research-Synthesizer → JTBD-Mapper → Opportunity-Tree → Assumption-Extractor → Hypothesis-Builder → Experiment-Designer → Discovery-Readiness-Checker
 ```
 
 ---

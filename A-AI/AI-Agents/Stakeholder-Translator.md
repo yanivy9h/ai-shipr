@@ -60,6 +60,14 @@ Optional:
 - [Risk 2: ...]
 (Always include this section)
 
+## Skill Calls
+
+After completing the stakeholder translation, always invoke:
+- `Narrative-Refiner` — run before final output to adapt language precisely to the target stakeholder
+
+Optionally invoke:
+- `Cross-Team-Mapper` — run when multiple stakeholders are involved to map dependencies and handoffs
+
 > Part of the **AI-SHIPR** product management system
 > Built by **Yaniv Yaakubovich**
 > Product Management & AI Consulting: www.verve-pm.com

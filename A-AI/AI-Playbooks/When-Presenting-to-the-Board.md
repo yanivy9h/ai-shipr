@@ -10,9 +10,21 @@ This playbook translates the system state into an executive narrative — one th
 ## Instructions to Claude
 
 Read the following files before responding:
-- `S-Strategy/Strategic-Bets.md`
-- `S-Strategy/KPIs.md`
-- All files in `I-Initiatives/`
+- `Settings.md`
+
+**If `product_mode: multi` in Settings.md:**
+This is a portfolio-level update. Read across all products:
+- `shared/Portfolio-Roadmap.md` — for cross-product overview and tensions
+- For each product listed under `products:` in Settings.md:
+  - `[product]/S-Strategy/Strategic-Bets.md`
+  - `[product]/S-Strategy/KPIs.md`
+  - All files in `[product]/I-Initiatives/`
+- Open the board update with a portfolio-level headline, then provide per-product detail.
+- Write output to `shared/P-Proof/BoardUpdate-[date].md` (or `[product-name]/P-Proof/BoardUpdate-[date].md` if single-product focus).
+
+- `S-Strategy/Strategic-Bets.md` (single mode) or per-product paths above (multi mode)
+- `S-Strategy/KPIs.md` (single mode) or per-product paths above (multi mode)
+- All files in `I-Initiatives/` (single mode) or per-product paths above (multi mode)
 - `R-Relationships/Team/Roster.md`
 - `R-Relationships/Stakeholders/Stakeholders.md`
 - `Learning.md`

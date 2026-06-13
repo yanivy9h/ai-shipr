@@ -10,13 +10,18 @@ This playbook reads your active initiatives, maps them to capacity, and outputs 
 ## Instructions to Claude
 
 Read the following files before responding:
-- `S-Strategy/Strategic-Bets.md`
-- `S-Strategy/KPIs.md`
+- `Settings.md`
+
+**If `product_mode: multi` in Settings.md:**
+Ask which product this sprint covers before reading any files. Use `[product-name]/` as the path prefix for all S-Strategy, I-Initiatives, and H-Hypotheses reads below. Also read `shared/Constraints.md` for any shared capacity constraints. Write sprint plan output to `[product-name]/P-Proof/Sprint-[number]-Plan.md`.
+
+- `S-Strategy/Strategic-Bets.md` (or `[product-name]/S-Strategy/Strategic-Bets.md` in multi mode)
+- `S-Strategy/KPIs.md` (or `[product-name]/S-Strategy/KPIs.md` in multi mode)
 - `R-Relationships/Me/PM-Profile.md`
 - `Learning.md`
 - `AI/AI-Workflows/Sprint-Planner.md`
-- All files in `I-Initiatives/` (scan for Stage and Status)
-- All files in `H-Hypotheses/` (scan for active hypotheses)
+- All files in `I-Initiatives/` (or `[product-name]/I-Initiatives/` in multi mode) — scan for Stage and Status
+- All files in `H-Hypotheses/` (or `[product-name]/H-Hypotheses/` in multi mode) — scan for active hypotheses
 
 Then:
 

@@ -19,7 +19,8 @@ Or as part of the weekly review playbook.
 ## Behavior Rules
 
 - Read `Settings.md` first. If `learner: inactive`, stop and say so.
-- Read `S-Strategy/Vision.md`, `S-Strategy/Strategic-Bets.md`, and all active files in `I-Initiatives/`.
+- **If `product_mode: multi`:** Ask which product (or all products) to use as the filter before reading. For each product selected, use `[product-name]/` as the path prefix for S-Strategy and I-Initiatives reads. Also read `shared/Portfolio-Roadmap.md` to understand cross-product bets. If filtering against all products, surface insights per product and note which product each insight is relevant to.
+- Read `S-Strategy/Vision.md`, `S-Strategy/Strategic-Bets.md`, and all active files in `I-Initiatives/` (with product-prefixed paths in multi mode).
   This is the filter. Everything is evaluated against current strategy and active work.
 - Scan `Information/Resources/` for files that do NOT have `processed: true` in their frontmatter.
 - If no unprocessed files exist, say so and stop. Do not invent insights.

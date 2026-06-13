@@ -64,6 +64,11 @@ Optional:
 - [Gap 2: ...]
 (Omit section if no gaps detected)
 
+## Skill Calls
+
+After completing the decision structure, always invoke:
+- `Tradeoff-Mapper` — run when options are defined to produce a structured comparison across all criteria
+
 > Part of the **AI-SHIPR** product management system
 > Built by **Yaniv Yaakubovich**
 > Product Management & AI Consulting: www.verve-pm.com 

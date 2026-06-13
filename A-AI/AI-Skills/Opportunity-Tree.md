@@ -46,6 +46,8 @@ Optional:
 - `R-Relationships/Users/Personas/` — for grounding opportunities in real user context
 - Active initiatives from `I-Initiatives/` — to check existing work against opportunity map
 
+**Multi-product note:** If `product_mode: multi` in Settings.md, use `[product-name]/` as the path prefix for all file reads above (e.g., `patient-prep/S-Strategy/KPIs.md`, `patient-prep/I-Initiatives/`).
+
 ---
 
 ## Output Structure

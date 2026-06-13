@@ -1,24 +1,29 @@
 
-## Workshop Deck (V1.1)
+# Learning Log
 
-The workshop deck (`00-NOT-For-Distribution/workshop-plan/AI-SHIPR workshop deck.html`) was updated to:
-- **Demo company**: CourtIQ replaced with Duolingo (40M DAU, streak retention challenge, 3 real initiatives)
-- **New slide: Figma Integration** (added after Playbooks slide) — shows figma-sync.js command + 3-card explanation
-- **New slide: Team Lead Mode** (added after Figma slide) — shows 2 new agents, 7 skills, 3 workflows, 4 playbooks; activate via `team_mode: lead`
-- All CourtIQ/CRTIQ references fully removed; Duolingo content sourced from Duolingo-demo/ folder
-
-The deck is in 00-NOT-For-Distribution/ and is NOT included in the student distribution zip.
+A running record of what was learned in each session.
+Updated at the end of any session where something was worth keeping.
 
 ---
 
-## Distribution Rules
+## Entry Format
 
-### Zip packaging
-When creating a zip of AI-SHIPR for distribution, always include:
-- `Settings.md`
-- `00-Inbox/`
-- `figma-sync.js`
-- `duolingo-example-worksheet.md` (use this, NOT `example-company.md`)
+```
+## [YYYY-MM-DD] — [Skill/Agent name]
+**Insight:** [what was learned]
+**Source:** [context — which initiative, decision, or session]
+**Implications:** [what this should change or inform going forward]
+```
+
+---
+
+## 2026-05-10 — System Organization
+
+**Insight:** The SHIPR Guide agent belongs inside AI-SHIPR, not in the ABC-TOM agent team. It explains the AI-SHIPR framework to users of the system — it is part of the product, not part of the content/copywriting system that runs alongside it.
+
+**Source:** System review session — noticed shipr-guide-agent.md was living in ABC-TOM/A-agents/ while all the agents and skills it describes live in AI-SHIPR/A-AI/AI-Agents/.
+
+**Implications:** SHIPR-Guide.md is now in `A-AI/AI-Agents/` and referenced in the AI-SHIPR CLAUDE.md Session Start Protocol. When building future guide or onboarding agents for AI-SHIPR, they belong here — not in the ABC-TOM team folder.
 
 ---
 

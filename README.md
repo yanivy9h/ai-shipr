@@ -6,7 +6,7 @@
 
 ## TL;DR
 
-AI-SHIPR is a **folder-based system that gives Claude persistent memory of your product**.
+AI-SHIPR is **a product manager's operating system** — a folder-based system that gives Claude persistent memory of your product.
 
 Instead of starting every session from zero, Claude reads your strategy, hypotheses, initiatives, and past decisions — so it can think with you, not just respond to prompts.
 
@@ -80,7 +80,7 @@ Most people use:
 * templates
 * static context files
 
-AI-SHIPR is different:
+AI-SHIPR is a harness, not a prompt:
 
 **1. It updates itself**
 Agents and workflows write back into the system after each session.

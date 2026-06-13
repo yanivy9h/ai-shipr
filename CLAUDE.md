@@ -4,9 +4,16 @@
 
 Before responding to any request, read these files in order:
 
-### 0. Team Context (if applicable)
+### 0. Context Layer (check both settings independently)
 
-Check `Settings.md` first. If `team_mode: individual`:
+Read `Settings.md`. Check `team_mode` and `product_mode` separately — they are independent.
+
+**team_mode** = do you manage other PMs or belong to a shared org?
+**product_mode** = do you manage one product or several?
+
+**Based on `team_mode`:**
+
+If `team_mode: individual`:
 Read these files BEFORE local strategy files — they represent org-level decisions that take precedence:
 - `../vp/shared/Vision.md`
 - `../vp/shared/Strategy.md`
@@ -24,13 +31,29 @@ Read these files BEFORE local files:
 - `../pm-*/S-Strategy/` — all PM product strategies (for portfolio view)
 - `R-Relationships/Team/` — team roster, PM profiles, 1:1 logs
 
+**`product_mode` is checked separately in Section 2 below — it is not determined by team_mode.**
+
 ### 1. Settings
-- `Settings.md` — voice mode, PM voice toggle, active integrations, team mode, learner config
+- `Settings.md` — voice mode, PM voice toggle, active integrations, team mode, product mode, learner config
+- `Governance.md` — permission tiers: what the AI can do, what requires confirmation, what is off-limits
 
 ### 2. Strategy Context
+
+Check `product_mode` in Settings.md before reading strategy files.
+
+**If `product_mode: single` (or not set):**
 - `S-Strategy/Vision.md` — what is being built and what is out of scope
 - `S-Strategy/KPIs.md` — how success is measured
 - `S-Strategy/Strategic-Bets.md` — where bets are placed this period
+
+**If `product_mode: multi`:**
+- `shared/Portfolio-Roadmap.md` — product overview, cross-product tensions, and PM time split
+- `shared/Constraints.md` — constraints that apply across all products
+- For each product listed under `products:` in Settings.md:
+  - `[product]/S-Strategy/Vision.md`
+  - `[product]/S-Strategy/KPIs.md`
+  - `[product]/S-Strategy/Strategic-Bets.md`
+- When responding, always identify which product the current request relates to. If unclear, ask before proceeding.
 
 ### 3. PM Context
 - `R-Relationships/Me/PM-Profile.md` — who this PM is, their challenge, their operating preference
@@ -38,6 +61,9 @@ Read these files BEFORE local files:
 
 ### 4. Memory
 - `Learning.md` — what has been learned in previous sessions
+
+### 5. System Guide
+- `A-AI/AI-Agents/SHIPR-Guide.md` — full reference for the AI-SHIPR framework (agents, skills, workflows, folder structure, key concepts)
 
 **Handling empty or template files:**
 
@@ -57,7 +83,16 @@ Do NOT list empty files. Respond with exactly this:
 Proceed normally. Do not flag Learning.md as empty. It just means no loops have been closed yet.
 
 **Case 3 — Partial setup** (one or more strategy files still in template state, but some setup has begun):
-Flag specifically which file is still empty and direct to the relevant part of `AI-SHIPR Setup Worksheet.md`. Example: "Vision.md hasn't been filled in yet — without it I can't frame problems against your product direction. Open the Setup Worksheet and complete Part 1."
+Flag specifically which file is still empty and direct to the relevant part of `AI-SHIPR-Setup-Worksheet.md`. Example: "Vision.md hasn't been filled in yet — without it I can't frame problems against your product direction. Open the Setup Worksheet and complete Part 1."
+
+**Case 4 — New product, discovery stage** (`product_stage: discovery` in Settings.md AND strategy files are populated):
+The PM is building a new product. There are no live metrics, no sprint history, no validated personas, and no launched features. Apply the following adjustments for the entire session:
+- **KPI targets are aspirational, not tracked.** Never ask for current metric values or flag their absence.
+- **All bets, personas, and problem statements are hypotheses.** Frame them as such in all output. Every bet in Strategic-Bets.md is an untested assumption until explicitly validated.
+- **Prioritize discovery skills** in suggestions and /today output: JTBD-Mapper, Persona-Builder, Assumption-Extractor, Hypothesis-Builder, Experiment-Designer, Opportunity-Tree, Lean-Product-Canvas, Product-Strategist.
+- **Do not invoke or suggest** Performance-Tracker, Sprint-Summarizer, Build-Review, Retro-Facilitator, or Fire-Responder — these require a live product.
+- **In /today:** surface unvalidated hypotheses, pending discovery work, and upcoming stakeholder alignment needs — not sprint metrics or initiative stage reviews.
+- **H-Hypotheses is the most important folder right now.** If it is empty, flag it and suggest running Assumption-Extractor on the current bets before anything else.
 
 Do not attempt to run any agent without strategy context. Generic output is worse than no output.
 
@@ -77,6 +112,8 @@ apply the PM's natural communication patterns to all written outputs
 ## What AI-SHIPR Is
 
 An AI-native Product Operating System for product managers.
+
+At its core, it is a **harness for product managers on top of LLMs** — a layer that wraps the raw model in product context, structure, and discipline so it operates as a PM thinking partner rather than a generic chat assistant.
 
 It is not a documentation tool. It is not a note-taking system.
 It is a structured decision and alignment operating model.
@@ -111,6 +148,8 @@ Always start your reply with the agent or skill used, in CAPS.
 | `PM-Coach` | Interpersonal challenges, stuck on options, post-situation debrief |
 | `Lean-Product-Canvas` | Build, review, or export a Lean Product Canvas — orchestrates Persona-Builder, Hypothesis-Builder, Experiment-Designer and more |
 | `Product-Strategist` | Build complete product strategy using JTBD, OST, and OKR — one level above initiative work, feeds into Lean-Product-Canvas |
+| `SHIPR-Guide` | Answer "how do I..." questions about the AI-SHIPR system — agents, skills, workflows, folder structure, key concepts |
+| `Product-Signal-Reader` | Interpret raw product analytics into structured signals and next-step hypotheses — after a launch (24–48h of data) or when metrics are unclear or contested |
 
 **Lead Mode Only** *(active when `team_mode: lead` in Settings.md)*
 
@@ -127,14 +166,18 @@ Always start your reply with the agent or skill used, in CAPS.
 
 | Skill | When to Invoke |
 |-------|---------------|
+| `Competitive-Landscape-Mapper` | Map alternatives, positioning gap, and differentiation signal — run before user research begins |
+| `Interview-Guide-Builder` | Generate a structured interview guide tied to a hypothesis and persona — run before every interview round |
+| `Interview-Synthesizer` | Convert post-interview notes into structured signals using the original guide as context |
+| `Research-Synthesizer` | Convert raw research into structured signals |
+| `Persona-Builder` | Build a structured user persona |
 | `JTBD-Mapper` | Produce a structured JTBD analysis — job statement, dimensions, unmet needs |
 | `Opportunity-Tree` | Map desired outcome to ranked opportunities, solutions, and next experiment |
 | `Assumption-Extractor` | Surface hidden assumptions in an initiative |
 | `Hypothesis-Builder` | Convert assumption into a falsifiable hypothesis |
-| `Research-Synthesizer` | Convert raw research into structured signals |
-| `Persona-Builder` | Build a structured user persona |
 | `Edge-Case-Finder` | Stress-test an initiative or experiment |
 | `Experiment-Designer` | Design the minimum viable experiment for a riskiest assumption |
+| `Discovery-Readiness-Checker` | Score discovery completeness — gate before moving to Definition or running PRD-Builder |
 
 **Prioritization & Decisions**
 
@@ -152,6 +195,7 @@ Always start your reply with the agent or skill used, in CAPS.
 | `Cross-Team-Mapper` | Map dependencies, handoffs, owners across teams |
 | `1on1-Prep` | Build a decision-first agenda for a 1:1 |
 | `Board-Update-Builder` | Generate a structured product update for exec, board, or investor audiences |
+| `Meeting-Synthesizer` | Convert raw meeting content (from any source) into decisions, action items, stakeholder signals, and system updates |
 
 **Build Phase**
 
@@ -209,7 +253,8 @@ Always start your reply with the agent or skill used, in CAPS.
 | `/launch` | `Launch-Coordinator` | 3–5 days before any launch |
 | `/iterate` | `Iteration-Planner` | After data comes in post-launch |
 | `/weekly` | `Weekly-Review` | Friday loop close |
-| *(setup)* | `Populate-Strategy` | Initial setup from Setup-Worksheet |
+| `/after-meeting` | `After-Meeting` | Right after any meeting — synthesize and propagate to system |
+| *(setup)* | `Populate-Strategy` | Initial setup from AI-SHIPR-Setup-Worksheet |
 
 ---
 
@@ -226,6 +271,7 @@ Pre-written prompts. Paste the relevant file into Claude Code to trigger a full 
 | `When-You-Need-to-Pitch` | Preparing a leadership or funding pitch |
 | `When-Theres-a-Fire` | Active incident or production issue |
 | `When-Preparing-for-a-1on1` | Morning before a 1:1 |
+| `When-After-a-Meeting` | Right after any meeting — capture and propagate to the system |
 | `When-Closing-the-Week` | Friday — close the loop |
 | `When-Creating-an-Agent` | Adding a new persistent AI persona to AI-SHIPR |
 | `When-Creating-a-Skill` | Adding a new single-task skill to AI-SHIPR |
@@ -247,14 +293,14 @@ AI-SHIPR/
 ├── I-Information/
 │   ├── Resources/       — Inputs for the Learner: articles, research, samples
 │   ├── Templates/       — Reusable document structures (PRDs, updates, agendas)
-│   └── Integrations/    — Data piped in from Slack, Email, Teams, Tickets, Miro
+│   └── Integrations/    — Data piped in from Slack, Email, Teams, Tickets, Miro, MeetingTool (Fireflies/tl;dv/Granola/Zoom)
 ├── A-AI/
 │   ├── AI-Agents/       — Agent definitions
 │   ├── AI-Skills/       — Skill definitions
 │   ├── AI-Workflows/    — Repeatable workflows
 │   └── AI-Playbooks/    — Situation-based paste-and-run prompts
 ├── Learning.md          — Loop memory (update after every session)
-├── Setup-Worksheet.md   — Raw input collector for initial setup
+├── AI-SHIPR-Setup-Worksheet.md — Raw input collector for initial setup
 ├── Half-Sprint-Guide.md — 5-day activation plan
 └── Roadmap.md           — System roadmap and tool coverage map
 ```
@@ -309,6 +355,7 @@ Defined → In Sprint → In Development → Testing → Launched → Monitoring
 - If a decision is needed but criteria are undefined, flag it before proceeding
 - When producing file-worthy output, offer to write it directly to the correct folder
 - Update `Learning.md` at the end of any session where something was learned
+- **Governance:** Before taking any action outside this folder (writing to Jira, Notion, Slack, git, or any external system), check `Governance.md`. Tier 1 actions proceed silently. Tier 2 actions require explicit confirmation before executing. Tier 3 actions require explicit instruction even if already discussed. When `Governance.md` has not been filled in, treat all external actions as Tier 2.
 
 ## Learning Capture
 
@@ -360,6 +407,7 @@ If nothing meaningful was surfaced, skip silently. Do not force a Learning Candi
 | Command | What It Does |
 |---------|-------------|
 | `/today` | Surface active initiatives, pending decisions, stale items, week priorities |
+| `/discovery` | Run Discovery-Sprint — setup (first run), check-in (each sprint), or `/discovery gate` for readiness check |
 | `/sprint` | Run Sprint-Planner — goal, committed scope, out-of-scope list |
 | `/plan` | Run Roadmap-Planner — strategic coverage and sequencing |
 | `/launch` | Run Launch-Coordinator — go/no-go checklist |
@@ -377,6 +425,7 @@ If nothing meaningful was surfaced, skip silently. Do not force a Learning Candi
 | `/canvas [idea or canvas]` | Run Lean-Product-Canvas — build, review, or export a Lean Product Canvas |
 | `/strategize` | Run Product-Strategist — build or refresh full product strategy using JTBD, OST, and OKR |
 | `/gap [file]` | Run Structural Integrity Auditor (Rex) on a PRD, initiative, hypothesis, or any artifact — flags gaps against AI-SHIPR standards |
+| `/after-meeting` | Run After-Meeting workflow — synthesize meeting notes and propagate decisions, stakeholder signals, and initiative updates across the system |
 
 ---
 

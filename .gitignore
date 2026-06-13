@@ -1,5 +1,21 @@
 # Private workshop materials — not for distribution
+# (moved to ../AI-SHIPR-Workshop/ — pattern kept as a safety net)
 00-NOT-For-Distribution/
+
+# Live working data — real client/instance data generated during use.
+# These integration drop-zones receive private content; never publish.
+# Keep the README/template files, ignore the dated data exports.
+I-Information/Integrations/Tickets/tickets-*.md
+I-Information/Integrations/MeetingTool/meeting-*.md
+I-Information/Integrations/MeetingTool/*.vtt
+I-Information/Integrations/MeetingTool/*.srt
+I-Information/Integrations/Email/email-*.md
+I-Information/Integrations/Slack/threads-*.md
+I-Information/Integrations/Teams/threads-*.md
+I-Information/Resources/Competitor-*.md
+I-Information/Resources/Competitive-*.md
+00-Inbox/*
+!00-Inbox/README-Inbox-Rules.md
 
 # macOS
 .DS_Store

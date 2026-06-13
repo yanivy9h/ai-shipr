@@ -66,14 +66,17 @@ If you use real problems, you will get a working operating system.
 **Focus:** Fill S-Strategy so every agent has context before they run.
 
 **Actions:**
-1. Complete `Setup-Worksheet.md` — raw answers, plain language, 30 minutes max
+1. Complete `AI-SHIPR-Setup-Worksheet.md` — raw answers, plain language, 30 minutes max
 2. Run `01-Populate-Strategy` — paste the prompt into Claude Code and it will read your worksheet automatically
 3. Run `Structural-Integrity-Auditor` on S-Strategy only
 4. Fix every gap it flags before moving on
+5. Open `Governance.md` — review the three permission tiers and customize before activating any integration in Settings.md
 
-**Deliverable:** S-Strategy is filled and passes audit.
+**Deliverable:** S-Strategy is filled and passes audit. Governance tiers are reviewed.
 
 **Why this first:** Agents without strategy context give generic output. Every agent you run after today will read these files. The quality of the whole week depends on the quality of Day 1.
+
+**On governance:** The default tiers in `Governance.md` are safe starting points. You do not need to change anything before Day 1. But before you activate Jira, Slack, or any other write-access integration, read Tier 2 and Tier 3 and confirm the defaults match your context.
 
 **Time required:** 60-90 minutes
 

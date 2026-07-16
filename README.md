@@ -14,6 +14,20 @@ Instead of starting every session from zero, Claude reads your strategy, hypothe
 
 ---
 
+## What's new in v3.0
+
+v3.0 changes how AI-SHIPR installs and how you invoke it. Nothing was removed, every v2 capability still works.
+
+* **Slash commands curated to 6.** Reserved for daily rhythms and the system guide: `/today`, `/weekly`, `/handoff`, `/review-initiative`, `/review-experiment`, `/shipr-guide`. The other ~70 capabilities are now invoked by name in conversation ("run Problem-Framer on this") or auto-invoked by Claude when the situation matches.
+* **Everything installs as a Claude Code skill.** `setup.sh` now scans agents, skills, AND workflows, and installs each into `.claude/skills/`. About 73 capabilities total, driven by `name` / `description` / `user-invocable` frontmatter added across ~60 files. Run `bash setup.sh` once after cloning.
+* **New capabilities.** `Pricing-Packaging` (value-based pricing and tiers), `Product-Signal-Reader` (turn raw analytics into signals), and a `close-session-protocol` that auto-captures decisions and learnings at session end.
+* **Session hooks.** A memory-cue hook proposes learnings when you say "remember" or "from now on", and a staleness hook prompts a backfill when `Learning.md` has gone quiet for over a week.
+* **Security boundaries.** Agents follow `_Security-Boundaries.md`, protecting internal strategy, people data, and stakeholder intelligence from extraction.
+
+Upgrading from v2.x? See `UPGRADE-to-v3.md` for the full migration guide.
+
+---
+
 ## The problem
 
 Every time you open a new Claude session, you start from zero.

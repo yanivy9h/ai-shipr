@@ -25,3 +25,9 @@ Keep each entry under ~6 lines. If the reasoning needs more depth, write it once
 ---
 
 ## Entries
+
+## [2026-07-16] — Ship v3.0 to the public repo; treat .claude/skills/ as a build artifact
+**Decision:** Published the uncommitted v3.0 work to github.com/yanivy9h/ai-shipr, and gitignored the generated `.claude/skills/` tree instead of committing it.
+**Alternatives considered:** Commit the full working tree including the 64 generated skill folders (what was initially staged).
+**Why this one:** `setup.sh` regenerates `.claude/skills/` from the `A-AI/` source files, so committing it duplicates content and invites drift. Source of truth is `A-AI/` + `setup.sh`; users run `bash setup.sh` after cloning. Dropped the diff from 171 files/+10k to 108 files/+2.2k.
+**Downstream impact:** `.gitignore` now excludes `.claude/skills/`; stale v2 skill copies removed from tracking. Future edits go to `A-AI/` source files, never the generated folder. GitHub About panel still needs a manual v3 refresh (no `gh` CLI locally).

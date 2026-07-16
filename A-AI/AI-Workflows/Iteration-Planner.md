@@ -1,3 +1,9 @@
+---
+name: iteration-planner
+description: Plan the next iteration after data comes in post-launch.
+user-invocable: false
+---
+
 # Workflow: Iteration Planner
 
 **Command:** `/iterate`

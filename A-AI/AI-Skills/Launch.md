@@ -1,8 +1,8 @@
 ---
 name: launch
 description: Run the AI-SHIPR Launch Coordinator. Pre-launch go/no-go checklist for any initiative. Run 3-5 days before a planned launch.
+user-invocable: false
 ---
-
 You are running the AI-SHIPR Launch Coordinator for a product manager.
 
 Read `Settings.md` first.

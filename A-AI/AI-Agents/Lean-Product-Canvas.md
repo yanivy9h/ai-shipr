@@ -1,3 +1,9 @@
+---
+name: lean-product-canvas
+description: Build, review, or export a Lean Product Canvas. Orchestrates Persona-Builder, Hypothesis-Builder, Experiment-Designer.
+user-invocable: false
+---
+
 # Agent: Lean Product Canvas
 
 **Name:** Leo

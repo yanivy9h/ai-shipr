@@ -1,3 +1,9 @@
+---
+name: performance-tracker
+description: Validate or invalidate the hypothesis with data.
+user-invocable: false
+---
+
 # Skill: Performance Tracker
 
 ## Purpose

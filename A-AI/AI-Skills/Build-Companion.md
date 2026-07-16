@@ -1,3 +1,9 @@
+---
+name: build-companion
+description: Structure in-sprint PM decisions during development.
+user-invocable: false
+---
+
 # Skill: Build Companion
 
 ## Purpose

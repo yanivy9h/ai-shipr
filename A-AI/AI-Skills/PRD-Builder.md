@@ -1,3 +1,9 @@
+---
+name: prd-builder
+description: Generate a PRD from a validated initiative.
+user-invocable: false
+---
+
 # Skill: PRD Builder
 
 ## Purpose

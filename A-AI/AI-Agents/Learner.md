@@ -1,3 +1,9 @@
+---
+name: learner
+description: Scan new resources and surface relevant insights into the system.
+user-invocable: false
+---
+
 # Agent: Learner
 
 **Name:** Sage

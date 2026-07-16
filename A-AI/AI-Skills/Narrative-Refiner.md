@@ -1,3 +1,9 @@
+---
+name: narrative-refiner
+description: Adapt structured thinking for a specific stakeholder audience.
+user-invocable: false
+---
+
 # Skill: Narrative Refiner
 
 ## Purpose

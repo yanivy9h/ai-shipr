@@ -1,3 +1,9 @@
+---
+name: pitch-deck-builder
+description: Convert business case into leadership presentation narrative.
+user-invocable: false
+---
+
 # Skill: Pitch Deck Builder
 
 ## Purpose

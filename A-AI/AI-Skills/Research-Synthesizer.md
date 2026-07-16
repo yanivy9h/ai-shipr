@@ -1,3 +1,9 @@
+---
+name: research-synthesizer
+description: Convert raw research into structured signals.
+user-invocable: false
+---
+
 # Skill: Research Synthesizer
 
 ## Purpose

@@ -1,3 +1,9 @@
+---
+name: hiring-brief-builder
+description: Build a PM job brief linked to current strategy. Lead mode.
+user-invocable: false
+---
+
 # Skill: Hiring Brief Builder
 
 ## Purpose

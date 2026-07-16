@@ -1,3 +1,9 @@
+---
+name: resource-allocator
+description: Allocate PM capacity across bets and initiatives. Lead mode.
+user-invocable: false
+---
+
 # Workflow: Resource Allocator
 
 ## Purpose

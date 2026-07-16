@@ -1,3 +1,9 @@
+---
+name: edge-case-finder
+description: Stress-test an initiative or experiment.
+user-invocable: false
+---
+
 # Skill: Edge Case Finder
 
 ## Purpose

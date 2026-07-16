@@ -1,3 +1,9 @@
+---
+name: launch-coordinator
+description: Pre-launch coordination workflow. Run 3-5 days before any launch.
+user-invocable: false
+---
+
 # Workflow: Launch Coordinator
 
 **Command:** `/launch`

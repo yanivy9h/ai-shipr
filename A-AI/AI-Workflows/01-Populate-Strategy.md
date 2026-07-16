@@ -1,3 +1,9 @@
+---
+name: populate-strategy
+description: Initial setup workflow. Reads AI-SHIPR-Setup-Worksheet.md and populates S-Strategy files.
+user-invocable: false
+---
+
 # Workflow: Populate Strategy
 
 ## Purpose
@@ -184,7 +190,7 @@ Generate these 8 files using the Product A sections of the worksheet (or the sin
 - Biggest pain: [from Part 6]
 - Emotional drivers: [from Part 6]
 - What success looks like: [synthesize]
-- Where they show up: [from Part 6]
+- Where & when they engage with the product: [from Part 6]
 
 ## Persona 2 — [Name or role label]
 [Repeat structure if secondary segment provided. If not: write "Not provided — add when identified."]
@@ -194,18 +200,21 @@ Generate these 8 files using the Product A sections of the worksheet (or the sin
 
 ### File 8: R-Relationships/Stakeholders/Stakeholders.md
 
-```
-# Stakeholders
+Preserve the `## Rubrics` section already present at the top of the template — do not overwrite it. Append one stakeholder block per Part 5 entry, using the field set below.
 
-## [Name] — [Role]
-- What they care about most: [from Part 5]
-- Their biggest concern: [from Part 5]
-- What makes them hard to align: [from Part 5]
-- Predicted objection to current work: [synthesize from the above]
-
-## [Name] — [Role]
-[Repeat for each stakeholder]
 ```
+## [Name] — [Role]
+- **Trust level with product team:** [To assess — see rubric — PM fills on Day 2]
+- **Decision role:** [To assess — see rubric — PM fills on Day 2]
+- **Current sentiment:** [To assess — see rubric — PM fills on Day 2]
+- **Optimizes for:** [from Part 5 — "what they care about most"]
+- **Biggest fear:** [synthesize from Part 5 — "biggest concern about your current work"]
+- **Common objections:** [synthesize from Part 5 — "what makes them hard to align"]
+- **Communication style:** [To assess — PM fills on Day 2]
+- **What they need to see to say "yes":** [synthesize from Part 5]
+```
+
+The three rubric-gated fields (Trust level, Decision role, Current sentiment) require judgment the Setup Worksheet does not collect. Do **not** infer them — leave "[To assess]" and let the PM fill them on Day 2 using the rubric at the top of Stakeholders.md.
 
 ---
 

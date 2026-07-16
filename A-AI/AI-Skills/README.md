@@ -28,7 +28,7 @@ To install or restore slash commands: run `bash setup.sh` from the AI-SHIPR root
 
 ---
 
-## Solo PM Skills (39)
+## Solo PM Skills (40)
 
 ### Discovery & Framing
 
@@ -88,6 +88,12 @@ To install or restore slash commands: run `bash setup.sh` from the AI-SHIPR root
 | `Business-Case-Builder` | Structures a funding pitch: problem, quantified impact, cost, clear ask |
 | `Pitch-Deck-Builder` | Converts Business Case Builder output into a leadership presentation narrative |
 
+### Monetization
+
+| Skill | Purpose |
+|---|---|
+| `Pricing-Packaging` | Designs a value-based pricing model and packaging tiers — forces a value metric, value-based price points, and tiers gated on real value levers, then exposes the assumptions to test before a price ships |
+
 ### Continuity
 
 | Skill | Purpose |
@@ -134,6 +140,7 @@ Handoff-Builder is typically the last skill run in any session — it closes the
 Assumption-Extractor → Hypothesis-Builder
 Research-Synthesizer → Persona-Builder
 Business-Case-Builder → Pitch-Deck-Builder
+Pricing-Packaging → Business-Case-Builder → Pitch-Deck-Builder
 Build-Review → Performance-Tracker → Retro-Facilitator
 Edge-Case-Finder → Experiment-Designer → Performance-Tracker
 Research-Synthesizer → Persona-Builder → JTBD-Mapper → Opportunity-Tree → OKR-Partner

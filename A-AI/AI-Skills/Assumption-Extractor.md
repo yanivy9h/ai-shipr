@@ -1,3 +1,9 @@
+---
+name: assumption-extractor
+description: Surface hidden assumptions in an initiative or strategy text.
+user-invocable: false
+---
+
 # Skill: Assumption Extractor
 
 ## Purpose

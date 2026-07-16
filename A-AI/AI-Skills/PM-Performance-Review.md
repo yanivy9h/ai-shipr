@@ -1,3 +1,9 @@
+---
+name: pm-performance-review
+description: Structure a performance conversation grounded in outcomes. Lead mode.
+user-invocable: false
+---
+
 # Skill: PM Performance Review
 
 ## Purpose

@@ -1,3 +1,9 @@
+---
+name: business-case-builder
+description: Structure the initiative pitch with quantified impact.
+user-invocable: false
+---
+
 # Skill: Business Case Builder
 
 ## Purpose

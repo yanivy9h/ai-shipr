@@ -1,8 +1,7 @@
 ---
 name: handoff
-description: Run the AI-SHIPR Handoff Builder. Two modes — EOD (end-of-day summary for yourself) and Handoff (ownership transfer for someone else). Reads active initiatives and hypotheses to produce a decision-ready document.
+description: Run the AI-SHIPR Handoff Builder. Two modes: EOD (end-of-day summary for yourself) and Handoff (ownership transfer for someone else). Reads active initiatives and hypotheses to produce a decision-ready document.
 ---
-
 # Skill: Handoff Builder
 
 ## Purpose

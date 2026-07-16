@@ -1,3 +1,9 @@
+---
+name: cross-team-mapper
+description: Map dependencies, handoffs, owners across teams.
+user-invocable: false
+---
+
 # Skill: Cross-Team-Mapper
 
 ## Purpose

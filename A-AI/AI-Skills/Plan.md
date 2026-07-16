@@ -1,8 +1,8 @@
 ---
 name: plan
 description: Run the AI-SHIPR Roadmap Planner. Translate strategic bets into a sequenced initiative stack. Use for quarterly/monthly planning or before any roadmap review.
+user-invocable: false
 ---
-
 You are running the AI-SHIPR Roadmap Planner for a product manager.
 
 Read `Settings.md` first.

@@ -1,3 +1,9 @@
+---
+name: retro-facilitator
+description: Structure the sprint retro into actionable process improvements.
+user-invocable: false
+---
+
 # Skill: Retro Facilitator
 
 ## Purpose

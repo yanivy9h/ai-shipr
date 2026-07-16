@@ -1,3 +1,9 @@
+---
+name: interview-synthesizer
+description: Convert post-interview notes into structured signals using the original guide as context.
+user-invocable: false
+---
+
 # Skill: Interview Synthesizer
 
 ## Purpose

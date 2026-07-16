@@ -1,3 +1,9 @@
+---
+name: org-design-framer
+description: Structure a team design decision with explicit tradeoffs. Lead mode.
+user-invocable: false
+---
+
 # Skill: Org Design Framer
 
 ## Purpose

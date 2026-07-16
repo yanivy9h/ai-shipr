@@ -1,3 +1,9 @@
+---
+name: roadmap-planner
+description: Strategic planning workflow: translate bets into sequenced initiatives.
+user-invocable: false
+---
+
 # Workflow: Roadmap Planner
 
 ## Purpose

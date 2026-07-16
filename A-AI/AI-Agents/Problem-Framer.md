@@ -1,3 +1,9 @@
+---
+name: problem-framer
+description: Sharpen a vague or contested problem statement into a structured frame.
+user-invocable: false
+---
+
 # Agent: Problem Framer
 
 **Name:** Clara

@@ -1,3 +1,9 @@
+---
+name: create-pm-voice
+description: Generate PM-Voice.md from your writing samples.
+user-invocable: false
+---
+
 # Skill: Create PM Voice
 
 ## Purpose

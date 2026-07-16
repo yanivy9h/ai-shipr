@@ -1,3 +1,9 @@
+---
+name: sprint-summarizer
+description: Generate a sprint summary (internal or stakeholder mode).
+user-invocable: false
+---
+
 # Skill: Sprint Summarizer
 
 ## Purpose

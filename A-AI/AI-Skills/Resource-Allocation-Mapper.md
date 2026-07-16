@@ -1,3 +1,9 @@
+---
+name: resource-allocation-mapper
+description: Map PM capacity to bets: surface gaps and overload risks. Lead mode.
+user-invocable: false
+---
+
 # Skill: Resource Allocation Mapper
 
 ## Purpose

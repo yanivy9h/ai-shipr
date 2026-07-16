@@ -1,3 +1,9 @@
+---
+name: okr-partner
+description: Set metrics with specificity and bet linkage.
+user-invocable: false
+---
+
 # Skill: OKR Partner
 
 ## Purpose

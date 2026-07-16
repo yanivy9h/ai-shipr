@@ -1,3 +1,9 @@
+---
+name: competitive-landscape-mapper
+description: Map alternatives, positioning gap, and differentiation signal. Run before user research begins.
+user-invocable: false
+---
+
 # Skill: Competitive Landscape Mapper
 
 ## Purpose
@@ -19,6 +25,7 @@ Understanding what you are replacing is not optional. It shapes positioning, dif
 - Identify what each alternative does well — a differentiation claim built on ignoring competitor strengths is fragile
 - Identify the switching cost — what would a user lose if they moved to your product?
 - Flag if the problem is already well-solved — this is a risk, not an insult
+- **No fabricated competitors.** Do not name companies, products, or alternatives that are not provided by the user, present in `S-Strategy/Product.md`, or grounded in a source the user can verify. Generic categories ("a CRM", "an in-house spreadsheet") are fine when no specific alternative is known. If the user has not provided competitors and none can be inferred from strategy files, ask before generating a list — do not fill the table from training data. Common failure mode: writing "[Company X]'s three primary competitors" when [Company X] is unrelated to the user's product.
 
 ## Input Expectations
 Provide one or more of:

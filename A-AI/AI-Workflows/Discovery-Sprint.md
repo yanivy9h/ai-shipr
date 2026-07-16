@@ -1,3 +1,9 @@
+---
+name: discovery-sprint
+description: Run a discovery sprint: setup (first run), check-in (each sprint), or gate (readiness check).
+user-invocable: false
+---
+
 # Workflow: Discovery Sprint
 
 ## Purpose

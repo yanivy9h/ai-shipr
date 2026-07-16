@@ -1,3 +1,9 @@
+---
+name: tradeoff-mapper
+description: Compare two or more options structurally.
+user-invocable: false
+---
+
 # Skill: Tradeoff Mapper
 
 ## Purpose

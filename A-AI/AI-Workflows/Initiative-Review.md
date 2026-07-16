@@ -1,3 +1,9 @@
+---
+name: initiative-review-workflow
+description: Workflow spec for the weekly initiative review.
+user-invocable: false
+---
+
 # Workflow: Initiative Review
 
 ## Purpose

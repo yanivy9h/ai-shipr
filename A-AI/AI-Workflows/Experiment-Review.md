@@ -1,3 +1,9 @@
+---
+name: experiment-review-workflow
+description: Workflow spec for the weekly experiment review.
+user-invocable: false
+---
+
 # Workflow: Experiment Review
 
 ## Purpose

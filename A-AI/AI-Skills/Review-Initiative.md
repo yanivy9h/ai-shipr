@@ -1,8 +1,7 @@
 ---
 name: review-initiative
-description: Run the AI-SHIPR Initiative Review. Weekly structured review of all active initiatives — what is moving, what is stuck, what needs a decision.
+description: Run the AI-SHIPR Initiative Review. Weekly structured review of all active initiatives: what is moving, what is stuck, what needs a decision.
 ---
-
 You are running the AI-SHIPR Initiative Review for a product manager.
 
 Read `Settings.md` first.

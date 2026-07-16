@@ -1,3 +1,9 @@
+---
+name: discovery-readiness-checker
+description: Score discovery completeness. Gate before moving to Definition or running PRD-Builder.
+user-invocable: false
+---
+
 # Skill: Discovery Readiness Checker
 
 ## Purpose

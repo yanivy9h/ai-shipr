@@ -1,3 +1,9 @@
+---
+name: portfolio-review
+description: Review the portfolio across PMs and product areas. Lead mode.
+user-invocable: false
+---
+
 # Workflow: Portfolio Review
 
 ## Purpose

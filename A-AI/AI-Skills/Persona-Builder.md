@@ -1,3 +1,9 @@
+---
+name: persona-builder
+description: Build a structured user persona.
+user-invocable: false
+---
+
 # Skill: Persona Builder
 
 ## Purpose
@@ -52,8 +58,8 @@ Optional:
 **What success looks like:**
 [Concrete outcome — what does their world look like when the problem is solved]
 
-**Where they show up:**
-[Channel, context, tool — where you can reach or observe them]
+**Where & when they engage with the product:**
+[Location, frequency, device, activity context — e.g., "In the lab daily, at a desktop PC, during live sessions with participants present"]
 
 ---
 

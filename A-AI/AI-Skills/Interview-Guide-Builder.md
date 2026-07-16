@@ -1,3 +1,9 @@
+---
+name: interview-guide-builder
+description: Generate a structured interview guide tied to a hypothesis and persona. Run before every interview round.
+user-invocable: false
+---
+
 # Skill: Interview Guide Builder
 
 ## Purpose

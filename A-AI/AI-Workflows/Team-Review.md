@@ -1,3 +1,9 @@
+---
+name: team-review
+description: Team-level review covering PMs, blockers, and health signals. Lead mode.
+user-invocable: false
+---
+
 # Workflow: Team Review
 
 ## Purpose

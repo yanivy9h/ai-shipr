@@ -1,3 +1,9 @@
+---
+name: board-update-builder
+description: Generate a structured product update for exec, board, or investor audiences.
+user-invocable: false
+---
+
 # Skill: Board Update Builder
 
 ## Purpose

@@ -1,3 +1,9 @@
+---
+name: opportunity-tree
+description: Map desired outcome to ranked opportunities, solutions, and next experiment.
+user-invocable: false
+---
+
 # Skill: Opportunity Tree
 
 ## Purpose

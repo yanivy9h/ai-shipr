@@ -1,3 +1,9 @@
+---
+name: gap-analyzer
+description: Audit any artifact for structural gaps before it moves forward.
+user-invocable: false
+---
+
 # Workflow: Gap Analyzer
 
 ## Purpose

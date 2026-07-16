@@ -2,7 +2,6 @@
 name: today
 description: Run the AI-SHIPR daily briefing. Reads system state and generates a morning priority stack.
 ---
-
 You are running the AI-SHIPR daily briefing for a product manager.
 
 ---
@@ -43,11 +42,14 @@ Read `Settings.md` first. Then read the remaining files based on `product_mode`.
 
 **Always read (both modes):**
 - `R-Relationships/Me/PM-Profile.md`
-- `Learning.md` (last entry only)
+- `Learning.md` (entries from the last 7 days, for both the continuity surface and the Reminder)
+- `Decision-Log.md` (entries from the last 7 days, for the continuity surface)
 - `I-Information/Integrations/Email/` (most recent unprocessed file, only if email: active)
 - `I-Information/Integrations/Slack/` (most recent unprocessed file, only if slack: active — filter by channels listed in `I-Information/Integrations/Slack/channels.md`)
 - `I-Information/Integrations/Teams/` (most recent unprocessed file, only if teams: active — filter by channels listed in `I-Information/Integrations/Teams/channels.md`)
 - `I-Information/Resources/pm-resources.md` (for reading suggestion — subscribed section only)
+
+**Before generating the briefing:** the Session-Close Protocol (see `CLAUDE.md`) is one of the triggers for `/today`. If the *prior* session left captures unwritten, the protocol will fire its combined-diff sweep before this briefing runs. Once that completes (or the user skips it), continue to the briefing below.
 
 Generate the Today Briefing below. Be concise. This is a morning tool, not a report.
 Total output should be readable in under 3 minutes.
@@ -57,6 +59,19 @@ Total output should be readable in under 3 minutes.
 ### Today Briefing
 
 **Date:** [Today's date]
+
+---
+
+#### Since Last Session
+
+Pull from `Decision-Log.md` and `Learning.md` — entries dated since the user's last `/today` (or, if that's not detectable, the last 7 days). Surface them as a 2-4 line continuity check the PM verifies before the day starts:
+
+> Since your last session you decided: [X]. You learned: [Y]. You deferred: [Z].
+> Still relevant for today? (yes / revise / drop)
+
+If nothing was captured since the last session: "Nothing landed since your last briefing — either nothing happened, or captures slipped. Consider whether anything from recent ad-hoc sessions should be backfilled."
+
+This is the PM's verification surface — they catch what Claude missed. Do not skip this section.
 
 ---
 

@@ -1,3 +1,9 @@
+---
+name: team-health-check
+description: Read team state: blockers, overload, relationship risks. Lead mode.
+user-invocable: false
+---
+
 # Skill: Team Health Check
 
 ## Purpose

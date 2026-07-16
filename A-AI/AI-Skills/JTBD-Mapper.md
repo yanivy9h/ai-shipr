@@ -1,3 +1,9 @@
+---
+name: jtbd-mapper
+description: Produce a structured Jobs-To-Be-Done analysis: job statement, dimensions, unmet needs.
+user-invocable: false
+---
+
 # Skill: JTBD Mapper
 
 ## Purpose

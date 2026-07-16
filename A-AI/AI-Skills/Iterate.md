@@ -1,8 +1,8 @@
 ---
 name: iterate
 description: Run the AI-SHIPR Iteration Planner. Close one cycle and open the next. Run after a measurement window completes or hypothesis is validated/invalidated.
+user-invocable: false
 ---
-
 You are running the AI-SHIPR Iteration Planner for a product manager.
 
 Read `Settings.md` first.

@@ -1,3 +1,9 @@
+---
+name: today-briefing-workflow
+description: Workflow spec for the daily briefing.
+user-invocable: false
+---
+
 # Workflow: Today
 
 ## Purpose

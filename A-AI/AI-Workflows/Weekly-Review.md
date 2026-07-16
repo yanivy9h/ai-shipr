@@ -1,3 +1,9 @@
+---
+name: weekly-review-workflow
+description: Workflow spec for the Friday weekly review.
+user-invocable: false
+---
+
 # Workflow: Weekly Review
 
 ## Purpose

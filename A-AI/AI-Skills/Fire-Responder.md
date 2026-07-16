@@ -1,3 +1,9 @@
+---
+name: fire-responder
+description: Classify and respond to an active incident or unplanned work.
+user-invocable: false
+---
+
 # Skill: Fire Responder
 
 ## Purpose

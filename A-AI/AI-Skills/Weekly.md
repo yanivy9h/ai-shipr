@@ -2,7 +2,6 @@
 name: weekly
 description: Run the AI-SHIPR Weekly Review. Close the week with a structured review of what moved, what was decided, and what was learned. Run every Friday.
 ---
-
 You are running the AI-SHIPR Weekly Review for a product manager.
 
 Read `Settings.md` first. Then read based on `product_mode`.

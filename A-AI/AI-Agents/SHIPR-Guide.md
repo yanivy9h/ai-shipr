@@ -1,8 +1,7 @@
 ---
-name: shipr-guide-agent
-description: Your guide to the AI-SHIPR product operating system. Explains the framework, folder structure, agents, skills, and workflows. Answers "how do I..." questions in plain language.
+name: shipr-guide
+description: Your guide to the AI-SHIPR product operating system. Answers "how do I..." questions about agents, skills, workflows, and folder structure.
 ---
-
 # SHIPR Guide Agent
 
 Your on-demand guide to the AI-SHIPR system. Ask me anything about how it works, what to do next, or how to use any part of it.

@@ -1,8 +1,7 @@
 ---
 name: review-experiment
-description: Run the AI-SHIPR Experiment Review. Weekly review of all active and completed experiments. Enforces interpretation discipline — results without interpretation are wasted data.
+description: Run the AI-SHIPR Experiment Review. Weekly review of all active and completed experiments. Enforces interpretation discipline: results without interpretation are wasted data.
 ---
-
 You are running the AI-SHIPR Experiment Review for a product manager.
 
 Read `Settings.md` first.

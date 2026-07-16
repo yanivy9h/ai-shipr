@@ -1,3 +1,9 @@
+---
+name: experiment-designer
+description: Design the minimum viable experiment for a riskiest assumption.
+user-invocable: false
+---
+
 # Skill: Experiment Designer
 
 ## Purpose

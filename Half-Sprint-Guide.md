@@ -42,7 +42,7 @@ That is not onboarding. That is a productive half-sprint.
 
 **Skills** are single-task tools you invoke on demand. You give them an input and they produce a specific structured output — Assumption-Extractor, Hypothesis-Builder, Tradeoff-Mapper are all skills. They do one thing well.
 
-**Slash commands** are the triggers that run a skill or workflow. Type `/today`, `/sprint`, or `/weekly` and Claude runs the full workflow for that command. You don't need to remember which skills to call — the command handles that.
+**Slash commands** are user-typeable triggers for the most-used workflows. Type `/today`, `/weekly`, `/handoff`, `/review-initiative`, `/review-experiment`, or `/shipr-guide` and Claude runs that workflow directly. Most agents and skills don't have slash commands. You either invoke them by name ("run Problem-Framer on this") or Claude picks them up automatically based on what you're doing.
 
 That's the whole vocabulary. Everything in this guide is one of those three things.
 
@@ -50,7 +50,23 @@ That's the whole vocabulary. Everything in this guide is one of those three thin
 
 ## Before Day 1
 
-One rule: use real current work. Not a hypothetical. Not a sample problem.
+### One-time setup (5 minutes)
+
+Before any slash command in this guide will work, install the AI-SHIPR capabilities into Claude Code.
+
+From the `AI-SHIPR/` folder, run:
+
+```bash
+bash setup.sh
+```
+
+This installs every agent, skill, and workflow from `A-AI/` into Claude Code. Six of them become user-typeable slash commands (`/today`, `/weekly`, `/handoff`, `/review-initiative`, `/review-experiment`, `/shipr-guide`). The rest are loaded as hidden skills: Claude auto-invokes them when the situation matches, or you can invoke them by name in conversation. Restart Claude Code after it finishes so everything activates.
+
+Safe to re-run any time. If something stops responding or you add a new capability, run `bash setup.sh` again.
+
+### One rule for the week
+
+Use real current work. Not a hypothetical. Not a sample problem.
 
 The initiative you file should be one you are actually running.
 The decision you structure should be one you are actually facing.
@@ -66,6 +82,7 @@ If you use real problems, you will get a working operating system.
 **Focus:** Fill S-Strategy so every agent has context before they run.
 
 **Actions:**
+0. Confirm you ran `bash setup.sh` from the AI-SHIPR root (see "Before Day 1"). Without it the slash commands below will not exist.
 1. Complete `AI-SHIPR-Setup-Worksheet.md` — raw answers, plain language, 30 minutes max
 2. Run `01-Populate-Strategy` — paste the prompt into Claude Code and it will read your worksheet automatically
 3. Run `Structural-Integrity-Auditor` on S-Strategy only
@@ -84,19 +101,23 @@ If you use real problems, you will get a working operating system.
 
 ## Day 2 — Relationships Layer
 
-**Focus:** Fill R-Relationships so agents know your people.
+**Focus:** Refine and finish the R-Relationships files. Day 1's `01-Populate-Strategy` already wrote first-pass content from your Setup Worksheet. Day 2 is where you fill the judgment-gated fields the worksheet could not collect, and add your PM voice.
+
+**Important for Claude:** When the PM says "run Day 2", do **not** assume any file is done because it has content. Open `Me/PM-Profile.md`, `Users/Personas.md`, and `Stakeholders/Stakeholders.md` and walk through each one — every file has fields the worksheet did not populate (marked `[To assess]` in Stakeholders.md, and judgment fields like "operating preference" in PM-Profile). Skipping a file because Day 1 touched it is the failure mode this guide is written against.
 
 **Actions:**
-1. Fill `Me/PM-Profile.md` — your role, biggest challenge, operating preference
-2. Fill `Users/Personas.md` — 2 user segments with job-to-be-done and core pain
-3. Fill `Stakeholders/Stakeholders.md` — 3 key stakeholders, their incentives, likely objections
-4. Run `Stakeholder-Translator` on one stakeholder — even with a rough initiative — just to see what the agent produces with real context
 
-**Deliverable:** R-Relationships is filled. You have seen Stakeholder-Translator in action.
+1. **Review `Me/PM-Profile.md`** — open the file, confirm role and challenge match how you'd state them today. Refine the "operating preference" lines if Day 1's draft doesn't sound like you.
+2. **Review `Users/Personas.md`** — open the file, confirm each persona's job-to-be-done and core pain. Add a second persona if Day 1 only generated one.
+3. **Finish `Stakeholders/Stakeholders.md`** — open the file, **read the Rubrics section at the top**, then assess each stakeholder against the three rubric-gated fields: Trust level with product team, Decision role for the current initiative, Current sentiment toward your work. Replace every `[To assess]` placeholder with a level from the rubric. Without this, every Stakeholder-Translator run downstream uses Claude's best guess.
+4. **Run `Stakeholder-Translator`** on one stakeholder — even with a rough initiative — to see the agent produce real-context output. If the agent uses any ordinal level not in your Stakeholders.md rubric, push back: every ordinal field must trace to a defined scale.
+5. **Run `Create-PM-Voice`** *(optional but recommended)* — drop 5–10 of your real writing samples (decision emails, retro notes, stakeholder updates) into `I-Information/Resources/` and invoke the skill by name. It generates `R-Relationships/Me/PM-Voice.md`. Then set `pm_voice: active` in `Settings.md` so every written output from now on sounds like you, not like generic AI.
 
-**Why this matters:** Stakeholder alignment failures are the most common reason good initiatives die. The sooner the agent knows your stakeholders, the sooner it can help you navigate them.
+**Deliverable:** PM-Profile, Personas, and Stakeholders all reviewed; every `[To assess]` field filled; Stakeholder-Translator has been run once; PM-Voice.md exists (or is consciously deferred).
 
-**Time required:** 45-60 minutes
+**Why this matters:** Stakeholder alignment failures are the most common reason good initiatives die. Trust level and sentiment are not paperwork — they determine which framing the agent will produce for the next room you walk into.
+
+**Time required:** 60–90 minutes (longer if running Create-PM-Voice; the voice skill alone is ~20 minutes after samples are gathered).
 
 ---
 

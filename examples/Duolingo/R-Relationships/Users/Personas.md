@@ -7,7 +7,7 @@
 - Biggest pain: She opens Duolingo with good intentions at 7pm, gets interrupted, closes it, and by 8pm the reminder feels annoying rather than motivating. She misses a day. Then two. The streak breaking feels final — not worth restarting from zero.
 - Emotional drivers: Wants to feel competent and not embarrassed abroad. Doesn't think of herself as "a language person." Sensitive to anything that makes her feel like she's failing. Motivated by small, visible wins — a green checkmark, a filled progress bar.
 - What success looks like: She finishes a lesson on the tube home (4-minute lesson, no WiFi required). She gets a notification at 9:15pm that says "you're on a 7-day streak" — at the exact moment she'd actually open the app. She doesn't associate Duolingo with guilt.
-- Where they show up: Morning commute (7:45–8:15am), lunch break (12:30–1pm), evening couch time (9–10pm). Phone only. Inconsistent — needs something that fits around her life, not the other way around.
+- Where & when they engage with the product: Morning commute (7:45–8:15am), lunch break (12:30–1pm), evening couch time (9–10pm). Phone only. Inconsistent — needs something that fits around her life, not the other way around.
 
 ---
 
@@ -18,7 +18,7 @@
 - Biggest pain: He knows the first 2 weeks are the easy part — he's been here before. His fear is the first streak loss. Last time, a work trip killed his streak and he never came back. He wants a safety net for disruption, not perfection.
 - Emotional drivers: Motivated by system and progress visibility. Compares himself to his past self, not to others. Takes pride in consistency — has a 250-day running streak on Strava and wants the same relationship with Duolingo.
 - What success looks like: He loses a streak during a work trip to Amsterdam. The app offers him a one-time repair. He takes it, completes a lesson from his hotel room, and the habit survives. He reaches day 90.
-- Where they show up: Every morning, 7:00–7:30am, desktop at home. Backup: phone during lunch. Travels 2–3 times per year, which is his highest churn risk window.
+- Where & when they engage with the product: Every morning, 7:00–7:30am, desktop at home. Backup: phone during lunch. Travels 2–3 times per year, which is his highest churn risk window.
 
 ---
 
@@ -29,7 +29,7 @@
 - Biggest pain: She doesn't have a product problem — she has a social one. She does her lesson every day but she does it alone. She mentioned Duolingo to a colleague who laughed it off. She'd love to see that a friend is also learning something.
 - Emotional drivers: The streak is identity, not habit — she would be mortified to lose it. Uses Streak Freeze proactively before travel. Feels a quiet pride she doesn't often share. Would be energized by knowing someone she knows is also on a streak.
 - What success looks like: She can see her friend's streak next to hers. No competition, no leaderboard — just awareness. It gives her something to mention at lunch: "Did you do your French today?"
-- Where they show up: Every evening, 9:30pm, iPad in bed. Extremely consistent. High LTV user — Super Duolingo subscriber, buys Streak Freezes proactively.
+- Where & when they engage with the product: Every evening, 9:30pm, iPad in bed. Extremely consistent. High LTV user — Super Duolingo subscriber, buys Streak Freezes proactively.
 
 > **© Yaniv Yaakubovich**
 > Product Management & AI Consulting: [www.verve-pm.com](www.verve-pm.com)

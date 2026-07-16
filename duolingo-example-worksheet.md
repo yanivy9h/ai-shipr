@@ -1,251 +1,199 @@
-# AI-SHIPR — Example: Duolingo
+# AI-SHIPR Setup Worksheet — Filled Example: Duolingo
 
-This file shows what a populated AI-SHIPR system looks like after completing the Setup Worksheet and running `Populate-Strategy`. Use it as a reference while filling in your own files.
+This file mirrors the structure of `AI-SHIPR-Setup-Worksheet.md` with Duolingo answers in each section. Use it as a reference for the kind of answers a Worksheet expects — depth, voice, length.
 
-**Duolingo** is the world's most downloaded language learning app. Users complete short, gamified lessons to learn a new language. The product runs on a freemium model — the core experience is free, with Duolingo Plus (Super) removing ads and adding offline access.
+To see what `Populate-Strategy` writes for you AFTER ingesting a filled Worksheet like this one, see `duolingo-example-output.md`.
 
----
-
-## S-Strategy/Vision.md
-
-### Product in one sentence
-Duolingo makes language learning free, effective, and addictive enough that people actually stick with it long enough to improve.
-
-### Vision (2–5 lines)
-Most people who want to learn a language never do — not because they lack motivation, but because they can't afford classes, can't find the time, and quit when it stops feeling fun. Duolingo's bet is that habit design beats curriculum design: if you show up every day for six months, you will learn. The streak, the XP, the leaderboard — these aren't decoration. They are the product. Over the next three years, Duolingo becomes the first language learning platform where the majority of users who reach a 100-day streak demonstrate measurable conversational ability — not just completion rates.
-
-### What we will NOT do
-- Replace structured immersion or in-person instruction for advanced learners
-- Build a social network or live conversation matching feature in the near term
-- Expand the content catalog to non-language subjects before the core learning model is fully validated at scale
+**Context for this example:** the PM is on Duolingo's retention and monetization team. Solo individual PM, single product (the Duolingo learner app — not Super Duolingo as a separate product).
 
 ---
 
-## S-Strategy/KPIs.md
+## Before You Start — Setup Mode
 
-### North Star Metric
-- Name: Daily Active Users (DAU) with a streak of 7+ days
-- Definition: Number of users who complete at least one lesson per day and have done so for 7 consecutive days
-- Current: 4.2M
-- Target: 6.5M by end of Q3
+**Question 1 — Products: Are you setting up for one product or multiple products?**
+Single product
 
-### Supporting Metrics
-1. Name: Day-30 retention
-   - Definition: % of new users who are still active 30 days after signup
-   - Current/Target: 18% → 28%
-
-2. Name: Streak recovery rate
-   - Definition: % of users who lose a streak and return within 48 hours
-   - Current/Target: 31% → 45%
-
-3. Name: Free-to-paid conversion
-   - Definition: % of 30-day active users who upgrade to Super Duolingo
-   - Current/Target: 6.2% → 9%
+**Question 2 — Team: Are you an individual PM or do you manage a team of PMs?**
+Individual PM
 
 ---
 
-## S-Strategy/Strategic-Bets.md
+## Part 1 — Your Product(s)
 
-### Bet 1 — Streak mechanics as the primary retention lever
-- Why this matters: Users who maintain a 7-day streak are 4x more likely to reach day 30. The streak is not a vanity feature — it is the retention model. Every friction point that causes streak loss is a product failure, not a user failure.
-- Who it serves: New users in their first 30 days; lapsed users returning after a break
-- What success looks like: Day-30 retention improves from 18% to 28%; streak recovery rate reaches 45%
-- Time horizon: Q2–Q3
+*User details (who, JTBD, pain, context) live in Part 6. This section is about the product itself.*
 
-### Bet 2 — Personalized lesson pacing reduces early drop-off
-- Why this matters: The top drop-off point is lessons 4–8. Users hit a difficulty spike or repeat content they already know and disengage. Adaptive pacing — detecting what a user already knows and skipping ahead — removes the friction that kills early momentum.
-- Who it serves: Users with prior language exposure who find the early lessons too slow
-- What success looks like: Drop-off rate in lessons 4–8 decreases by 30%; average lesson completion rate in week 1 increases from 54% to 70%
-- Time horizon: Q2
+### Product A — Duolingo (Learner App)
 
-### Bet 3 — Super Duolingo conversion tied to learning milestones, not ads
-- Why this matters: Users convert to paid when they feel invested in their progress — not when they are annoyed by ads. Surfacing the upgrade prompt at a meaningful moment (first streak milestone, first unit completion) will outperform the current ad-interruption model.
-- Who it serves: Active free users who have completed at least one full unit
-- What success looks like: Free-to-paid conversion increases from 6.2% to 9%; upgrade prompt click-through rate improves by 40%
-- Time horizon: Q3
+**What does this product do? (1-2 sentences, as if explaining to a new hire)**
+Duolingo is a free language-learning app built on short, gamified lessons. The product runs on a freemium model — the core experience is free with ads, and Duolingo Super removes ads and adds offline access for around $7/month.
+
+**How does your company make money from this product?**
+Two streams. The big one is Super Duolingo subscriptions — paying users who get ads removed, offline lessons, and a few quality-of-life features. The smaller stream is in-app ads served to free users between lessons. Family Plan is starting to grow but is still a smaller slice of revenue.
+
+**Name 1-2 competitors or alternatives. What do users choose instead of you, and why?**
+Babbel and Memrise are the closest direct competitors. People pick Babbel when they want something that feels more "serious" — structured grammar, real-world dialogue practice. Memrise leans into native-speaker video clips. But honestly, our biggest competitor is doing nothing — users who say "I should learn Spanish someday" and never start, or who start and quit by day 10.
 
 ---
 
-## R-Relationships/Me/PM-Profile.md
+## Part 2 — Your Strategy
 
-### My role in the team
-- Responsibilities: Own the retention and monetization loop — streak mechanics, re-engagement flows, push notification strategy, and Super upgrade experience
-- Decision ownership: A/B test prioritization, streak mechanic changes, notification cadence and copy, paywall placement and upgrade flow
-- Interfaces with: Growth engineering (daily), data science (weekly), marketing (bi-weekly), legal for notification compliance (as needed)
+### Product A Strategy
 
-### My biggest challenge right now
-Retention drops sharply between day 7 and day 30. Users who survive the first week feel momentum — then life happens, they miss a day, lose their streak, and don't come back. We've shipped streak freezes and streak repair but the recovery rate is still only 31%. I'm not sure if the problem is the mechanic design, the notification timing, or the emotional cost of losing a long streak. Each hypothesis points to a different solution and we're testing all three at once, which means our data is messy.
+**What stage is this product at right now?**
+Iterating
 
-### Where I spend most of my time
-- ~40% experimentation — designing, prioritizing, and reading A/B tests
-- ~30% cross-functional alignment — syncing with data science on signal reads and with engineering on sprint scope
-- ~30% stakeholder communication — weekly growth reviews with VP, monthly board-ready metric updates
+Iterating:
+- What did the data show that changed your direction? The streak-freeze feature we shipped last quarter improved 7-day retention by ~3 points, but it didn't move 30-day retention. So we learned: protecting an existing streak isn't enough. The real drop-off happens AFTER a streak loss, when users don't feel like coming back to "restart from zero." We're pivoting from streak protection to streak recovery.
+- What hypothesis are you currently testing? That users who lose a streak and receive a low-friction "repair" option within 48 hours will return at meaningfully higher rates than the control. Running an A/B test now on a subset of churning users.
 
-### Where I want leverage from AI-SHIPR
-- Faster hypothesis discipline: I run a lot of tests but I'm not always honest with myself about what would actually falsify my assumption. I need a forcing function.
-- Cleaner decision logs: When a test ends ambiguously, I make a call and move on. Six months later nobody remembers why. I want every close call documented with the reasoning.
+**What is your north star metric? (the single number that best captures product health)**
+DAU with a 7-day-or-longer streak. This is the single number that best captures whether the product is actually doing its job — getting people to come back daily long enough to learn anything.
 
-### My operating preference
-Data / Hypothesis
+**How are you currently tracking on that metric? (current value, if known)**
+About 4.2M.
 
----
+**Where do you want that metric to be in 6 months?**
+6.5M by end of Q3.
 
-## Learning.md (sample entry)
+**List 2-3 supporting metrics you track regularly:**
+1. Day-30 retention: 18% today, target 28%.
+2. Streak recovery rate (% of users who lose a streak and return within 48 hours): 31% today, target 45%.
+3. Free-to-paid conversion (% of 30-day active free users who upgrade to Super): 6.2% today, target 9%.
 
-**2025-11-12**
-When a streak recovery rate test shows improvement in click-through but not in day-14 retention, the mechanic worked but the underlying motivation problem didn't. Users came back to save the streak — not because they wanted to learn. Flag this pattern: engagement metrics can mask retention problems. Always read the downstream metric before calling a test a win.
+**What are the 1-3 big bets you are making in the next 6 months?**
 
-Pattern elevated to rule: A recovered streak that doesn't lead to a 7-day re-engagement window is a false positive. Measure re-engagement quality, not just re-engagement rate.
+Bet 1: Streak mechanics are the primary retention lever. Users who hit a 7-day streak are 4x more likely to reach day 30. Every product decision should reduce friction around streak loss and accelerate streak recovery. This is the bet — not "engagement" generally, but the streak specifically.
 
----
+Bet 2: Personalized lesson pacing reduces early drop-off. The biggest churn cliff is lessons 4-8. Users hit a difficulty spike or get bored repeating content they already know. If we detect prior knowledge and adapt pacing, we can save a meaningful chunk of week-1 churn.
 
-## S-Strategy/JTBD.md
+Bet 3: Super conversion tied to learning milestones, not ads. Users convert when they feel invested in their progress — not when they're annoyed. We want to move the upgrade prompt from "after watching an ad" to "after completing a unit" or "at first streak milestone."
 
-*Generated by the `JTBD-Mapper` skill. Run after `Research-Synthesizer`, before defining Strategic Bets.*
+**For each bet, what does success look like? What signal tells you the bet is paying off?**
 
-### Core Job Statement
+Bet 1 success signal: Day-30 retention moves from 18% to 28%. Streak recovery rate from 31% to 45%. Both numbers, not just one.
 
-Maintain daily language learning practice in the gaps of an already full schedule — without losing the progress I have built when life gets in the way.
+Bet 2 success signal: Drop-off rate in lessons 4-8 decreases by 30%. Week-1 lesson completion rate goes from 54% to 70%.
 
-### Job Executor
+Bet 3 success signal: Free-to-paid conversion goes from 6.2% to 9%. CTR on the upgrade prompt goes up by 40%.
 
-A working adult (25–45) who wants to learn or maintain a foreign language but cannot commit to structured coursework. Completes sessions on commute, at lunch, or before bed. Measures success by whether they can say they are "actually learning" — not just opening an app.
-
-### Job Context
-
-Triggered when the user has chosen to learn a language but faces a recurring daily scheduling problem — fitting practice into days that are already overcommitted. Acute trigger: missing a day, feeling the streak is at risk, or hitting a difficulty spike that makes the session feel pointless.
-
-### Job Dimensions
-
-**Functional:**
-Complete a short, meaningful practice session in under 10 minutes; resume cleanly after a break without losing context; know what to practice without having to decide.
-
-**Emotional:**
-Feel like they are genuinely improving — not just earning points; feel resilient when they miss a day rather than ashamed or defeated; feel the streak represents real progress, not just app-opening.
-
-**Social:**
-Be able to tell people they are "learning a language" without feeling like a fraud; demonstrate measurable improvement — even small — to others.
-
-### Competing Alternatives
-
-1. **Language classes / tutors** — Effective for learning; fails the job: too expensive, too scheduled, can't fit into the gaps of a workday.
-2. **YouTube / podcasts** — Accessible; fails the job: passive consumption, no feedback loop, no way to gauge progress.
-3. **Babbel / Rosetta Stone** — Similar format; fails the job: weaker habit mechanics, less addictive, higher price creates commitment anxiety.
-
-### Top Unmet Needs
-
-1. Know whether today's practice actually moved the needle — not just whether the session was completed.
-2. Return after a gap without feeling like all progress is lost and having to restart.
-3. Get practice that matches what they actually need today — not content they already know.
-
-### Positioning Signal
-
-Duolingo uniquely combines habit-design mastery (streaks, XP, social pressure) with zero-cost access — making it the only language learning product that competes credibly in the "dead time" slot at population scale.
-
-### Confidence Level
-
-High — grounded in published DAU behavioral data and VP-level growth review (Q3).
-
-### Source Research
-
-Q3 growth review data; streak analysis — 4.2M DAU with 7+ day streaks; streak recovery rate study (31%).
-
-### Last Updated
-
-2025-11-15
+**What are you explicitly NOT doing in the next 6 months? (what have you ruled out, and why)**
+- Replacing structured immersion or in-person classes for advanced learners — that's a different product.
+- Building a live conversation or social network feature — too far from the core retention thesis.
+- Expanding the content catalog to non-language subjects (math, music) — the core model isn't fully validated at scale yet, so it's premature.
 
 ---
 
-## S-Strategy/Opportunity-Tree.md
+## Part 3 — Your Constraints
 
-*Generated by the `Opportunity-Tree` skill. Runs after `JTBD-Mapper`. Feeds `H-Hypotheses/` and `I-Initiatives/`.*
+### Product A Constraints
 
-# OST — Increase 7-day streak users from 4.2M to 6.5M by end of Q3
+**What is your biggest resource constraint right now? (engineering capacity, budget, time, headcount)**
+Engineering capacity. Growth engineering is shared with the monetization team and the discovery team. Realistically we get about 60% of one squad's bandwidth. That means we ship one major experiment per sprint, not three.
 
-## Desired Outcome
+**What external factors could block your strategy? (market, regulation, dependencies, competitors)**
+Push notification regulation. iOS has been tightening notification permissions and that's our primary re-engagement channel. If conversion-on-permission-prompt drops further, we lose the lever we rely on for streak recovery.
 
-Increase the number of users with an active 7-day streak from 4.2M to 6.5M by end of Q3.
-(Source: S-Strategy/KPIs.md — North Star Metric)
-
----
-
-### Opportunity 1: Users experience losing a streak as permanent failure — not a recoverable setback
-
-**Evidence:** 31% streak recovery rate after a miss. Push notification data shows 54% open rate but only 31% return-to-app action. User interview signal: "Once I lose it, what's the point?"
-**Impact:** High — streak loss is the dominant exit trigger in the Day 7→30 window.
-**Confidence:** High — directly measurable; pattern validated across 3 cohorts.
-**Priority Score:** 1 (High/High)
-
-**Candidate Solutions:**
-- A: 48-hour streak recovery window — active push notification reframes missing one day as recoverable; user can "repair" streak for 48h at no cost.
-- B: "Streak reset ceremony" — remove the streak counter on miss day; replace with a "fresh start" moment that reframes loss as a new beginning rather than punishment.
-
-**Riskiest Assumption (Solution A):** Users who receive the notification will choose to act on it — not dismiss it as another reminder they feel guilty ignoring.
-**Riskiest Assumption (Solution B):** A reframed emotional experience of streak loss is achievable through design without undermining the streak's core motivational value for users who have not yet lost one.
+**What internal factors could block your strategy? (org politics, tech debt, team gaps)**
+Data science prioritization. The streak-recovery test is one of three the team is supporting and we're not always first. Also there's tech debt on the notification scheduling layer that makes timing experiments slower than they should be.
 
 ---
 
-### Opportunity 2: Users in lessons 4–8 hit content that does not match their existing knowledge level
+## Part 4 — Your Role
 
-**Evidence:** Lessons 4–8 are the top drop-off zone. Average completion rate week 1: 54%. Users with prior language exposure disproportionately represented in early exits.
-**Impact:** High — directly depresses week-1 retention, which feeds the 30-day retention gap.
-**Confidence:** Medium — drop-off data is strong; root cause (content mismatch vs. difficulty spike vs. motivation loss) not fully confirmed.
-**Priority Score:** 2 (High/Medium)
+**What is your title and actual scope of ownership?**
+Senior PM, Retention & Monetization. I own the streak mechanics, re-engagement flows (notifications + email), the Super upgrade experience, and the paywall placement.
 
-**Candidate Solutions:**
-- A: Placement test at signup — detect what the user already knows and skip to the right level before the first lesson.
-- B: In-lesson adaptive branching — detect mastery signal mid-lesson; offer a "skip ahead" prompt without breaking the flow.
+**What decisions do you own? What requires sign-off from others?**
+I own: A/B test prioritization, streak mechanic changes, notification cadence and copy, paywall placement and upgrade flow design.
+Sign-off needed: pricing changes (Director of Monetization), any change to how XP is calculated (Head of Learning Science), any visual change to the core lesson UI (Design Director).
 
-**Riskiest Assumption (Solution A):** Users will complete a placement test at signup without increasing drop-off at that exact step — the moment of highest churn risk in any onboarding flow.
-**Riskiest Assumption (Solution B):** We can detect a mastery signal accurately enough mid-lesson that skipping ahead feels smart rather than confusing or arbitrary.
+**Who do you interface with most? (engineering, design, exec, sales, etc.)**
+Growth engineering daily. Data science weekly. Marketing bi-weekly. Legal occasionally, mostly around notification compliance.
+
+**What is your biggest challenge right now?**
+Retention drops sharply between day 7 and day 30. Users survive the first week, feel momentum, then life happens, they miss a day, and they don't come back. We've shipped streak freezes and a basic repair flow but recovery is still only 31%. The hard part is I'm not sure if the problem is the mechanic design, the notification timing, or the emotional cost of losing a long streak. Each hypothesis points to a different solution and we're testing all three at once, which means our data is messy.
+
+**Where do you spend most of your time currently?**
+~40% on experimentation — designing, prioritizing, and reading A/B tests. ~25% in cross-functional meetings (engineering syncs, data science check-ins, marketing alignment). ~20% on roadmap and exec updates. ~15% on user research and qualitative signal.
+
+**Where do you want to spend more time? Where do you want AI leverage?**
+I want to spend more time on hypothesis design and synthesis — the front end of the experimentation loop where the leverage is highest. I want AI leverage on the back end: meeting notes, status updates, experiment summaries, weekly reviews. Anywhere I'm currently writing the same kind of doc twice a week.
+
+**How do you prefer to operate? Pick 2: Urgency / Impact / Risk / Alignment / Strategic / Balanced**
+Impact + Strategic. I want to optimize for what moves the metric long-term, not what's loudest this week.
+
+**If running multiple products — how is your time split across them, roughly?**
+N/A — single product.
+
+*(Cross-product relationship questions live in Part 7 — answer them there if you run multiple products.)*
 
 ---
 
-### Opportunity 3: Users cannot feel whether they are improving day to day
+## Part 5 — Your Stakeholders
 
-**Evidence:** Learning.md entry (2025-11-12): engagement metrics can mask retention problems — users who came back to save a streak, not because they wanted to learn, showed strong click-through but weak day-14 retention.
-**Impact:** Medium — affects long-term retention beyond 30 days; less acute than Opportunities 1 and 2.
-**Confidence:** Medium — signal is real, but size of addressable segment within the funnel is unconfirmed.
-**Priority Score:** 3 (Medium/Medium)
+**Name your 3 most important stakeholders (people you need to align with or get decisions from):**
 
-**Candidate Solutions:**
-- A: "Progress pulse" — weekly insight showing what the user can now say, read, or understand vs. 7 days ago. Framed as ability, not activity.
+Stakeholder 1 — Sarah Chen, VP of Product
+- Product relevance: Product A
+- Their role in this product: Exec sponsor for the retention team; approves quarterly roadmap and resource allocation.
+- What they care about most: Hitting the DAU target. She's been clear that 6.5M by Q3 is the bar that matters for the team's standing in the org.
+- Their biggest concern about your current work: That we're not moving fast enough on the streak-recovery thesis. She thinks we should already have shipped two recovery experiments by now.
+- What makes them hard to align: She prefers headline metrics and is allergic to nuance. Hard to explain why a 3-point lift on 7-day retention without movement on 30-day is still a learning, not a failure.
 
-**Riskiest Assumption (Solution A):** Users care enough about longitudinal progress data to read it weekly — and it functions as a retention driver rather than a feature no one opens after the first time.
+Stakeholder 2 — Marcus Liu, Head of Growth Engineering
+- Product relevance: Product A
+- Their role in this product: Owns the engineering capacity my experiments depend on.
+- What they care about most: Experiment velocity and infrastructure reuse. He wants every test to build infra that the next test can use, not be a one-off.
+- Their biggest concern about your current work: That we're proposing too many experiments and not designing them in a way that compounds. He's right.
+- What makes them hard to align: He says yes verbally and pushes back later via priority lists. The actual alignment happens in his planning doc, not in our meetings.
+
+Stakeholder 3 — Priya Iyer, Data Science Lead
+- Product relevance: Product A
+- Their role in this product: Owns the experimentation platform and the metric definitions. Her team reads results.
+- What they care about most: Statistical rigor and clean experiment design. She'll block tests that don't have a clear primary metric and pre-registered guardrails.
+- Their biggest concern about your current work: That we're testing three streak hypotheses at once and the results are getting confounded. She's been pushing for a stricter sequencing.
+- What makes them hard to align: She prefers async written input over meetings. Aligning verbally rarely sticks; I need to document things into her experiment-design doc to make decisions hold.
 
 ---
 
-## Opportunity Ranking
+## Part 6 — Your Users
 
-| Rank | Opportunity | Impact | Confidence | Priority |
-|------|-------------|--------|------------|----------|
-| 1 | Streak loss feels like permanent failure | High | High | 1 |
-| 2 | Content mismatch in lessons 4–8 | High | Medium | 2 |
-| 3 | Users can't feel daily improvement | Medium | Medium | 3 |
+### Product A Users
 
-## Recommended Focus
+**Describe your primary user segment in detail:**
+- Who they are (role, company type, context): Casual learners, mostly 25-40, mix of professional and personal motivations — a trip booked, a relationship, a vague "I should learn a language" pull. They are NOT advanced learners. They are people who have tried language apps before, often Duolingo specifically, and quit before day 30.
+- Their job-to-be-done (what outcome they are trying to achieve): Build a daily language-learning habit that fits around the rest of their life, without it feeling like homework. They want to feel like they're making progress, not like they're being tested.
+- Their biggest pain today: Friction at the moment of streak loss. They open the app intending to do the day's lesson, get interrupted by a kid or a meeting, miss the day. The next day the streak is gone and the emotional cost of restarting feels like "what was the point of the last 14 days." That's where they churn.
+- What motivates them emotionally: Small visible wins. Green checkmarks. The streak number going up. Feeling like the kind of person who follows through on things. They are NOT motivated by leaderboards or social competition — that tends to backfire for this segment.
+- Where & when they engage with your product (location, frequency, device, activity context — e.g., "In the lab daily, at a desktop PC, during live sessions with participants present"): Phone, in pockets of dead time — morning commute (~7:45-8:15), lunch break (~12:30-1:00), evening couch time (~9-10pm). Inconsistent timing day to day. They need something that fits around their life, not the other way around.
 
-**Opportunity 1 — Streak recovery experience.**
-Highest data confidence. Directly addresses the Day 7→30 retention gap. Intervention surface (notification + emotional reframe) is buildable within current sprint capacity. Moves the primary KPI (7-day streak users) faster than the alternatives.
+**Describe a secondary user segment if relevant:**
+- Who they are: Streak purists. Longer-tenured users (200+ day streaks), often older skew (40-55), high LTV. Super Duolingo subscribers. Highly consistent — they have a fixed time each day and the app is part of their routine.
+- Their job-to-be-done: Maintain the streak. The streak IS the goal for this segment — language learning is the byproduct, not the purpose. They use Streak Freeze proactively before travel.
+- Their biggest pain: They don't have a product problem — they have a social one. They do their lesson alone and would love to know that someone they know is also learning. Mentions to friends have fallen flat.
 
-## Gaps Flagged
+---
 
-Opportunity 3 (progress visibility) is under-researched at the individual user level. Flag for qualitative discovery before committing to a solution — progress perception may be segment-dependent (language level, prior exposure, session length).
+## Part 7 — Your Portfolio *(complete only if running multiple products)*
 
-## What Happens Next
+*N/A — single product.*
 
-**Top opportunity → H-Hypotheses/:**
-We believe Day-30 retention will improve if users who miss a day receive a 48-hour streak recovery window with an active push notification that reframes the miss as recoverable — and that recovery rate increases from 31% to 45%.
+---
 
-**Top solution → I-Initiatives/ (when hypothesis validated):**
-Initiative: Streak Recovery Window — linked to Bet 1 (Streak mechanics as the primary retention lever).
+## Part 8 — Your Team *(complete only if team_mode: lead AND you manage other PMs)*
 
-**Next experiment → P-Proof/:**
-Run `Experiment-Designer` on riskiest assumption: "Users who receive the recovery notification will act on it — not dismiss it."
+*N/A — individual PM, not a team lead.*
 
-## Last Updated
+---
 
-2025-11-15
+## When You Are Done
+
+This file is an EXAMPLE of how to fill `AI-SHIPR-Setup-Worksheet.md`. To set up your own AI-SHIPR:
+
+1. Open `AI-SHIPR-Setup-Worksheet.md` (the empty template — not this file).
+2. Fill in your own answers, using the depth and voice you see here as a guide.
+3. Run `Populate-Strategy` and paste your filled Worksheet as input.
+4. Review what Populate-Strategy writes (see `duolingo-example-output.md` for what to expect).
 
 ---
 

@@ -37,18 +37,11 @@ Populate-Strategy will read both answers and automatically set `product_mode` an
 *Single product: fill Product A only.*
 *Multiple products: fill one section per product. Add more sections if needed.*
 
+*User details (who, JTBD, pain, context) live in Part 6. This section is about the product itself.*
+
 ### Product A — [Product Name]
 
 **What does this product do? (1-2 sentences, as if explaining to a new hire)**
-
-
-**Who is the primary user? (be specific — not "SMBs" but "operations managers at 50-200 person logistics companies")**
-
-
-**What is the core problem this user has right now, without your product?**
-
-
-**What does success look like for the user after using your product? (concrete outcome, not emotional)**
 
 
 **How does your company make money from this product?**
@@ -62,15 +55,6 @@ Populate-Strategy will read both answers and automatically set `product_mode` an
 ### Product B — [Product Name] *(skip if single product)*
 
 **What does this product do? (1-2 sentences, as if explaining to a new hire)**
-
-
-**Who is the primary user?**
-
-
-**What is the core problem this user has right now, without your product?**
-
-
-**What does success look like for the user after using your product?**
 
 
 **How does your company make money from this product?**
@@ -270,10 +254,7 @@ Bet 3 success signal:
 **If running multiple products — how is your time split across them, roughly?**
 (e.g., 60% Product A, 40% Product B. Leave blank if single product.)
 
-
-**If running multiple products — how do the products relate to each other?**
-(e.g., same user base / same tech / shared budget / completely separate. Leave blank if single product.)
-
+*(Cross-product relationship questions live in Part 7 — answer them there if you run multiple products.)*
 
 ---
 
@@ -317,7 +298,7 @@ Stakeholder 3 — Name, role:
 - Their job-to-be-done (what outcome they are trying to achieve):
 - Their biggest pain today:
 - What motivates them emotionally:
-- Where they spend their time (Slack, email, dashboards, meetings):
+- Where & when they engage with your product (location, frequency, device, activity context — e.g., "In the lab daily, at a desktop PC, during live sessions with participants present"):
 
 **Describe a secondary user segment if relevant:**
 - Who they are:
@@ -333,7 +314,7 @@ Stakeholder 3 — Name, role:
 - Their job-to-be-done:
 - Their biggest pain today:
 - What motivates them emotionally:
-- Where they spend their time:
+- Where & when they engage with your product (location, frequency, device, activity context):
 
 **Describe a secondary user segment if relevant:**
 - Who they are:

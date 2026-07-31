@@ -26,6 +26,11 @@ Updated at the end of any session where something was worth keeping.
 **Source:** Adding the skill from Werner Vogels' 2006 post (allthingsdistributed.com/2006/11/working_backwards.html).
 **Implications:** Working-Backwards is now the front door of the discovery chain, feeding Assumption-Extractor via its Claims That Must Be True table. Two design rules worth reusing in future skills: (1) build the honest-failure path into the output structure (the "not ready" verdict), so the skill can reject an idea instead of flattering it; (2) constrain any generated quote to persona names from `R-Relationships/Users/Personas.md` so the skill cannot violate the no-fabricated-proper-nouns rule.
 
+## [2026-07-31] — Working-Backwards + Prototype-Builder (cheap prototypes amendment)
+**Insight:** When prototypes get nearly free, the thing that needs designing is not the prototype, it is the *routing decision*. Vogels' 2026 amendment says build first when you have conviction on the problem and uncertainty on the approach, which is a condition, not a new default. The failure mode a cheap-prototype era creates is category confusion: a great demo feels like validation, so people start answering demand questions with prototypes. Feasibility and usability are prototype questions. Demand never is.
+**Source:** Extending Working-Backwards after Vogels' "Return to two-pizza culture" (2026-06), and building Prototype-Builder as its escalation target.
+**Implications:** Three rules now hold across the system: (1) route before you build, and name where the uncertainty sits; (2) a prototype can evidence a feasibility or usability claim only, enforced in the Claims table's evidence column and in Prototype-Builder's evidence-filed table; (3) demand questions bounce between Prototype-Builder and Experiment-Designer by explicit cross-reference in both files, so neither skill can quietly absorb the other's job. Fourth, smaller rule worth reusing: record what did *not* change your mind, otherwise you cannot tell a confirming result from a badly aimed build.
+
 ---
 
 > Part of the **AI-SHIPR** product management system

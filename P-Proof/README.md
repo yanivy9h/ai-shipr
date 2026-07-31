@@ -27,6 +27,14 @@ Proof closes the loop. Without this folder, you have opinions. With it, you have
 | `Signal-Log-Template.md` | Accumulating weak signals from calls, CS, sales, reviews | `signals-[topic].md` |
 | `Post-Mortem-Template.md` | Incident or failed launch debrief | `postmortem-[name].md` |
 
+Prototypes are evidence too, so they live here as folders rather than single files:
+
+| Folder | What it is | Naming convention |
+|--------|-----------|-------------------|
+| `Prototypes/[name]/` | A runnable prototype plus the question it answered and the read on what it taught. Written by `Working-Backwards` (thin, throwaway) or `Prototype-Builder` (deeper) | `Prototypes/[idea-name]/index.html` + `README.md` |
+
+A prototype folder without its `README.md` is unreadable within weeks. The question, the timebox, what was faked, and what it taught all live in the notes file, not in someone's memory.
+
 ---
 
 ## Experiment structure (what each file contains)
@@ -49,6 +57,8 @@ Each experiment file tracks:
 | `Performance-Tracker` skill | Reads experiment results to validate or invalidate the linked hypothesis |
 | `Iteration-Planner` workflow | Reads proof results to decide what the next cycle should be |
 | `Structural-Integrity-Auditor` agent | Checks experiments for missing thresholds, missing hypothesis links, or undefined decisions |
+| `Prototype-Builder` skill | Writes prototypes and their reads into `Prototypes/`, and appends findings to the linked hypothesis |
+| `Working-Backwards` skill | Writes its thin prototype into `Prototypes/` before the press release is written |
 
 ---
 

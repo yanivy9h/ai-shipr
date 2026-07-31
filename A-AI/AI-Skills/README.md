@@ -28,13 +28,14 @@ To install or restore slash commands: run `bash setup.sh` from the AI-SHIPR root
 
 ---
 
-## Solo PM Skills (41)
+## Solo PM Skills (42)
 
 ### Discovery & Framing
 
 | Skill | Purpose |
 |---|---|
-| `Working-Backwards` | Breaks a raw idea by writing the launch first: press release, FAQ, customer experience, user manual. Amazon's method. Ends with the claims that must be true and a ready / needs-discovery / not-ready verdict |
+| `Working-Backwards` | Breaks a raw idea by writing the launch first: press release, FAQ, customer experience, user manual. Amazon's method, including the 2026 amendment: routes to prototype-first or write-first depending on where the uncertainty sits, and builds a thin throwaway prototype itself when the uncertainty is the approach |
+| `Prototype-Builder` | Turns one written uncertainty into a runnable prototype and a read on what it taught. Picks fidelity from the question, time-boxes the build, files the result as evidence. Escalation target when Working-Backwards' thin build hits its ceiling. Refuses demand questions |
 | `Competitive-Landscape-Mapper` | Maps the alternatives users choose today — positioning gap, differentiation signal, switching cost. Run before user research begins |
 | `Interview-Guide-Builder` | Generates a structured customer interview guide tied to a specific hypothesis and persona. Run before every round of user interviews |
 | `Interview-Synthesizer` | Converts post-interview notes into structured signals using the original guide as context. Feeds directly into Research-Synthesizer |
@@ -141,6 +142,9 @@ Handoff-Builder is typically the last skill run in any session — it closes the
 Assumption-Extractor → Hypothesis-Builder
 Working-Backwards → Assumption-Extractor → Hypothesis-Builder → Experiment-Designer
 Working-Backwards → Problem-Framer → PRD-Builder
+Working-Backwards (prototype-first) → Prototype-Builder → Working-Backwards (write the docs)
+Hypothesis-Builder → Prototype-Builder → Interview-Guide-Builder      (feasibility / usability)
+Hypothesis-Builder → Experiment-Designer                             (demand — never Prototype-Builder)
 Research-Synthesizer → Persona-Builder
 Business-Case-Builder → Pitch-Deck-Builder
 Pricing-Packaging → Business-Case-Builder → Pitch-Deck-Builder

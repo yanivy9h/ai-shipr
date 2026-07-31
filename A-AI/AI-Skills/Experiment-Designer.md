@@ -48,6 +48,7 @@ Selects the right experiment type, defines pass and fail criteria, and outputs a
 - Default to the fastest experiment that produces a real signal
 - Interviews before building — always
 - Smoke test before prototype if demand is the unknown
+- If the unknown is feasibility or usability rather than demand, this is not an experiment: route it to `Prototype-Builder`. The reverse also holds — a demand question sent to `Prototype-Builder` comes back here.
 - Concierge MVP when value delivery (not demand) is the unknown
 - Data pull when the assumption can be answered from existing product data
 

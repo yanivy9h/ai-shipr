@@ -169,7 +169,8 @@ Always start your reply with the agent or skill used, in CAPS.
 
 | Skill | When to Invoke |
 |-------|---------------|
-| `Working-Backwards` | Break a raw idea by writing the launch first — press release, FAQ, customer experience, user manual — then extract the claims that must be true |
+| `Working-Backwards` | Break a raw idea by writing the launch first — press release, FAQ, customer experience, user manual — then extract the claims that must be true. Routes to prototype-first or write-first based on where the uncertainty sits |
+| `Prototype-Builder` | Turn one written uncertainty into a runnable prototype and a read on what it taught — feasibility and usability questions only, never demand |
 | `Competitive-Landscape-Mapper` | Map alternatives, positioning gap, and differentiation signal — run before user research begins |
 | `Interview-Guide-Builder` | Generate a structured interview guide tied to a hypothesis and persona — run before every interview round |
 | `Interview-Synthesizer` | Convert post-interview notes into structured signals using the original guide as context |

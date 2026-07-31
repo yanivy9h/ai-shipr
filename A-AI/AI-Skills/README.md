@@ -28,12 +28,13 @@ To install or restore slash commands: run `bash setup.sh` from the AI-SHIPR root
 
 ---
 
-## Solo PM Skills (40)
+## Solo PM Skills (41)
 
 ### Discovery & Framing
 
 | Skill | Purpose |
 |---|---|
+| `Working-Backwards` | Breaks a raw idea by writing the launch first: press release, FAQ, customer experience, user manual. Amazon's method. Ends with the claims that must be true and a ready / needs-discovery / not-ready verdict |
 | `Competitive-Landscape-Mapper` | Maps the alternatives users choose today — positioning gap, differentiation signal, switching cost. Run before user research begins |
 | `Interview-Guide-Builder` | Generates a structured customer interview guide tied to a specific hypothesis and persona. Run before every round of user interviews |
 | `Interview-Synthesizer` | Converts post-interview notes into structured signals using the original guide as context. Feeds directly into Research-Synthesizer |
@@ -138,6 +139,8 @@ Handoff-Builder is typically the last skill run in any session — it closes the
 
 ```
 Assumption-Extractor → Hypothesis-Builder
+Working-Backwards → Assumption-Extractor → Hypothesis-Builder → Experiment-Designer
+Working-Backwards → Problem-Framer → PRD-Builder
 Research-Synthesizer → Persona-Builder
 Business-Case-Builder → Pitch-Deck-Builder
 Pricing-Packaging → Business-Case-Builder → Pitch-Deck-Builder

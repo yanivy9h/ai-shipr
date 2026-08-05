@@ -139,9 +139,12 @@ Options: `solo` | `individual` | `lead`
 
 `solo`: Standard AI-SHIPR — individual PM, no shared org layer.
 
-`individual`: Part of a product team running on a shared Google Drive structure.
+`individual`: Part of a product team whose lead maintains a shared org layer.
 Reads org-level context from `../vp/shared/` before local strategy files.
-Use this when your VP has set up a shared team folder. See verve-pm.com/ai-shipr-resources/google-drive-setup/ for setup instructions.
+Use this when your VP or Head of Product has set up the org layer.
+Where those files live (Google Drive, SharePoint, Confluence, Notion): verve-pm.com/ai-shipr-resources/team-collab/
+Who fills which worksheet and in what order: verve-pm.com/ai-shipr-resources/team-rollout/
+On Confluence or Notion, run `/sync-context` to refresh `../vp/shared/` before your first session.
 
 `lead`: VP / Team Lead mode — activates portfolio agents and team management layer.
 Reads `shared/` (your org layer) and `../pm-*/S-Strategy/` (all PM product strategies) in addition to standard files. `/today` aggregates across team. Portfolio-Strategist and Team-Manager agents become available.

@@ -20,11 +20,34 @@ Pick one: Single product / Multiple products
 
 ---
 
-**Question 2 — Team: Are you an individual PM or do you manage a team of PMs?**
-Pick one: Individual PM / Team lead (VP or Head of Product managing other PMs)
+**Question 2 — Team: how does your product work relate to other PMs?**
+Pick one: Solo PM / PM on a team / Team lead
 
-*Individual PM: fill Parts 1-6, skip Part 8.*
-*Team lead: fill all parts including Part 8 (Your Team).*
+*Solo PM — nobody has set up a shared org layer for you. Fill Parts 1-6, skip Part 8.*
+*PM on a team — your VP or Head of Product maintains a shared org layer you read from. Fill Parts 1-6, skip Part 8.*
+*Team lead (VP or Head of Product managing other PMs) — fill all parts including Part 8. Your answers become the org layer everyone else reads.*
+
+---
+
+### Setting up a whole team? Read this before anyone fills anything
+
+**One worksheet per person. Each person answers about their own scope. Nobody fills it in on behalf of anyone else.**
+
+This is not etiquette, it is how the machinery works. Populate-Strategy turns a worksheet into *that person's* files — one of them is literally `R-Relationships/Me/PM-Profile.md`, holding their biggest challenge, where their time goes, and what they optimise for. Every agent reads it before responding. Install one person's answers on five machines and all five instances behave as though they are that person.
+
+| | Team lead | Each PM |
+|---|---|---|
+| **Question 2** | Team lead | PM on a team |
+| **Parts 1-3** | Every product at portfolio altitude; org-level constraints | Their own product, in depth |
+| **Parts 4-5** | Their own role and stakeholders | Their own role and stakeholders |
+| **Part 6** | Skip — personas belong to the PM who owns the product | Theirs, in depth. The highest-value part for a PM |
+| **Part 7** | Yes — this becomes the org layer | Skip, unless they run two or more products |
+| **Part 8** | Yes — only the lead fills this | Skip |
+
+**Order matters: the lead goes first.** Their worksheet produces the org layer in `shared/`. Each PM then reads that layer *before* filling their own worksheet, so their strategy comes out already aligned instead of needing reconciliation afterwards — and reconciliation after the fact is a rewrite, not a review.
+
+Full rollout sequence, including who publishes what back up and what to do when a PM changes product or leaves: **verve-pm.com/ai-shipr-resources/team-rollout/**
+Where the shared files physically live (Drive, SharePoint, Confluence, Notion): **verve-pm.com/ai-shipr-resources/team-collab/**
 
 ---
 
@@ -400,6 +423,17 @@ Run the `Populate-Strategy.md` prompt and paste this entire worksheet as input.
 - `shared/Stakeholders.md` ← stakeholders that span both products
 - `shared/Portfolio-Roadmap.md` ← draft cross-product roadmap (refine with Portfolio-Strategist)
 - One full strategy layer per product in its own subfolder (`product-a/S-Strategy/`, `product-b/S-Strategy/`, etc.)
+
+**Team lead** — it will also generate the org layer your PMs read at the start of every session:
+- `shared/Vision.md`
+- `shared/Strategy.md`
+- `shared/OKRs.md` ← draft, refine with `OKR-Partner`
+- `shared/Strategic-Bets.md`
+- `shared/Portfolio-Roadmap.md`
+- `shared/Constraints.md`
+- `R-Relationships/Team/Roster.md`
+
+**PM on a team** — it will read `../vp/shared/` first and flag anything in your answers that conflicts with the org layer, before generating your files. It never writes to `shared/`; only the lead does.
 
 Populate-Strategy will also update `Settings.md` automatically:
 - Sets `product_mode: single` or `product_mode: multi` based on Question 1

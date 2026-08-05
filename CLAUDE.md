@@ -237,6 +237,7 @@ Always start your reply with the agent or skill used, in CAPS.
 | Skill | When to Invoke |
 |-------|---------------|
 | `Create-PM-Voice` | Generate PM-Voice.md from your writing samples |
+| `Sync-Context` | Refresh the local `vp/shared/` org layer from a shared surface that is not a file system (Notion, Confluence). Not needed on Google Drive or SharePoint, which mount directly |
 
 **Lead Mode Only** *(active when `team_mode: lead` in Settings.md)*
 
@@ -475,6 +476,7 @@ These are the user-typeable slash commands. All other agents, skills, and workfl
 | `/review-initiative` | Weekly review of all active initiatives: what is moving, stuck, or needs a decision |
 | `/review-experiment` | Weekly review of active and completed experiments with interpretation discipline |
 | `/shipr-guide` | Get answers about the AI-SHIPR system: agents, skills, workflows, folder structure |
+| `/sync-context` | Refresh `vp/shared/` from the team's shared surface (Notion, Confluence). Team setups only |
 
 ---
 

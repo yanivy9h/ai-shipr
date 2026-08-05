@@ -6,29 +6,28 @@ Unlike agents (persistent perspective) or workflows (multi-step sequences), skil
 
 ---
 
-## Slash Commands (9)
+## Slash Commands (6)
 
-Some skills in this folder are also registered as Claude Code slash commands.
-Any skill file with a `name:` field in its YAML frontmatter is automatically installed as a slash command when you run `setup.sh`.
+Skills you can type directly. `setup.sh` installs a file as a typeable slash command when its YAML frontmatter has a `name:` field **and does not have `user-invocable: false`**.
 
 | File | Command | Purpose |
 |------|---------|---------|
 | `Today.md` | `/today` | Daily briefing — priority stack, decisions, stale items |
-| `Sprint.md` | `/sprint` | Sprint planning — goal, committed scope, out-of-scope list |
 | `Weekly.md` | `/weekly` | Friday loop close |
-| `Iterate.md` | `/iterate` | Iteration planner after data comes in |
-| `Plan.md` | `/plan` | Roadmap planner |
-| `Launch.md` | `/launch` | Pre-launch go/no-go checklist |
 | `Review-Initiative.md` | `/review-initiative` | Weekly initiative health check |
 | `Review-Experiment.md` | `/review-experiment` | Weekly experiment status review |
 | `Handoff.md` | `/handoff` | EOD summary or ownership transfer handoff |
-| `Figma.md` | `/figma` | Load Figma design context |
+| `Sync-Context.md` | `/sync-context` | Refresh `vp/shared/` from Notion or Confluence. Team setups only |
+
+`/shipr-guide` is also typeable — it lives in `A-AI/AI-Agents/`, not here.
+
+**Not slash commands, despite earlier versions of this table saying so:** `Sprint.md`, `Iterate.md`, `Plan.md`, `Launch.md` and `Figma.md` are all marked `user-invocable: false`. They load as skills the model auto-invokes when the situation matches, and you can call them by name ("run Sprint on this"), but typing `/sprint` will not find anything.
 
 To install or restore slash commands: run `bash setup.sh` from the AI-SHIPR root, then restart Claude Code.
 
 ---
 
-## Solo PM Skills (42)
+## Solo PM Skills (43)
 
 ### Discovery & Framing
 
@@ -107,6 +106,7 @@ To install or restore slash commands: run `bash setup.sh` from the AI-SHIPR root
 | Skill | Purpose |
 |---|---|
 | `Create-PM-Voice` | Analyzes writing samples to produce a PM-Voice.md — makes AI outputs sound like you |
+| `Sync-Context` | Refreshes the local `vp/shared/` org layer from a shared surface that is not a file system (Notion, Confluence). Team setups only — Google Drive and SharePoint mount directly and need no sync |
 
 ---
 

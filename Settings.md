@@ -47,6 +47,8 @@ Set to `off` to use default AI-SHIPR neutral tone.
 
 ## Integrations
 
+The keys below map to the file drop-zones in `I-Information/Integrations/`. For live tool connections (MCP / connectors), which tools to wire first for your stage, and the compliance questions to bring to IT — see `Connections.md`.
+
 ```
 slack: inactive        # reads from I-Information/Integrations/Slack/
 email: inactive        # reads from I-Information/Integrations/Email/

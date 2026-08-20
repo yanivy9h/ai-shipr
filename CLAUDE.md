@@ -14,7 +14,7 @@ Each folder has its own `CLAUDE.md` index — read the folder's index when you n
 - `I-Information/` — resources, templates, tool integrations.
 - `A-AI/` — agents, skills, workflows, playbooks. Its index routes to the right capability and lists the 7 slash commands.
 - `shared/` — org layer for team setups (VP writes, PMs read).
-- Root files: `Settings.md` (modes, voice, integrations) · `Governance.md` (permission tiers) · `Learning.md` (session memory) · `Decision-Log.md` (decisions + reasoning) · `Session-Start.md` (conditional first-run/empty-state cases) · `Half-Sprint-Guide.md` (5-day activation) · `AI-SHIPR-Setup-Worksheet.md` (setup input).
+- Root files: `Settings.md` (modes, voice, integrations) · `Governance.md` (permission tiers) · `Connections.md` (wiring external tools — read when the user asks about connecting/MCP/integrations) · `Learning.md` (session memory) · `Decision-Log.md` (decisions + reasoning) · `Session-Start.md` (conditional first-run/empty-state cases) · `Half-Sprint-Guide.md` (5-day activation) · `AI-SHIPR-Setup-Worksheet.md` (setup input).
 
 ## Session start (every session)
 

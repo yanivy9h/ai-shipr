@@ -43,6 +43,7 @@ This is not etiquette, it is how the machinery works. Populate-Strategy turns a 
 | **Part 6** | Skip — personas belong to the PM who owns the product | Theirs, in depth. The highest-value part for a PM |
 | **Part 7** | Yes — this becomes the org layer | Skip, unless they run two or more products |
 | **Part 8** | Yes — only the lead fills this | Skip |
+| **Part 9** | Yes — org-level tool stack | Yes — only where their tools differ from the org's |
 
 **Order matters: the lead goes first.** Their worksheet produces the org layer in `shared/`. Each PM then reads that layer *before* filling their own worksheet, so their strategy comes out already aligned instead of needing reconciliation afterwards — and reconciliation after the fact is a rewrite, not a review.
 
@@ -404,6 +405,33 @@ Stakeholder 3 — Name, role:
 
 ---
 
+## Part 9 — Your Tools
+
+*One line each, factual, no thinking required. Leave blank what you don't use. These answers configure the Integrations block in Settings.md and produce your personal connection checklist (see `Connections.md`) — nothing here blocks setup, and no IT approval is needed to finish this worksheet.*
+
+**Where does your team keep code? (GitHub, GitLab, Bitbucket, other / none)**
+
+
+**Where do tickets live? (Jira, Linear, Azure DevOps, other / none)**
+
+
+**Where do product docs and PRDs live? (Notion, Confluence, Google Drive, SharePoint, other)**
+
+
+**Where do product analytics live? (Amplitude, Mixpanel, a warehouse like Snowflake/BigQuery, a BI tool, other / none yet)**
+
+
+**Where does user research live? (Dovetail, Qualtrics, a Drive folder, other / none yet)**
+
+
+**What records and transcribes your meetings? (Zoom, Fireflies, tl;dv, Granola, manual notes)**
+
+
+**Does your team use Slack, Teams, or neither for product discussions?**
+
+
+---
+
 ## When You Are Done
 
 Run the `Populate-Strategy.md` prompt and paste this entire worksheet as input.
@@ -438,6 +466,7 @@ Run the `Populate-Strategy.md` prompt and paste this entire worksheet as input.
 Populate-Strategy will also update `Settings.md` automatically:
 - Sets `product_mode: single` or `product_mode: multi` based on Question 1
 - Sets `team_mode: solo`, `team_mode: individual`, or `team_mode: lead` based on Question 2
+- Sets the `Integrations` block and `meeting_tool` from Part 9, and produces your personal connection checklist from `Connections.md` — ordered by your product stage, with the compliance question to bring to IT for each
 
 Review each output before filing. Correct anything that misses your intent.
 Then run `Structural-Integrity-Auditor` on the Strategy layer before moving to Day 2.

@@ -250,6 +250,14 @@ The three rubric-gated fields (Trust level, Decision role, Current sentiment) re
 
 After generating all 8 files, list any fields marked "[Missing — add manually]" and explain briefly what the PM needs to add.
 
+**Then run the Tools & Connections step (all modes):**
+
+Read Part 9 of the worksheet. If it is blank, skip this step silently — connections are an upgrade, never a setup gate.
+
+1. In `Settings.md`, update the `Integrations` block from the answers: flip `tickets:`, `github:`, `slack:` / `teams:`, `email:` to `active` where the PM named a tool, and set `meeting_tool:` (`zoom` / `fireflies` / `tldv` / `granola` / `manual`). Do not add new keys — tools with no matching key (docs, analytics, research) are handled by `Connections.md`, not Settings.
+2. Output a **personal connection checklist** built from `Connections.md`: only the categories the PM actually named, ordered by their `product_stage` (discovery → docs/research/workspace first; building → tickets/code first; launched/iterating → analytics first; team modes → docs first). For each: the tool they named, the live-connection option, the drop-zone fallback, and the compliance question from the table in `Connections.md`.
+3. Close the checklist with: connect one, use it for a week, then add the next — and none of this blocks Day 2.
+
 **If `team_mode: lead` (Question 2 answer was "Team lead"):**
 Also run the **Lead Mode — The Org Layer** section near the end of this file, then generate the following from Part 8 of the worksheet:
 
@@ -283,7 +291,7 @@ Also run the **Lead Mode — The Org Layer** section near the end of this file, 
 Then update `Settings.md`:
 - Set `product_mode: single`
 - Set `team_mode:` from Question 2 — `solo` ("Solo PM"), `individual` ("PM on a team"), or `lead` ("Team lead")
-- Do not change any other settings.
+- Integrations and `meeting_tool` were already set by the Tools & Connections step; beyond that, do not change any other settings.
 
 Then write:
 > "Settings.md updated — product_mode: single, team_mode: [value]. Run Structural-Integrity-Auditor on S-Strategy before moving to Day 2 of your Half-Sprint."
@@ -393,6 +401,7 @@ After generating all files:
 
 1. List any fields marked "[Missing — add manually]" per product and for the shared layer.
 2. Flag if any product-specific stakeholders were NOT marked cross-product but appear to interact with both products — ask the PM to confirm.
+3. Run the **Tools & Connections step** (defined in the Single-Product flow above) — it is mode-independent and runs once, not per product.
 
 **If `team_mode: lead` (Question 2 answer was "Team lead"):**
 Also run the **Lead Mode — The Org Layer** section near the end of this file, and generate `R-Relationships/Team/Roster.md` from Part 8 of the worksheet, using the same structure as in the Single-Product flow above.

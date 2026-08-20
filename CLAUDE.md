@@ -9,7 +9,7 @@ Each folder has its own `CLAUDE.md` index — read the folder's index when you n
 - `S-Strategy/` — vision, product, KPIs, bets, constraints. The anchor: read before any agent or skill run.
 - `H-Hypotheses/` — filed, falsifiable hypotheses.
 - `I-Initiatives/` — active work, one file per initiative. Stage lifecycle lives in its index.
-- `P-Proof/` — experiments, performance reads, launch checklists.
+- `P-Proof/` — experiments, launch records, and the measurement layer (metric definitions, blessed queries, schemas, investigation methods, dashboards). Read its index before any metric conversation.
 - `R-Relationships/` — the PM (`Me/`), users, stakeholders, team. Protected content.
 - `I-Information/` — resources, templates, tool integrations.
 - `A-AI/` — agents, skills, workflows, playbooks. Its index routes to the right capability and lists the 7 slash commands.

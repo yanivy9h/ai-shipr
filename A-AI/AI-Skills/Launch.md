@@ -55,6 +55,17 @@ Then work through the go/no-go checklist below.
 
 ---
 
+**2b. Measurement Layer Filed** *(the launch gate — the feature is not "Launched" until this is done)*
+- [ ] Metric definitions for this feature filed in `P-Proof/Metrics/[area]/metrics.md`
+- [ ] The query behind each new metric filed in `P-Proof/Queries/` with a verification header (blessed by your data person, or explicitly marked `UNVERIFIED — draft`)
+- [ ] New tables or events documented in `P-Proof/Schemas/` (only if the queries touch tables not yet documented)
+- [ ] Dashboard linked in `P-Proof/dashboards.md`
+- [ ] If this launch creates a new recurring data question, an investigation method filed in `P-Proof/Investigations/`
+
+**Measurement layer:** FILED / NOT FILED — a launch without filed definitions means every post-launch metric conversation starts from paste
+
+---
+
 **3. Content & Communication Readiness**
 - [ ] In-product copy reviewed and approved
 - [ ] Help center / documentation updated (if applicable)
@@ -103,6 +114,7 @@ Then work through the go/no-go checklist below.
 |------|--------|
 | Product readiness | GO / NO-GO / CONDITIONAL |
 | Measurement readiness | GO / NO-GO / CONDITIONAL |
+| Measurement layer filed | FILED / NOT FILED |
 | Content readiness | GO / NO-GO / NOT APPLICABLE |
 | Stakeholder sign-off | GO / NO-GO |
 | Rollback plan | GO / NO-GO |

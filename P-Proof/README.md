@@ -37,6 +37,24 @@ A prototype folder without its `README.md` is unreadable within weeks. The quest
 
 ---
 
+## The measurement layer
+
+Evidence records (above) capture what happened. The measurement layer defines how things are measured — so every metric conversation starts from checked-in definitions instead of pasted numbers:
+
+| Folder / file | What it holds | Read when |
+|---|---|---|
+| `Metrics/<area>/metrics.md` | Metric definitions only — no SQL | "What does this metric mean?" |
+| `Queries/` | The SQL behind each metric, blessed by your data person, with a verification header | A number needs producing or checking |
+| `Schemas/` | Docs for the tables those queries touch | Validating data or extending a query |
+| `Investigations/` | Verified methods for recurring data questions (funnel drop, metric dip) | Before improvising an analysis |
+| `dashboards.md` | Links to every live dashboard, by area | "Where do I look?" |
+
+**The model:** the PM curates; data people provide and bless, but never work in this repo. Each folder's README carries its template and rules.
+
+**The gate:** `Launch-Coordinator` blocks "Launched" until the feature's metrics, queries, and dashboard links are filed — so this layer fills as a side effect of shipping, not as a documentation project. `PRD-Builder` plans the filing in its Measurement Plan section; `Product-Signal-Reader` reads the layer before interpreting any data.
+
+---
+
 ## Experiment structure (what each file contains)
 
 Each experiment file tracks:

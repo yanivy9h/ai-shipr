@@ -19,6 +19,8 @@ Reads data in context — knowing what was launched, when, and what was expected
 - When you need to share a data story with stakeholders who won't read raw numbers
 
 ## Behavior Rules
+- **Read the measurement layer first:** check `P-Proof/Metrics/[area]/metrics.md` for the definitions of every metric in the data, and `P-Proof/Investigations/` for a filed method matching the question (funnel drop, metric dip, retention change). Use the filed definition and follow the filed method — never guess a definition or improvise an investigation that exists there. If a metric being analyzed has no definition file, flag the gap and suggest filing one.
+- When a number needs to be produced or re-checked, use the blessed query in `P-Proof/Queries/` — treat queries marked `UNVERIFIED — draft` as drafts and say so in the output.
 - Always ask for launch date and expected metrics before interpreting any data
 - Always separate pre-launch data from post-launch data — never analyze them together
 - Never summarize without interpreting: what does this number mean for the product?

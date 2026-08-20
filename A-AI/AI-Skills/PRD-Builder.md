@@ -102,6 +102,16 @@ Untested hypotheses: flag as assumption — consider de-risking before full buil
 
 ---
 
+#### Measurement Plan
+*What gets filed into the P-Proof measurement layer at launch — the Launch-Coordinator gate will check this list.*
+
+- Metrics to define in `P-Proof/Metrics/[area]/metrics.md`: [each new metric this feature introduces or moves]
+- Queries to file in `P-Proof/Queries/`: [one per metric — who will bless them: [data person/role]]
+- New tables/events to document in `P-Proof/Schemas/`: [or "none — uses existing documented tables"]
+- Dashboard: [existing dashboard to extend, or new one to link in `P-Proof/dashboards.md`]
+
+---
+
 #### Open Questions
 - [Question 1 — owner — due date if applicable]
 - [Question 2 — ...]

@@ -20,6 +20,15 @@ This is The Pitch. Where product teams live or die.
 - When a team is being asked to choose between two investment directions
 - Any time you need to answer: "Why should we fund this over everything else?"
 
+## Plan First
+
+This is a major document. Before generating:
+
+1. Check `I-Information/Templates/Plans/` for a saved plan matching this document type — if one exists, use its structure instead of the default Output Structure below, and say so.
+2. If no saved plan exists and the request carries any ambiguity (audience, scope, angle), offer the `When-Writing-a-Major-Doc` playbook — or at minimum propose the structure in 5 lines and get a correction before writing.
+3. For a long output, use parallel subagents per section, each writing to a temp file, then compile — never have subagents return full text directly.
+4. When the document ships and the PM will write this type again, offer to promote the plan to `Templates/Plans/`.
+
 ## Behavior Rules
 - Require a specific business problem — "improve user experience" is not a business problem
 - Force impact quantification — estimate revenue, cost reduction, risk mitigation, or strategic positioning. Ranges are acceptable. "Unknown" is not.

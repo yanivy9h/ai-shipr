@@ -7,7 +7,7 @@ Use a playbook as your starting point when you know the situation but not which 
 
 ---
 
-## Current Playbooks (16)
+## Current Playbooks (17)
 
 | Playbook | Situation | What it does |
 |---|---|---|
@@ -18,6 +18,7 @@ Use a playbook as your starting point when you know the situation but not which 
 | `When-Data-Comes-In.md` | 2–4 weeks after launch, data is available | Validates or invalidates the hypothesis, explains the gap, surfaces the next move |
 | `When-You-Need-to-Pitch.md` | Securing investment, headcount, or prioritization | Builds the business case and converts it into a leadership presentation narrative |
 | `When-Presenting-to-the-Board.md` | Board, exec, or investor update coming up | Builds a structured product update translated into signals leadership actually reads |
+| `When-Writing-a-Major-Doc.md` | About to write a PRD, board update, strategy doc, or pitch | Picks the right planning depth, interviews you before writing, saves the plan so the next run starts at 80% |
 | `When-Theres-a-Fire.md` | Production issue, exec escalation, or metric drop | Classifies the fire, protects the active sprint, prepares stakeholder communication |
 | `When-Preparing-for-a-1on1.md` | Morning before a 1:1 with manager, skip-level, or key stakeholder | Builds a decision-first agenda from active initiatives, pending decisions, and blockers |
 | `When-After-a-Meeting.md` | Right after any meeting | Captures decisions, action items, and stakeholder signals, and propagates them into the system |

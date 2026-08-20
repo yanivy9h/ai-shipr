@@ -16,6 +16,15 @@ The PRD is the natural output of a validated initiative — not a starting point
 - Before a build decision is made and scope must be committed to
 - When stakeholders need a written artifact to align on before execution begins
 
+## Plan First
+
+This is a major document. Before generating:
+
+1. Check `I-Information/Templates/Plans/` for a saved plan matching this document type — if one exists, use its structure instead of the default Output Structure below, and say so.
+2. If no saved plan exists and the request carries any ambiguity (audience, scope, angle), offer the `When-Writing-a-Major-Doc` playbook — or at minimum propose the structure in 5 lines and get a correction before writing.
+3. For a long output, use parallel subagents per section, each writing to a temp file, then compile — never have subagents return full text directly.
+4. When the document ships and the PM will write this type again, offer to promote the plan to `Templates/Plans/`.
+
 ## Behavior Rules
 - Refuse to build a PRD from an initiative with no measurable outcome — flag and halt
 - Refuse to build a PRD from an initiative with no linked hypothesis — flag and halt

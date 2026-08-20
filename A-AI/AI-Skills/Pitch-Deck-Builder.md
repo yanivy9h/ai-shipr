@@ -18,6 +18,15 @@ The PM fills the deck. This skill tells them what goes where and why.
 - When a business case has been written but needs to be translated into presentation format
 - When a deck exists but the narrative is weak — use this to restructure it
 
+## Plan First
+
+This is a major document. Before generating:
+
+1. Check `I-Information/Templates/Plans/` for a saved plan matching this document type — if one exists, use its structure instead of the default Output Structure below, and say so.
+2. If no saved plan exists and the request carries any ambiguity (audience, scope, angle), offer the `When-Writing-a-Major-Doc` playbook — or at minimum propose the structure in 5 lines and get a correction before writing.
+3. For a long output, use parallel subagents per section, each writing to a temp file, then compile — never have subagents return full text directly.
+4. When the document ships and the PM will write this type again, offer to promote the plan to `Templates/Plans/`.
+
 ## Behavior Rules
 - Require Business-Case-Builder input — do not build a pitch without a structured case
 - The narrative must make the ask before the appendix — never bury the decision

@@ -27,7 +27,7 @@ To install or restore slash commands: run `bash setup.sh` from the AI-SHIPR root
 
 ---
 
-## Solo PM Skills (43)
+## Solo PM Skills (45, including the six slash commands above)
 
 ### Discovery & Framing
 
@@ -64,6 +64,7 @@ To install or restore slash commands: run `bash setup.sh` from the AI-SHIPR root
 | `Cross-Team-Mapper` | Maps dependencies, handoffs, and owners across teams for a given initiative |
 | `1on1-Prep` | Structures 1:1 agendas from active initiatives, pending decisions, and blockers |
 | `Board-Update-Builder` | Generates a structured product update for exec, board, or investor audiences — translates portfolio state into signals leadership actually reads |
+| `Meeting-Synthesizer` | Converts raw meeting content (from any source) into decisions, action items, stakeholder signals, and system updates |
 
 ### Build Phase
 
@@ -101,12 +102,23 @@ To install or restore slash commands: run `bash setup.sh` from the AI-SHIPR root
 |---|---|
 | `Handoff-Builder` | Two modes. **EOD:** structured end-of-day summary — what was done, what is in progress, what is blocked, and a 3-bullet quick-start for tomorrow. Lets you resume the next morning with zero re-orientation. **Handoff:** decision-ready ownership transfer for a named person or role — active initiatives with first actions, pending decisions with recommendations, blockers with specific asks, and key stakeholder context. Run with "EOD handoff" or "create a handoff for [name]" |
 
-### Setup
+### Planning & Cycle (auto-invoked — not typeable, call by name)
+
+| Skill | Purpose |
+|---|---|
+| `Sprint` | Sprint planning — maps active initiatives to capacity, outputs a sprint goal with committed items |
+| `Plan` | Roadmap planning — translates strategic bets into a sequenced initiative stack |
+| `Launch` | Pre-launch go/no-go checklist, run 3–5 days before a planned launch |
+| `Iterate` | Iteration planning — close one cycle and open the next after a measurement window completes |
+| `Figma` | Loads the most recent synced Figma file's design structure into the session |
+
+### Setup & System
 
 | Skill | Purpose |
 |---|---|
 | `Create-PM-Voice` | Analyzes writing samples to produce a PM-Voice.md — makes AI outputs sound like you |
 | `Sync-Context` | Refreshes the local `vp/shared/` org layer from a shared surface that is not a file system (Notion, Confluence). Team setups only — Google Drive and SharePoint mount directly and need no sync |
+| `close-session-protocol` | Session-close sweep — scans the conversation for unwritten captures and proposes one combined diff. Fired automatically by the root CLAUDE.md rule, never typed |
 
 ---
 

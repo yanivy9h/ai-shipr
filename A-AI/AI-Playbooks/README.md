@@ -7,20 +7,31 @@ Use a playbook as your starting point when you know the situation but not which 
 
 ---
 
-## Current Playbooks (10)
+## Current Playbooks (16)
 
 | Playbook | Situation | What it does |
 |---|---|---|
 | `When-You-Have-a-New-Idea.md` | A new initiative idea has arrived | Frames the idea, surfaces assumptions, gets to a testable hypothesis before any commitment |
+| `When-Building-a-New-Product.md` | Starting a brand-new product (discovery stage) | Sets up the discovery-first operating mode: hypotheses over metrics, discovery skills over launch skills |
 | `When-Starting-a-Sprint.md` | Beginning of a sprint | Produces a clear goal, committed scope list, and explicit out-of-scope items before kickoff |
 | `When-Launching.md` | 3–5 days before a launch | Full go/no-go checklist: criteria, content, experiments, stakeholder sign-off, rollback plan |
 | `When-Data-Comes-In.md` | 2–4 weeks after launch, data is available | Validates or invalidates the hypothesis, explains the gap, surfaces the next move |
 | `When-You-Need-to-Pitch.md` | Securing investment, headcount, or prioritization | Builds the business case and converts it into a leadership presentation narrative |
+| `When-Presenting-to-the-Board.md` | Board, exec, or investor update coming up | Builds a structured product update translated into signals leadership actually reads |
 | `When-Theres-a-Fire.md` | Production issue, exec escalation, or metric drop | Classifies the fire, protects the active sprint, prepares stakeholder communication |
 | `When-Preparing-for-a-1on1.md` | Morning before a 1:1 with manager, skip-level, or key stakeholder | Builds a decision-first agenda from active initiatives, pending decisions, and blockers |
+| `When-After-a-Meeting.md` | Right after any meeting | Captures decisions, action items, and stakeholder signals, and propagates them into the system |
 | `When-Closing-the-Week.md` | End of week or sprint | Closes the loop: what moved, what was decided, what carries forward — makes the next week sharper |
 | `When-Creating-an-Agent.md` | You want to add a new persistent AI persona to AI-SHIPR | Guides purpose, behavior rules, and output definition; drafts the agent file and updates the README |
 | `When-Creating-a-Skill.md` | You want to add a new single-task skill to AI-SHIPR | Guides task, input, and output structure definition; drafts the skill file and updates the README |
+
+**Lead mode** (`team_mode: lead` in Settings.md)
+
+| Playbook | Situation | What it does |
+|---|---|---|
+| `When-Planning-Headcount.md` | Planning team size or an open role | Maps capacity to bets, surfaces gaps, and builds the hiring brief from current strategy |
+| `When-Preparing-for-Team-Review.md` | Start of the week, before the first team sync or 1:1 | Replaces ad-hoc check-ins with a structured read of team state from the system |
+| `When-a-PM-is-Struggling.md` | A direct report is blocked, overloaded, or underperforming | Structures the read on what's happening and the conversation that follows |
 
 ---
 

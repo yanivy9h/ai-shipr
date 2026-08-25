@@ -14,6 +14,22 @@ Instead of starting every session from zero, Claude reads your strategy, hypothe
 
 ---
 
+## What's new in v4
+
+v4 changes how AI-SHIPR loads context. Nothing was removed, every v3 capability still works, and the folder names are unchanged.
+
+* **The root `CLAUDE.md` went from 485 lines to 73.** It used to carry a full catalogue of every agent, skill, workflow and playbook, and all of it loaded on every session whether you needed it or not. Context now loads in three tiers: the root file always, folder indexes when Claude navigates to that folder, content files only when something actually needs them. **Measured result: about 77% fewer tokens loaded before you type anything.** Nothing was deleted, everything moved.
+* **12 nested `CLAUDE.md` navigation indexes.** One in each major folder, plus one for each of the four `A-AI/` subfolders. They are maps, not content. Claude reads the index and goes straight to the right file instead of searching the repo, which is where the token saving comes from.
+* **New `Session-Start.md`.** The four first-run and empty-state cases moved out of the root file into their own file, loaded only when one of them actually applies. A returning user with a populated system never pays for setup instructions again.
+* **New `Connections.md`.** Six categories of tool to wire up: code, tickets, docs, analytics, user research, workspace. Each one lists the live connection, what it unlocks inside AI-SHIPR, a drop-zone fallback if you cannot connect it, and the question to take to your compliance team. Analytics is the one with the highest ceiling: unconnected, every metric conversation starts with copy-paste.
+* **New measurement layer in `P-Proof/`.** `Metrics/` for definitions, `Queries/` for SQL, `Schemas/` for table docs, `Investigations/` for repeatable analysis methods, and `dashboards.md`. Queries carry a verification header, so a query is either blessed by whoever owns the data or explicitly marked unverified. Launching a feature now includes a gate for checking this in, and `PRD-Builder` writes a measurement plan as part of the PRD.
+* **Planning discipline for major documents.** A new `When-Writing-a-Major-Doc` playbook, bringing the playbooks to 17. It covers picking a planning tier, an interview step where Claude challenges your assumptions before writing anything, saving plans into `I-Information/Templates/Plans/` so recurring work starts part-done, and pointing parallel subagents at temp files so a long document does not overflow the context window. `PRD-Builder`, `Board-Update-Builder`, `Pitch-Deck-Builder` and `Business-Case-Builder` each gained a Plan First step.
+* **The restructure was tested, not assumed.** 20 realistic prompts run against the old and new structures. Both got 20 out of 20 to the correct capability, so cutting the always-loaded context cost nothing in routing accuracy. The honest tradeoff: the tiered structure sometimes takes more navigation turns to get there.
+
+Upgrading from v3.x? Unzip over your existing folder, keep your own content files, and run `bash setup.sh` again.
+
+---
+
 ## What's new in v3.3
 
 v3.3 fixes team setup. If you are a solo PM, nothing here changes how you work.
@@ -153,10 +169,13 @@ Product managers who:
 
 ```
 AI-SHIPR/
+├── CLAUDE.md          → the 73-line root index
+├── Session-Start.md   → first-run and empty-state cases
+├── Connections.md     → the six tool connections
 ├── S-Strategy/        → vision, bets, KPIs
 ├── H-Hypotheses/      → structured hypotheses
 ├── I-Initiatives/     → execution layer
-├── P-Proof/           → experiments
+├── P-Proof/           → experiments, metrics, queries, schemas
 ├── R-Relationships/   → users, stakeholders
 ├── Learning.md        → accumulated knowledge
 └── A-AI/              → agents, skills, workflows

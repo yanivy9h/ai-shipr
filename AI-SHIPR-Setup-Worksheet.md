@@ -42,14 +42,15 @@ This is not etiquette, it is how the machinery works. Populate-Strategy turns a 
 | | The lead | Everyone else |
 |---|---|---|
 | **Question 2** | Team lead | PM on a team |
-| **Parts 1-3** | Every product at portfolio altitude; org-level constraints | Their own product or surface, in depth |
+| **Part 1** | Every product at portfolio altitude | Their own product or surface |
+| **Parts 2-3** | Org bets, metrics and org-level constraints | A PM: their product's strategy and constraints, in depth. A non-PM: skip both, these come down from the lead's shared layer |
 | **Parts 4-5** | Their own role and stakeholders | Their own role and stakeholders |
 | **Part 6** | Skip. Personas belong to whoever owns the product | Theirs, in depth. The highest-value part they fill |
 | **Part 7** | Yes. This becomes the org layer | Skip, unless they run two or more products |
 | **Part 8** | Yes. Only the lead fills this | Skip |
 | **Part 9** | Yes, org-level tool stack | Yes, only where their tools differ from the org's |
 
-"Everyone else" is not only product managers. A designer, researcher, data analyst or product marketer who needs the same product context gets the same install and fills the same column, with the strategy parts coming down from the lead's shared layer instead of being authored locally.
+"Everyone else" is not only product managers. A designer, researcher, data analyst or product marketer who needs the same product context gets the same install and fills the same column, with one difference: they skip Parts 2 and 3. Strategy and constraints are the lead's to author, and a non-PM writing a second version of them is the duplicate-strategy problem the shared layer exists to prevent. Parts 1, 4, 5 and 6 are theirs, and Part 6 most of all.
 
 **Order matters: the lead goes first.** Their worksheet produces the org layer in `shared/`. Everyone else then reads that layer *before* filling their own worksheet, so their strategy comes out already aligned instead of needing reconciliation afterwards, and reconciliation after the fact is a rewrite, not a review.
 

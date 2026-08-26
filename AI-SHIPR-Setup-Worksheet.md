@@ -20,12 +20,16 @@ Pick one: Single product / Multiple products
 
 ---
 
-**Question 2 — Team: how does your product work relate to other PMs?**
+**Question 2 — Team: does anyone else read product context that you maintain?**
 Pick one: Solo PM / PM on a team / Team lead
 
-*Solo PM — nobody has set up a shared org layer for you. Fill Parts 1-6, skip Part 8.*
-*PM on a team — your VP or Head of Product maintains a shared org layer you read from. Fill Parts 1-6, skip Part 8.*
-*Team lead (VP or Head of Product managing other PMs) — fill all parts including Part 8. Your answers become the org layer everyone else reads.*
+*Solo PM: nobody maintains a shared org layer for you, and nobody reads one from you. Fill Parts 1-6, skip Part 8.*
+*PM on a team: someone above you maintains a shared org layer that you read from. Fill Parts 1-6, skip Part 8.*
+*Team lead: you maintain the shared org layer that other people read. Fill all parts including Part 8.*
+
+**"Team lead" is about who reads your context, not head count.** It is the only option that writes a `shared/` folder for other instances to read, so pick it if anyone else needs the vision, strategy, bets and constraints you maintain. Six PMs, three engineering teams, or one designer working alongside you all count.
+
+Leading engineering teams rather than PMs, or working with a designer, researcher or analyst who needs your context? That shape has its own install guide, including why you will want two folders rather than one: **verve-pm.com/ai-shipr-resources/lead-without-pms/**
 
 ---
 
@@ -35,17 +39,19 @@ Pick one: Solo PM / PM on a team / Team lead
 
 This is not etiquette, it is how the machinery works. Populate-Strategy turns a worksheet into *that person's* files — one of them is literally `R-Relationships/Me/PM-Profile.md`, holding their biggest challenge, where their time goes, and what they optimise for. Every agent reads it before responding. Install one person's answers on five machines and all five instances behave as though they are that person.
 
-| | Team lead | Each PM |
+| | The lead | Everyone else |
 |---|---|---|
 | **Question 2** | Team lead | PM on a team |
-| **Parts 1-3** | Every product at portfolio altitude; org-level constraints | Their own product, in depth |
+| **Parts 1-3** | Every product at portfolio altitude; org-level constraints | Their own product or surface, in depth |
 | **Parts 4-5** | Their own role and stakeholders | Their own role and stakeholders |
-| **Part 6** | Skip — personas belong to the PM who owns the product | Theirs, in depth. The highest-value part for a PM |
-| **Part 7** | Yes — this becomes the org layer | Skip, unless they run two or more products |
-| **Part 8** | Yes — only the lead fills this | Skip |
-| **Part 9** | Yes — org-level tool stack | Yes — only where their tools differ from the org's |
+| **Part 6** | Skip. Personas belong to whoever owns the product | Theirs, in depth. The highest-value part they fill |
+| **Part 7** | Yes. This becomes the org layer | Skip, unless they run two or more products |
+| **Part 8** | Yes. Only the lead fills this | Skip |
+| **Part 9** | Yes, org-level tool stack | Yes, only where their tools differ from the org's |
 
-**Order matters: the lead goes first.** Their worksheet produces the org layer in `shared/`. Each PM then reads that layer *before* filling their own worksheet, so their strategy comes out already aligned instead of needing reconciliation afterwards — and reconciliation after the fact is a rewrite, not a review.
+"Everyone else" is not only product managers. A designer, researcher, data analyst or product marketer who needs the same product context gets the same install and fills the same column, with the strategy parts coming down from the lead's shared layer instead of being authored locally.
+
+**Order matters: the lead goes first.** Their worksheet produces the org layer in `shared/`. Everyone else then reads that layer *before* filling their own worksheet, so their strategy comes out already aligned instead of needing reconciliation afterwards, and reconciliation after the fact is a rewrite, not a review.
 
 Full rollout sequence, including who publishes what back up and what to do when a PM changes product or leaves: **verve-pm.com/ai-shipr-resources/team-rollout/**
 Where the shared files physically live (Drive, SharePoint, Confluence, Notion): **verve-pm.com/ai-shipr-resources/team-collab/**
@@ -377,27 +383,30 @@ Stakeholder 3 — Name, role:
 
 ---
 
-## Part 8 — Your Team *(complete only if team_mode: lead AND you manage other PMs)*
+## Part 8 — Your Team *(complete only if `team_mode: lead`)*
 
-*This section is for VP or Team Leads managing a team of PMs — not for solo PMs managing multiple products.*
-*If you are one person managing multiple products, use Part 7 (Portfolio) instead and skip this section.*
+*This section is for anyone who maintains the shared org layer that other people read: a VP over a team of PMs, or a Director over engineering teams with a designer, researcher or analyst alongside.*
 
-**What is your team structure? (how many PMs, what do they each own)**
+*Read "PM" below as "whoever owns the work". That may be a product manager, an engineering squad, or a non-PM collaborator. Answer about the people you actually have, not the ones the wording implies.*
 
+*If you are one person managing multiple products and nobody reads context from you, use Part 7 (Portfolio) instead and skip this section.*
 
-**What bets does each PM own? (name the PM and the bet)**
-
-
-**What is the biggest challenge you face as a team lead right now?**
+**What is your team structure? (who or which teams sit under you, and what does each own)**
 
 
-**Which PM needs the most support right now, and why?**
+**What bet does each of them own, or support? (name the person or team, and the bet)**
 
 
-**What is the biggest gap in your team — skill, capacity, or coverage?**
+**What is the biggest challenge you face as a lead right now?**
 
 
-**Are there any open headcount needs? If so, what bet would the new PM own?**
+**Who needs the most support right now, and why?**
+
+
+**What is the biggest gap in your team: skill, capacity, or coverage?**
+
+
+**Are there any open headcount needs? If so, what bet would the new hire own?**
 
 
 **How do you prefer to run 1:1s? (what structure works best for you)**

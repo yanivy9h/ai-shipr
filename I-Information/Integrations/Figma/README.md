@@ -89,7 +89,7 @@ FIGMA_TOKEN=your-token-here
 
 From the AI-SHIPR root folder:
 ```bash
-node figma-sync.js https://www.figma.com/design/FILE_KEY/FILE_NAME
+node I-Information/Integrations/Figma/figma-sync.js https://www.figma.com/design/FILE_KEY/FILE_NAME
 ```
 
 This creates a dated `.md` file in this folder.

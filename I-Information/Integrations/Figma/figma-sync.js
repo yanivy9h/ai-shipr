@@ -8,31 +8,52 @@
  * in I-Information/Integrations/Figma/
  *
  * Usage:
- *   node figma-sync.js <figma-url>
- *   node figma-sync.js https://www.figma.com/design/aRDxTsABxgP6NAGEb2U7zo/My-File
+ *   node I-Information/Integrations/Figma/figma-sync.js <figma-url>
  *
- * Requires: FIGMA_TOKEN env variable (or .env file in this folder)
+ * Run from the AI-SHIPR root folder. Requires FIGMA_TOKEN, either exported in
+ * your environment or in a .env file at the AI-SHIPR root.
  */
 
 const https = require('https');
 const fs = require('fs');
 const path = require('path');
 
+// --- Locate the AI-SHIPR root ---
+// This script lives at <root>/I-Information/Integrations/Figma/, but it used to
+// sit at the root itself. Walk up looking for root markers rather than assuming
+// a fixed depth, so moving the file again does not break the token lookup.
+function findRoot(start) {
+  let dir = start;
+  for (let i = 0; i < 6; i++) {
+    if (fs.existsSync(path.join(dir, 'Settings.md')) &&
+        fs.existsSync(path.join(dir, 'CLAUDE.md'))) return dir;
+    const parent = path.dirname(dir);
+    if (parent === dir) break;
+    dir = parent;
+  }
+  return null;
+}
+const ROOT = findRoot(__dirname);
+
 // --- Load .env if present ---
-const envPath = path.join(__dirname, '.env');
-if (fs.existsSync(envPath)) {
-  const envContent = fs.readFileSync(envPath, 'utf8');
-  envContent.split('\n').forEach(line => {
+// Folder-local first, then the AI-SHIPR root, so the documented root location wins.
+function loadEnv(envPath) {
+  if (!envPath || !fs.existsSync(envPath)) return;
+  fs.readFileSync(envPath, 'utf8').split('\n').forEach(line => {
     const [key, ...valueParts] = line.split('=');
     if (key && valueParts.length > 0) {
       process.env[key.trim()] = valueParts.join('=').trim().replace(/^["']|["']$/g, '');
     }
   });
 }
+loadEnv(path.join(__dirname, '.env'));
+loadEnv(ROOT && path.join(ROOT, '.env'));
 
 // --- Config ---
 const FIGMA_TOKEN = process.env.FIGMA_TOKEN;
-const OUTPUT_DIR = path.join(__dirname, 'I-Information', 'Integrations', 'Figma');
+const OUTPUT_DIR = ROOT
+  ? path.join(ROOT, 'I-Information', 'Integrations', 'Figma')
+  : __dirname;
 
 // --- Helpers ---
 function extractFileKey(input) {
@@ -199,7 +220,7 @@ async function main() {
   const input = process.argv[2];
 
   if (!input) {
-    console.error('Usage: node figma-sync.js <figma-url-or-file-key>');
+    console.error('Usage: node I-Information/Integrations/Figma/figma-sync.js <figma-url-or-file-key>');
     process.exit(1);
   }
 
@@ -209,7 +230,7 @@ async function main() {
       '',
       'Set it in one of two ways:',
       '  1. Add to ~/.zshrc:  export FIGMA_TOKEN="your-token"',
-      '  2. Create a .env file in this folder:  FIGMA_TOKEN=your-token',
+      `  2. Create a .env file in the AI-SHIPR root folder${ROOT ? ` (${ROOT})` : ''}:  FIGMA_TOKEN=your-token`,
       '',
       'Get a token at: figma.com → Settings → Personal access tokens',
     ].join('\n'));

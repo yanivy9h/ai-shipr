@@ -12,7 +12,7 @@ You are loading Figma design context for the AI-SHIPR PM system.
 Read `Settings.md`.
 
 If `figma: inactive`:
-- Output: "Figma integration is inactive. Run `node figma-sync.js <url>` to sync a file, then set `figma: active` in Settings.md."
+- Output: "Figma integration is inactive. Run `node I-Information/Integrations/Figma/figma-sync.js <url>` to sync a file, then set `figma: active` in Settings.md."
 - Stop.
 
 If `figma: active`: continue.
@@ -26,7 +26,7 @@ Read all `.md` files in `I-Information/Integrations/Figma/` (excluding `README.m
 Select the most recent file by date in the filename.
 
 If no files found:
-- Output: "No Figma files synced yet. Run `node figma-sync.js <figma-url>` to sync your first file."
+- Output: "No Figma files synced yet. Run `node I-Information/Integrations/Figma/figma-sync.js <figma-url>` to sync your first file."
 - Stop.
 
 ---
@@ -94,7 +94,7 @@ Those skills will pick up design context automatically. You only need to run `/f
 
 To sync a new or updated Figma file:
 ```bash
-node figma-sync.js https://www.figma.com/design/YOUR_FILE_KEY/Your-File-Name
+node I-Information/Integrations/Figma/figma-sync.js https://www.figma.com/design/YOUR_FILE_KEY/Your-File-Name
 ```
 
 Requires `FIGMA_TOKEN` in your environment or a `.env` file in the AI-SHIPR root folder.

@@ -7,7 +7,7 @@ Routing map for the AI capabilities. Read the subfolder index that matches what 
 - `AI-Agents/` — 12 persistent personas with a fixed lens (Problem-Framer, Decision-Architect, PM-Coach...). Read `AI-Agents/CLAUDE.md` to pick one.
 - `AI-Skills/` — 51 single-task tools (Hypothesis-Builder, PRD-Builder, Priority-Stack...). Read `AI-Skills/CLAUDE.md` to pick one.
 - `AI-Workflows/` — 15 multi-step sequences (today, Weekly-Review, Launch-Coordinator...). Read `AI-Workflows/CLAUDE.md` to pick one.
-- `AI-Playbooks/` — 16 When-* situation guides the PM pastes in ("When There's a Fire"...). Read `AI-Playbooks/CLAUDE.md` to pick one.
+- `AI-Playbooks/` — 17 When-* situation guides the PM pastes in ("When There's a Fire"...). Read `AI-Playbooks/CLAUDE.md` to pick one.
 
 ## Key context
 

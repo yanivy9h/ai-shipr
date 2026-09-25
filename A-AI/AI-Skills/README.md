@@ -27,7 +27,7 @@ To install or restore slash commands: run `bash setup.sh` from the AI-SHIPR root
 
 ---
 
-## Solo PM Skills (45, including the six slash commands above)
+## Solo PM Skills (46, including the six slash commands above)
 
 ### Discovery & Framing
 
@@ -55,6 +55,7 @@ To install or restore slash commands: run `bash setup.sh` from the AI-SHIPR root
 | `Priority-Stack` | Scores and ranks initiatives or features with explicit criteria — replaces gut-feel prioritization |
 | `Tradeoff-Mapper` | Maps tradeoffs between options structurally — forces real costs into the open |
 | `OKR-Partner` | Defines sharp, measurable OKRs explicitly linked to Strategic Bets |
+| `Sunset-Review` | Decides whether a live product or feature keeps running. Puts what the roadmap says next to where the team's time actually went, asks whether a new PM would choose to work on it, and ends on a keep-condition with a check date, a hand-off, or a sunset. Run quarterly on anything with no active initiative behind it |
 
 ### Stakeholder & Communication
 
@@ -161,6 +162,8 @@ Research-Synthesizer → Persona-Builder
 Business-Case-Builder → Pitch-Deck-Builder
 Pricing-Packaging → Business-Case-Builder → Pitch-Deck-Builder
 Build-Review → Performance-Tracker → Retro-Facilitator
+Sunset-Review → Priority-Stack                                      (clear what nobody chose to keep before ranking)
+Sunset-Review → Narrative-Refiner → Cross-Team-Mapper               (when the outcome is sunset)
 Edge-Case-Finder → Experiment-Designer → Performance-Tracker
 Research-Synthesizer → Persona-Builder → JTBD-Mapper → Opportunity-Tree → OKR-Partner
 

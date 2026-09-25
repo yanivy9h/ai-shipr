@@ -1,6 +1,6 @@
 # AI-Skills — Index
 
-51 single-task skills. Find the group that matches the work, then read only that skill's file. Six are typeable slash commands (marked); the rest are invoked by name or auto-invoked.
+52 single-task skills. Find the group that matches the work, then read only that skill's file. Six are typeable slash commands (marked); the rest are invoked by name or auto-invoked.
 
 ## Daily rhythms (typeable)
 
@@ -19,7 +19,7 @@
 
 ## Prioritization & decisions
 
-`Priority-Stack` (score and rank initiatives) · `Tradeoff-Mapper` (compare options structurally) · `OKR-Partner` (metrics with bet linkage)
+`Priority-Stack` (score and rank initiatives) · `Tradeoff-Mapper` (compare options structurally) · `OKR-Partner` (metrics with bet linkage) · `Sunset-Review` (keep, keep on a dated condition, or stop a live product or feature)
 
 ## Stakeholder & communication
 

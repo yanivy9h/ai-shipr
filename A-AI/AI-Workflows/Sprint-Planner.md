@@ -2,6 +2,7 @@
 name: sprint-planner
 description: Sprint planning workflow: map initiatives to capacity.
 user-invocable: false
+model: sonnet
 ---
 
 # Workflow: Sprint Planner

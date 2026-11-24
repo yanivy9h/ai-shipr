@@ -2,6 +2,7 @@
 name: sprint
 description: Run the AI-SHIPR Sprint Planner. Maps active initiatives to sprint capacity and outputs a sprint goal with committed items.
 user-invocable: false
+model: sonnet
 ---
 You are running the AI-SHIPR Sprint Planner for a product manager.
 

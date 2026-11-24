@@ -2,6 +2,7 @@
 name: interview-guide-builder
 description: Generate a structured interview guide tied to a hypothesis and persona. Run before every interview round.
 user-invocable: false
+model: sonnet
 ---
 
 # Skill: Interview Guide Builder

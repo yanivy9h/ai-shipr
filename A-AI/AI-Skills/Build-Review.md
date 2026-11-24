@@ -2,6 +2,7 @@
 name: build-review
 description: Prepare the sprint review: shipped vs committed.
 user-invocable: false
+model: sonnet
 ---
 
 # Skill: Build Review

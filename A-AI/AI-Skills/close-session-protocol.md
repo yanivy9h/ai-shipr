@@ -2,6 +2,7 @@
 name: close-session-protocol
 description: Session-close sweep — scans the current conversation for unwritten captures and proposes them as one combined diff with write-all default. Invoked by the mandatory Session-Close Protocol rule in CLAUDE.md (on end signals, /today, /weekly, /handoff, or after 3+ substantive exchanges go idle). Not user-typeable — the rule fires it automatically.
 user-invocable: false
+model: sonnet
 ---
 
 You are running the AI-SHIPR Session-Close Protocol.

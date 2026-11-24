@@ -2,6 +2,7 @@
 name: priority-stack
 description: Score and rank initiatives against each other.
 user-invocable: false
+model: sonnet
 ---
 
 # Skill: Priority Stack

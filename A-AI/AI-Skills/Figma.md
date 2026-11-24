@@ -2,6 +2,7 @@
 name: figma
 description: Load Figma design context into the current session. Reads the most recent synced Figma file and makes its design structure available for PM work.
 user-invocable: false
+model: haiku
 ---
 You are loading Figma design context for the AI-SHIPR PM system.
 

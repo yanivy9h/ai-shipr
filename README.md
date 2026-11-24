@@ -150,6 +150,8 @@ AI-SHIPR/
 
 Roughly 73 capabilities: agents for thinking work, skills for single tasks, workflows for multi-step routines, and playbooks organized by the situation you are actually in.
 
+Each capability is matched to a Claude model. Routine one-shot skills run on Sonnet or Haiku. The hardest strategy work recommends Fable. Everything else runs on the model you picked. Details in [CHANGELOG.md](CHANGELOG.md) (v4.1).
+
 ---
 
 ## See a full example

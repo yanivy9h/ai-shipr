@@ -6,6 +6,8 @@ user-invocable: false
 
 # Skill: Org Design Framer
 
+> **Recommended model:** Fable, for the deepest reasoning. Run `/model fable` before you start. Opus works too. Fable costs about 2x Opus and may use extra usage credits, so this is your call.
+
 ## Purpose
 Structure a team design decision — how to organize PMs across products, bets, or customer segments.
 Surface tradeoffs between org models before the decision is made.

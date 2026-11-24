@@ -2,6 +2,7 @@
 name: portfolio-priority-stack
 description: Rank initiatives across PMs and product areas. Lead mode.
 user-invocable: false
+model: sonnet
 ---
 
 # Skill: Portfolio Priority Stack

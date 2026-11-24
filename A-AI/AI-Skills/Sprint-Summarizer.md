@@ -2,6 +2,7 @@
 name: sprint-summarizer
 description: Generate a sprint summary (internal or stakeholder mode).
 user-invocable: false
+model: sonnet
 ---
 
 # Skill: Sprint Summarizer

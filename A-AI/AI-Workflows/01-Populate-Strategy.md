@@ -6,6 +6,8 @@ user-invocable: false
 
 # Workflow: Populate Strategy
 
+> **Recommended model:** Fable, for the deepest reasoning. Run `/model fable` before you start. Opus works too. Fable costs about 2x Opus and may use extra usage credits, so this is your call.
+
 ## Purpose
 Convert a completed `AI-SHIPR-Setup-Worksheet.md` into ready-to-file content for the S-Strategy and R-Relationships layers.
 Supports both single-product and multi-product setups.

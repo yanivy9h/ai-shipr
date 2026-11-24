@@ -2,6 +2,7 @@
 name: 1on1-prep
 description: Build a decision-first agenda for a 1:1.
 user-invocable: false
+model: sonnet
 ---
 
 # Skill: 1on1 Prep

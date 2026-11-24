@@ -6,6 +6,8 @@ user-invocable: false
 
 # Skill: Pricing & Packaging
 
+> **Recommended model:** Fable, for the deepest reasoning. Run `/model fable` before you start. Opus works too. Fable costs about 2x Opus and may use extra usage credits, so this is your call.
+
 ## Purpose
 Turn a product's value into a pricing model and a packaging structure that a customer will actually buy.
 Forces a value metric, value-based (not cost-plus) price points, and tiers gated on real value levers, then exposes the load-bearing assumptions so they can be tested before a price ships.

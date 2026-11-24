@@ -2,6 +2,7 @@
 name: after-meeting
 description: Synthesize meeting notes and propagate decisions, stakeholder signals, and initiative updates across the system.
 user-invocable: false
+model: sonnet
 ---
 
 # Workflow: After Meeting

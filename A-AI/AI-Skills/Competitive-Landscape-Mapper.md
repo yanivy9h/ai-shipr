@@ -6,6 +6,8 @@ user-invocable: false
 
 # Skill: Competitive Landscape Mapper
 
+> **Recommended model:** Fable, for the deepest reasoning. Run `/model fable` before you start. Opus works too. Fable costs about 2x Opus and may use extra usage credits, so this is your call.
+
 ## Purpose
 Map the alternatives your target user is already using before you commit to building anything.
 Every user has a current solution — even if it is a spreadsheet, a workaround, or doing nothing.

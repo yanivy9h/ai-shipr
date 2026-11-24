@@ -2,6 +2,7 @@
 name: research-synthesizer
 description: Convert raw research into structured signals.
 user-invocable: false
+model: sonnet
 ---
 
 # Skill: Research Synthesizer

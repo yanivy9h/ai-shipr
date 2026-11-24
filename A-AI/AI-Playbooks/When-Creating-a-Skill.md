@@ -35,6 +35,11 @@ Using `Priority-Stack.md` as your format template, draft the full skill file wit
 
 If the user left "Behavior rules" blank, propose 4–6 rules based on the task logic.
 
+Pick a model tier and say why in one line:
+- **One-shot, structured, runs often** (a summary, a briefing, a scoring pass) → add `model: sonnet` to the frontmatter. Purely mechanical (copy, load, tag) → `model: haiku`.
+- **Hardest open-ended work** (strategy, pricing, a roadmap) → no `model:` line. Add a `> **Recommended model:** Fable...` note under the title instead, copied from `AI-Skills/Plan.md`. Never set `model: fable`: it costs about 2x Opus and may use extra usage credits, so the user chooses.
+- **Everything else, and any multi-turn conversation** → no `model:` line. A skill's `model:` lasts only until the user's next prompt, so it does nothing after the first answer.
+
 Show me the draft. **Wait for my approval before writing.**
 
 **Step 3 — Write**

@@ -1,6 +1,7 @@
 ---
 name: sync-context
 description: Refresh the local vp/shared/ org layer from the team's shared surface (Notion, Confluence, or any non-filesystem tool).
+model: haiku
 ---
 
 # Skill: Sync Context

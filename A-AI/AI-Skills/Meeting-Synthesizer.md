@@ -2,6 +2,7 @@
 name: meeting-synthesizer
 description: Convert raw meeting content into decisions, action items, stakeholder signals, and system updates.
 user-invocable: false
+model: sonnet
 ---
 
 # Skill: Meeting Synthesizer

@@ -6,6 +6,19 @@ Upgrading is always the same shape: unzip over your existing folder, keep your o
 
 ---
 
+## v4.1 (24 November 2026)
+
+**v4.1 matches each capability to a Claude model.** Run `bash setup.sh` again after upgrading, so the installed skills pick up the change.
+
+* **21 routine skills now run on a smaller model.** 19 one-shot, structured skills carry `model: sonnet` (Today, Meeting-Synthesizer, After-Meeting, the interview and research synthesizers, the sprint rituals, Priority-Stack, the readiness and health checks, the cross-team and resource mappers, 1on1-Prep, Handoff, close-session-protocol). Figma and Sync-Context carry `model: haiku`. They come back faster and use less of your plan.
+* **The setting lasts one turn.** Per the Claude Code docs, a skill's `model:` applies until your next prompt, then your own model comes back. That is why only one-shot skills are set. Conversations like PM-Coach stay on your model.
+* **10 capabilities recommend Fable without forcing it.** Product-Strategist, Portfolio-Strategist, Decision-Architect, Competitive-Landscape-Mapper, Pricing-Packaging, Plan, Roadmap-Planner, Populate-Strategy, Org-Design-Framer and Sunset-Review carry a "Recommended model" note. Fable costs about 2x Opus and may use extra usage credits, so switching is your call.
+* **Everything else runs on whatever model you picked.** For most people that is Opus, which the docs name as the default for most work.
+* **Don't want it?** Delete the `model:` line from the file in `A-AI/` and re-run `bash setup.sh`.
+* **New skills and agents pick a tier on day one.** `When-Creating-a-Skill` and `When-Creating-an-Agent` now include the rule.
+
+---
+
 ## v4 (20 August 2026)
 
 **v4 changes how AI-SHIPR loads context.** Nothing was removed, every v3 capability still works, and the folder names are unchanged.

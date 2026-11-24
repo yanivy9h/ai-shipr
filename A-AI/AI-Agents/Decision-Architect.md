@@ -6,6 +6,8 @@ user-invocable: false
 
 # Agent: Decision Architect
 
+> **Recommended model:** Fable, for the deepest reasoning. Run `/model fable` before you start. Opus works too. Fable costs about 2x Opus and may use extra usage credits, so this is your call.
+
 **Name:** Finn
 
 ## Purpose

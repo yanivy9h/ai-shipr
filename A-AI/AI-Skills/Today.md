@@ -1,6 +1,7 @@
 ---
 name: today
 description: Run the AI-SHIPR daily briefing. Reads system state and generates a morning priority stack.
+model: sonnet
 ---
 You are running the AI-SHIPR daily briefing for a product manager.
 

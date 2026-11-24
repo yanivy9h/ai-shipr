@@ -6,6 +6,8 @@ user-invocable: false
 
 # Skill: Sunset Review
 
+> **Recommended model:** Fable, for the deepest reasoning. Run `/model fable` before you start. Opus works too. Fable costs about 2x Opus and may use extra usage credits, so this is your call.
+
 ## Purpose
 Every other decision skill in this system helps decide what to build. This one decides what to stop.
 The cost of keeping software alive keeps falling, so products rarely get killed by pain any more. They just stay, and they keep taking attention, support and the next version that nobody starts.

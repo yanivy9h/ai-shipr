@@ -6,7 +6,9 @@ Upgrading is always the same shape: unzip over your existing folder, keep your o
 
 ---
 
-## Unreleased
+## v4.2 (26 November 2026)
+
+**v4.2 works with the epics your team already has, and keeps memory useful as it grows.** Run `bash setup.sh` again after upgrading, so `Epic-Import` and `Memory-Upkeep` install.
 
 **Memory that stays useful, and playbooks that can start on their own.**
 

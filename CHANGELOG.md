@@ -8,6 +8,14 @@ Upgrading is always the same shape: unzip over your existing folder, keep your o
 
 ## Unreleased
 
+**Memory that stays useful, and playbooks that can start on their own.**
+
+* **New `Memory-Upkeep` workflow.** Saving to `Learning.md` is easy. Over a few months it fills with duplicates, entries that contradict each other, and facts whose date has passed, and Claude keeps acting on all of them. Memory-Upkeep runs five checks (duplicates, past their review date, outcomes never recorded, corrections that keep coming back, patterns ready to become rules) and writes one report. It proposes edits and changes nothing without your approval. Run it monthly, or on a schedule. Workflows go from 15 to 16.
+* **Optional `Review by:` date on Learning.md entries.** For insights that depend on a date or a status. Entries that are no longer true move to a `## Retired` section instead of being deleted.
+* **The Learner checks for an existing entry before adding one,** and sets a review date when an insight will go stale.
+* **"What starts each playbook."** The Playbooks index now says which playbooks start from a schedule (closing the week, sprint start, 1:1 prep, launch countdown), which from an event (a new meeting transcript, new results in `P-Proof/`), and which need you. Anything that runs without a prompt writes a draft and stops: no edits to your files and nothing sent.
+* **Review first.** `When-Creating-a-Skill` and `When-Creating-an-Agent` now require every output to open with one line saying whether the PM needs to act. Fast reviews are how your corrections get back into memory.
+
 **AI-SHIPR now works with the epics you already have.**
 
 Teams told us they plan in epics and projects, not in hypotheses. The model now meets them there: `Goal → Initiative → Hypothesis → Epic → Story → Proof`. AI-SHIPR holds the first three. Epics and stories stay in Jira or Linear and are linked, never copied.

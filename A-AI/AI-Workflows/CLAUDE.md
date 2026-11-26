@@ -1,6 +1,6 @@
 # AI-Workflows — Index
 
-15 multi-step sequences. None are typeable slash commands — invoke by name ("run the Roadmap Planner") or auto-invoke when the situation matches. The daily/weekly rhythms have skill counterparts in `AI-Skills/` that ARE typeable (`/today`, `/weekly`, `/review-initiative`, `/review-experiment`).
+16 multi-step sequences. None are typeable slash commands — invoke by name ("run the Roadmap Planner") or auto-invoke when the situation matches. The daily/weekly rhythms have skill counterparts in `AI-Skills/` that ARE typeable (`/today`, `/weekly`, `/review-initiative`, `/review-experiment`).
 
 ## When to run which
 
@@ -8,6 +8,7 @@
 |---|---|
 | `today.md` | Every morning — strategy-driven priorities |
 | `Weekly-Review.md` | Every Friday — close the loop |
+| `Memory-Upkeep.md` | Monthly, or when Learning.md has grown ~50 entries — merge duplicates, retire stale entries, record missing outcomes. Safe to run on a schedule |
 | `Initiative-Review.md` | Weekly — health check of all active initiatives |
 | `Experiment-Review.md` | Weekly — Continue / Iterate / Kill discipline |
 | `Discovery-Sprint.md` | Discovery phase: setup, per-sprint check-in, or readiness gate |

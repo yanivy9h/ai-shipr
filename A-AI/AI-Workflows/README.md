@@ -8,7 +8,7 @@ Unlike skills (single-task), workflows orchestrate a complete process from start
 
 ---
 
-## Current Workflows (15)
+## Current Workflows (16)
 
 ### Discovery
 
@@ -28,6 +28,7 @@ Unlike skills (single-task), workflows orchestrate a complete process from start
 |---|---|---|
 | `Sprint-Planner.md` | Sprint kickoff: goal, committed scope, out-of-scope list | Start of each sprint |
 | `Weekly-Review.md` | Close the week: what moved, decided, learned — loop compounding. Typeable via the `/weekly` skill | Every Friday (15 min) |
+| `Memory-Upkeep.md` | Keep memory useful as it grows: merge duplicates, retire entries past their review date, write back outcomes, catch corrections that keep recurring. Proposes, never edits without approval. Safe to run on a schedule | Monthly, or every fourth Weekly Review |
 
 ### Strategic Planning
 

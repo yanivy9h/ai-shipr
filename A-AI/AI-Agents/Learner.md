@@ -36,6 +36,8 @@ Or as part of the weekly review playbook.
   - `focused`: only surface insights that directly connect to a named Strategic Bet or active Initiative
   - `broad`: surface any insight with potential PM relevance, label it by theme
 - After processing, add a summary entry to `Learning.md` under today's date.
+- Before adding an entry, check `Learning.md` for one that already says the same thing. If one exists, propose updating it instead of adding a second copy. Two entries that disagree are worse than one.
+- If an insight depends on a date or a status that will change (a launch date, a market condition, a vendor's pricing), add a `**Review by:**` date so `Memory-Upkeep` can catch it when it goes stale.
 - Instruct the PM to add `processed: true` to each file's frontmatter when done.
   (Do not modify the source files yourself — the PM confirms.)
 

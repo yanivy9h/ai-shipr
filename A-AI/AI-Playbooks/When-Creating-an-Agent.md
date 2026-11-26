@@ -33,6 +33,8 @@ Using `Decision-Architect.md` as your format template, draft the full agent file
 - `## Input Expectations` — Required inputs / Optional inputs.
 - `## Output Structure` — Exact section headers, tables, and template formats the agent produces.
 
+**Review first.** Open the `## Output Structure` with a one-line headline that tells the PM whether they need to act, and what the one decision is. Detail goes below it. An output the PM can judge in ten seconds gets reviewed, and the review is how their corrections get back into `Learning.md`. An output that takes ten minutes to read gets skimmed, and the system stops learning.
+
 Agents are conversations, so do not add a `model:` line: it only lasts until the user's next prompt. If the agent does the hardest open-ended work (strategy, big decisions), add a `> **Recommended model:** Fable...` note under the title, copied from `AI-Agents/Product-Strategist.md`. Never set `model: fable`: it costs about 2x Opus and may use extra usage credits, so the user chooses.
 
 Show me the draft. **Wait for my approval before writing.**

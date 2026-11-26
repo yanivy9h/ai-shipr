@@ -114,6 +114,7 @@ Based on this week's review:
 - [ ] Meeting-Log reflects this week's key conversations
 - [ ] Any completed experiments have an interpretation recorded
 - [ ] Next week's top priorities are clear
+- [ ] Every fourth week: run `Memory-Upkeep` so Learning.md stays useful as it grows
 
 ---
 

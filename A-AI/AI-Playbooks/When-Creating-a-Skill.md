@@ -35,6 +35,8 @@ Using `Priority-Stack.md` as your format template, draft the full skill file wit
 
 If the user left "Behavior rules" blank, propose 4–6 rules based on the task logic.
 
+**Review first.** Open the `## Output Structure` with a one-line headline that tells the PM whether they need to act, and what the one decision is. Detail goes below it. An output the PM can judge in ten seconds gets reviewed, and the review is how their corrections get back into `Learning.md`. An output that takes ten minutes to read gets skimmed, and the system stops learning.
+
 Pick a model tier and say why in one line:
 - **One-shot, structured, runs often** (a summary, a briefing, a scoring pass) → add `model: sonnet` to the frontmatter. Purely mechanical (copy, load, tag) → `model: haiku`.
 - **Hardest open-ended work** (strategy, pricing, a roadmap) → no `model:` line. Add a `> **Recommended model:** Fable...` note under the title instead, copied from `AI-Skills/Plan.md`. Never set `model: fable`: it costs about 2x Opus and may use extra usage credits, so the user chooses.

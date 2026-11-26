@@ -60,6 +60,7 @@ Reply 'no [N]' to skip an item, 'edit [N]' to revise, or just press enter to wri
 **Insight:** [what was learned]
 **Source:** [context — which initiative, decision, or session]
 **Implications:** [what this should change or inform going forward]
+**Review by:** [optional — YYYY-MM-DD, only when the insight depends on a date or a status that will change]
 ```
 
 6. Append `Decision-Log.md` entries under today's date in the format defined in that file's header.

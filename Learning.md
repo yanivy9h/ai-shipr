@@ -12,7 +12,10 @@ Updated at the end of any session where something was worth keeping.
 **Insight:** [what was learned]
 **Source:** [context — which initiative, decision, or session]
 **Implications:** [what this should change or inform going forward]
+**Review by:** [optional — YYYY-MM-DD, only when the insight depends on a date or a status that will change]
 ```
+
+Entries that are no longer true move to a `## Retired` section at the bottom, with the date and one line on why. `Memory-Upkeep` proposes these moves; nothing is deleted.
 
 ---
 
@@ -30,6 +33,11 @@ Updated at the end of any session where something was worth keeping.
 **Insight:** When prototypes get nearly free, the thing that needs designing is not the prototype, it is the *routing decision*. Vogels' 2026 amendment says build first when you have conviction on the problem and uncertainty on the approach, which is a condition, not a new default. The failure mode a cheap-prototype era creates is category confusion: a great demo feels like validation, so people start answering demand questions with prototypes. Feasibility and usability are prototype questions. Demand never is.
 **Source:** Extending Working-Backwards after Vogels' "Return to two-pizza culture" (2026-06), and building Prototype-Builder as its escalation target.
 **Implications:** Three rules now hold across the system: (1) route before you build, and name where the uncertainty sits; (2) a prototype can evidence a feasibility or usability claim only, enforced in the Claims table's evidence column and in Prototype-Builder's evidence-filed table; (3) demand questions bounce between Prototype-Builder and Experiment-Designer by explicit cross-reference in both files, so neither skill can quietly absorb the other's job. Fourth, smaller rule worth reusing: record what did *not* change your mind, otherwise you cannot tell a confirming result from a badly aimed build.
+
+## [2026-11-24] — Memory-Upkeep (new workflow) + playbook triggers
+**Insight:** Saving memory was never the hard part; keeping it useful as it grows is. Three failures show up: no sense of what's worth keeping, entries that go stale, and duplicates that later contradict each other. Background agents handle this with a scheduled cleanup pass ("dreaming") before the next run. The second insight: when agents start work without a prompt, the PM's attention becomes the bottleneck, so every output has to be judgeable in seconds.
+**Source:** LangChain, "What We've Learned Building Proactive Agents" (Sydney Runkle, 2026-11-17), applied first to the ABC-TOM content lane.
+**Implications:** (1) Memory-Upkeep proposes, never edits, and retires instead of deleting. (2) A correction that repeats is the measure of whether memory works, so the report tracks it run over run. (3) Anything that runs on a schedule writes a draft and stops, and never sends anything. (4) Every new skill or agent output opens with a one-line "does this need you" headline.
 
 ---
 

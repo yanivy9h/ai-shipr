@@ -23,3 +23,24 @@
 | A PM is struggling (lead) | `When-a-PM-is-Struggling.md` |
 | Adding a new agent to AI-SHIPR | `When-Creating-an-Agent.md` |
 | Adding a new skill to AI-SHIPR | `When-Creating-a-Skill.md` |
+
+## What starts each playbook
+
+Every playbook is named after a moment. A moment comes from one of three places, and that decides whether Claude can start the playbook without you typing anything.
+
+| Playbook | Started by | Can run without a prompt? |
+|---|---|---|
+| `When-Closing-the-Week.md` | **Schedule:** every Friday | Partly. Claude drafts the review and the Learning.md candidates; you approve them in your next session |
+| `When-Starting-a-Sprint.md` | **Schedule:** sprint start date | Partly. Claude drafts goal and scope from the initiative files; you commit them |
+| `When-After-a-Meeting.md` | **Event:** a new transcript or notes file lands (e.g. from a meeting recorder) | Partly. Claude drafts the synthesis; propagation into initiative and stakeholder files waits for you |
+| `When-Data-Comes-In.md` | **Event:** a new results file in `P-Proof/`, or a date set at launch | Partly. Claude drafts the read; the hypothesis verdict is yours |
+| `When-Preparing-for-a-1on1.md` | **Schedule:** the morning of a 1:1 on your calendar | Yes. The output is an agenda for you to read |
+| `When-Launching.md` | **Schedule:** 3–5 days before a launch date in an initiative file | Partly. Claude runs the checklist; sign-off is yours |
+| All others | **You:** you name the situation | No. They need your input first |
+
+**Rules for anything that runs without a prompt:**
+- It writes a draft file and stops. Edits to strategy, initiatives, hypotheses, `Learning.md` and `Decision-Log.md` wait for your approval (Tier 2 in `Governance.md`).
+- It never sends, posts or shares anything. Drafts contain protected content (`A-AI/AI-Agents/_Security-Boundaries.md`).
+- The draft opens with one line saying whether it needs you. If you start ignoring these drafts, run fewer of them: your attention is the scarce resource, not Claude's.
+
+How to schedule: Claude Code scheduled tasks or `/loop`, a cloud routine, or a cron job calling the Claude CLI. `Connections.md` covers wiring the event sources (meeting recorder, analytics).

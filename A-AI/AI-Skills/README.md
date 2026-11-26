@@ -27,7 +27,7 @@ To install or restore slash commands: run `bash setup.sh` from the AI-SHIPR root
 
 ---
 
-## Solo PM Skills (46, including the six slash commands above)
+## Solo PM Skills (47, including the six slash commands above)
 
 ### Discovery & Framing
 
@@ -117,6 +117,7 @@ To install or restore slash commands: run `bash setup.sh` from the AI-SHIPR root
 
 | Skill | Purpose |
 |---|---|
+| `Epic-Import` | Brings a team's existing epics (Jira epics, Linear projects) into AI-SHIPR. Groups them under initiatives, drafts the bet behind each group for the PM to confirm, and links to the ticket tool without copying. The entry point for teams that plan in epics |
 | `Create-PM-Voice` | Analyzes writing samples to produce a PM-Voice.md — makes AI outputs sound like you |
 | `Sync-Context` | Refreshes the local `vp/shared/` org layer from a shared surface that is not a file system (Notion, Confluence). Team setups only — Google Drive and SharePoint mount directly and need no sync |
 | `close-session-protocol` | Session-close sweep — scans the conversation for unwritten captures and proposes one combined diff. Fired automatically by the root CLAUDE.md rule, never typed |
@@ -153,6 +154,7 @@ Handoff-Builder is typically the last skill run in any session — it closes the
 
 ```
 Assumption-Extractor → Hypothesis-Builder
+Epic-Import → Hypothesis-Builder → [build the epics] → Performance-Tracker      (teams that start from epics)
 Working-Backwards → Assumption-Extractor → Hypothesis-Builder → Experiment-Designer
 Working-Backwards → Problem-Framer → PRD-Builder
 Working-Backwards (prototype-first) → Prototype-Builder → Working-Backwards (write the docs)

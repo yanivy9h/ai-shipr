@@ -6,6 +6,7 @@ Interview | Usability test | Survey | Observation | Other
 ## Linked To
 - Hypothesis: [[HYP - ...]]
 - Initiative: [[INI - ...]]
+- Source ticket (if the research tested one story or issue): [Ticket ID](link)
 
 ## Research Question
 What were we trying to learn?
@@ -45,6 +46,11 @@ YYYY-MM-DD
 
 ## Signal Strength
 Strong | Moderate | Weak — [brief rationale]
+
+## Direction
+Supports | Weakens | Inconclusive
+
+What this record does to the linked hypothesis. Add a row to that hypothesis's Proof Log and update its Confidence.
 
 ## Decision
 Proceed | Pivot | Run another round

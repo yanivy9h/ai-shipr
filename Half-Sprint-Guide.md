@@ -29,6 +29,7 @@ That is not onboarding. That is a productive half-sprint.
 - [ ] S-Strategy passes Structural Integrity Audit
 - [ ] R-Relationships filled (PM Profile, Personas, Stakeholders)
 - [ ] At least 1 Initiative filed in I-Initiatives
+- [ ] If your team plans in epics: your active epics are linked from an Initiative
 - [ ] At least 2 Hypotheses filed in H-Hypotheses
 - [ ] At least 1 meeting prepped using Stakeholder-Translator
 - [ ] Learning.md has first entries
@@ -143,14 +144,21 @@ If you use real problems, you will get a working operating system.
 
 **Focus:** File your first Initiative and structure any pending decision.
 
+**If your team already plans in epics (Jira epics, Linear projects), start here:**
+Run `Epic-Import`. It reads your active epics, groups them under initiatives, and drafts the bet behind each group. You confirm or change the grouping. Your epics stay in your ticket tool and nothing changes in how the team works there. Then continue from step 3.
+
+An initiative is not an epic. It sits above your epics and says what they are for. If your tool has no level above the epic, this is the layer AI-SHIPR adds.
+
 **Actions:**
-1. Create Initiative file in `I-Initiatives/` — link it to a Strategic Bet
+1. Create Initiative file in `I-Initiatives/` — link it to a Strategic Bet, and set its Type: `Bet` or `Commitment`
 2. Set a measurable outcome with a time horizon
 3. If a decision is pending: run `Decision-Architect`
 4. If options are competing: run `Tradeoff-Mapper`
 5. Run `Narrative-Refiner` on the initiative for your most important stakeholder
 
 **Deliverable:** First Initiative is filed and linked to strategy. Pending decision is structured or explicitly deferred with a date.
+
+**Bet or Commitment:** a Commitment is work that happens whatever you believe: a regulation, a contractual promise, a security fix. It needs no hypothesis. Everything else is a Bet. If most of your initiatives turn out to be Commitments, look again.
 
 **The test:** If you cannot link the initiative to a Strategic Bet, that is a signal — either the bet is missing or the initiative is disconnected from strategy. Do not paper over it. Either add the bet or reconsider the initiative.
 
@@ -167,6 +175,8 @@ If you use real problems, you will get a working operating system.
 2. Run `Hypothesis-Builder` on each
 3. File each in `H-Hypotheses/`
 4. Verify each passes: falsifiable, metric defined, thresholds set, time-bound
+
+**If you ran `Epic-Import` on Day 4:** your hypotheses are already drafted. Confirm, rewrite or reject each one, then run `Hypothesis-Builder` on those missing a metric or threshold. Aim for 1 to 3 per initiative, not one per epic. For an epic that has not started, set the threshold now: that is what makes it a test. For an epic already in flight, file the hypothesis with Confidence `Low` and treat the first result as a look back.
 
 **Afternoon — Stakeholder Meeting Prep:**
 1. Identify a real meeting happening this week or next

@@ -8,10 +8,12 @@ This is where hypotheses come to be validated or killed — not confirmed by gut
 ## Role in the system
 
 ```
-H-Hypotheses (what we believe) → P-Proof (here's the test) → Learning.md (what we learned)
+H-Hypotheses (what we believe) → epics and stories (what we built to test it) → P-Proof (what it showed) → back to the hypothesis
 ```
 
 Proof closes the loop. Without this folder, you have opinions. With it, you have a learning system.
+
+Proof often comes from a single story, not a whole epic. So each record names the ticket it came from and says what it does to the hypothesis: `Supports`, `Weakens` or `Inconclusive`. That row goes into the hypothesis's Proof Log, and its Confidence moves with it. Your ticket tool tells you what got done. This folder tells you what you learned.
 
 ---
 
@@ -59,10 +61,12 @@ Evidence records (above) capture what happened. The measurement layer defines ho
 
 Each experiment file tracks:
 - **Linked Hypothesis** — the H-Hypotheses file this experiment is testing
+- **Source Ticket** — the story or issue the proof came from, if any
 - **Setup** — variant(s), target audience, and duration
 - **Metric + Threshold** — the exact metric and the number that means it worked
 - **Results** — what was observed
 - **Interpretation** — what it suggests and confidence level
+- **Direction** — `Supports | Weakens | Inconclusive` — what the result does to the hypothesis
 - **Decision** — `Continue | Iterate | Kill` — forced conclusion, no ambiguity
 
 ---

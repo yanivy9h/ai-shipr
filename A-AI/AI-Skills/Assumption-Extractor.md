@@ -22,12 +22,15 @@ Assumptions left implicit become risks. Made explicit, they become testable hypo
 - Do not conflate assumptions with facts — if it's stated as known, note it but don't flag it
 - Convert each assumption into a falsifiable hypothesis candidate
 - Be concise — one line per assumption where possible
+- Backward mode (input is a set of epics under one initiative): ask what must be true for these epics to be worth building. Put assumptions shared by several epics first, since those are the initiative's real bets. Return at most 3 hypothesis candidates for the initiative, not one per epic
+- Skip `Commitment` initiatives. Work that happens whatever the team believes has no load-bearing assumption to test
 
 ## Input Expectations
 Provide one of:
 - An initiative description
 - A strategy section
 - A feature brief or product decision
+- The epics (or projects) linked to one initiative: name and one-line scope each
 
 ## Output Structure
 

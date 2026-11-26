@@ -59,6 +59,9 @@ For each experiment, assess:
 - Metric + threshold: [defined / missing]
 - Results recorded: [Yes / No / Partial]
 - Interpretation: [Complete / Missing / Contradictory]
+- Source ticket: [named / not applicable / missing]
+- Direction: [Supports / Weakens / Inconclusive / missing]
+- Logged on the hypothesis: [Proof Log row present / missing]
 - Decision recorded: [Continue / Iterate / Kill / Pending]
 
 Flag any experiment where:
@@ -66,6 +69,8 @@ Flag any experiment where:
 - Interpretation exists but decision is not recorded
 - Experiment has been running past its stated duration with no results
 - Metric or threshold was never defined (experiment is unmeasurable)
+- Direction is set but the hypothesis has no Proof Log row for it (the learning did not roll up)
+- A Proof Log row was added but the hypothesis Confidence was not reviewed
 
 ---
 

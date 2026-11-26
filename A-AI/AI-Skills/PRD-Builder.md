@@ -27,7 +27,9 @@ This is a major document. Before generating:
 
 ## Behavior Rules
 - Refuse to build a PRD from an initiative with no measurable outcome — flag and halt
-- Refuse to build a PRD from an initiative with no linked hypothesis — flag and halt
+- Refuse to build a PRD from a `Bet` initiative with no linked hypothesis — flag and halt
+- A `Commitment` initiative needs no hypothesis. Build its PRD from "Required by" and "Done when", and say in the Hypothesis Summary that none applies
+- Writing into the ticket tool is Tier 2 in `Governance.md`. Offer the epic handover text, never post it unasked
 - Problem statement must come from Problem-Framer output or equivalent — not invented
 - Scope must be explicit: what is IN and what is OUT of this PRD
 - Success metrics must match the initiative's outcome metric exactly — no substitution
@@ -104,6 +106,20 @@ Validated hypotheses: proceed with confidence.
 Testing hypotheses: build with instrumentation to confirm.
 Untested hypotheses: flag as assumption — consider de-risking before full build.
 
+Confidence comes from the hypothesis file, per its rubric. Do not assign it here.
+
+---
+
+#### Epic Handover
+
+One block per linked epic (or project), ready to paste into its description in the ticket tool, so engineers see why the work exists:
+
+> **Bet:** [the hypothesis in one line]
+> **We will know when:** [metric and success threshold]
+> **Details:** [link to the hypothesis file]
+
+For a `Commitment`: "Required by: [source]. Done when: [criterion]."
+
 ---
 
 #### Constraints
@@ -136,7 +152,8 @@ A PRD with no open questions has not been stress-tested. Add at least one.
 
 ### Structural Flags
 - [Flag: initiative has no measurable outcome — PRD cannot be built]
-- [Flag: no linked hypothesis — build is proceeding on unvalidated assumptions]
+- [Flag: Bet with no linked hypothesis — build is proceeding on unvalidated assumptions]
+- [Flag: a linked epic names no hypothesis]
 - [Flag: hypothesis is Invalidated — reconsider whether this initiative should proceed]
 (Omit if no flags)
 

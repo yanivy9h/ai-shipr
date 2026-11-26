@@ -138,6 +138,14 @@ Any hypotheses currently in Testing status that are approaching or past their te
 
 If none: "No hypotheses in active testing."
 
+Also list, one line each, and omit the line when there is nothing to report:
+- Hypotheses with nothing testing them (Tested By is empty)
+- Linked epics that name no hypothesis
+- Proof records in `P-Proof/` with no row in the linked hypothesis's Proof Log (the learning did not roll up)
+- Commitments above `commitment_alert` percent of Active initiatives (`Settings.md`)
+
+Use the team's words for epics and stories (`epic_term`, `story_term` in `Settings.md`).
+
 ---
 
 #### One Reminder from Learning

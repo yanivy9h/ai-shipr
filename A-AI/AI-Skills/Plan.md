@@ -81,10 +81,14 @@ Flag:
 
 #### Hypothesis Coverage
 
-For each Active initiative:
-- Is at least one hypothesis linked? (Yes / No)
-- If Yes: current hypothesis status (Untested / Testing / Validated / Invalidated)
-- If No: flag — initiatives without hypotheses are executing on assumptions
+For each Active `Bet` initiative:
+- How many hypotheses are linked? (expected: 1 to 3)
+- Status of each (Untested / Testing / Validated / Invalidated) and its Confidence
+- If none: flag as a structural gap. A Bet with no hypothesis is executing on assumptions
+- If more than 3: flag. They were probably written per epic and should be merged
+- Linked epics that name no hypothesis: list them
+
+`Commitment` initiatives carry no hypothesis. List them separately and report their share of Active initiatives against `commitment_alert` in `Settings.md`. Flag it when the share is above the alert.
 
 ---
 

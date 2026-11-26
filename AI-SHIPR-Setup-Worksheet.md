@@ -425,6 +425,15 @@ Stakeholder 3 — Name, role:
 **Where do tickets live? (Jira, Linear, Azure DevOps, other / none)**
 
 
+**In that tool, what is the unit your team plans in? (epic, project, other)**
+
+
+**What do you call the tickets under it? (story, issue, ticket)**
+
+
+**What sits above that unit, if anything? (OKRs, quarterly themes, roadmap pillars, initiatives, nothing)**
+
+
 **Where do product docs and PRDs live? (Notion, Confluence, Google Drive, SharePoint, other)**
 
 
@@ -476,6 +485,7 @@ Run the `Populate-Strategy.md` prompt and paste this entire worksheet as input.
 Populate-Strategy will also update `Settings.md` automatically:
 - Sets `product_mode: single` or `product_mode: multi` based on Question 1
 - Sets `team_mode: solo`, `team_mode: individual`, or `team_mode: lead` based on Question 2
+- Sets the `Work Hierarchy` block from Part 9 (`ticket_tool`, `epic_term`, `story_term`, and `goal_source: okrs` if you named OKRs), so agents speak your team's words and know where your epics live
 - Sets the `Integrations` block and `meeting_tool` from Part 9, and produces your personal connection checklist from `Connections.md` — ordered by your product stage, with the compliance question to bring to IT for each
 
 Review each output before filing. Correct anything that misses your intent.

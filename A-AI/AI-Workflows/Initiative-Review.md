@@ -43,9 +43,9 @@ Generate the Initiative Review Report below.
 
 #### Initiative Status Summary
 
-| Initiative | Bet | Status | Outcome Metric | Hypothesis | Decision Needed |
-|-----------|-----|--------|---------------|-----------|----------------|
-| ...       | ... | ...    | ...           | ...       | Yes / No       |
+| Initiative | Type | Bet | Status | Outcome Metric | Hypothesis | Decision Needed |
+|-----------|------|-----|--------|---------------|-----------|----------------|
+| ...       | Bet / Commitment | ... | ...    | ...           | ...       | Yes / No       |
 
 ---
 
@@ -56,7 +56,11 @@ For each Active or At Risk initiative, provide:
 **[Initiative Name]**
 - Strategic link: [Bet # — confirmed / missing]
 - Outcome: [metric + current state, or "undefined"]
-- Hypothesis status: [Untested / Testing / Validated / Invalidated / Missing]
+- Type: [Bet / Commitment]
+- Hypothesis status: [Untested / Testing / Validated / Invalidated / Missing] (Commitment: "not required")
+- Hypothesis confidence: [Low / Medium / High, and whether it moved since the last review]
+- Linked epics: [N linked, N naming the hypothesis they test, or "none linked"]
+- Commitment only: [Required by: named / missing] · [Done when: defined / missing]
 - Momentum: [Moving / Stalled / Blocked]
 - Blocker (if any): [decision, dependency, or resource]
 - Recommended action: [Continue / Escalate / Pause / Kill]
@@ -81,6 +85,8 @@ Initiatives that show one or more of:
 - No progress in 2+ weeks
 - Hypothesis invalidated with no pivot defined
 - No longer linked to an active bet
+- Bet with more than 3 hypotheses (likely written per epic: merge them)
+- Commitment with no named source in "Required by" (retype it as a Bet or question the work)
 - Blocked with no resolution path
 
 List with reason and recommendation.

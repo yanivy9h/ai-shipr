@@ -98,6 +98,9 @@ Skills are single-task tools. You give them an input, they produce a specific st
 **Pitch**
 - Business Case Builder, Pitch Deck Builder
 
+**Setup**
+- Epic Import (brings your existing Jira epics or Linear projects in, groups them under initiatives, drafts the bet behind each group)
+
 ---
 
 ### Workflows (Slash Commands)
@@ -162,11 +165,16 @@ If you can't write a failure condition, the hypothesis is not ready.
 Every piece of the system connects:
 
 ```
-Strategic Bet
-  └── Initiative
-        └── Hypothesis
-              └── Experiment (in P-Proof/)
+Goal (Strategic Bet, or OKR Objective)
+  └── Initiative (Bet or Commitment)
+        └── Hypothesis (1 to 3 per Bet initiative)
+              └── Epic → Story (in your ticket tool, linked, never copied)
+                    └── Proof (in P-Proof/, rolls back up to the hypothesis)
 ```
+
+The top three levels live in AI-SHIPR. Epics and stories stay in Jira or Linear. Proof names the ticket it came from and says what it does to the hypothesis: Supports, Weakens or Inconclusive. Your ticket tool rolls up what got done. AI-SHIPR rolls up what you learned.
+
+A `Commitment` is an initiative with no hypothesis: work that happens whatever you believe (a regulation, a contractual promise, a security fix, tech debt). It names who requires it and when it is done.
 
 If an initiative doesn't link to a Strategic Bet, it's disconnected from strategy. Flag it — don't paper over it.
 
@@ -246,12 +254,22 @@ If unsure: `/today` is always the right starting point. It reads your system sta
 
 ### "I filed a hypothesis. Now what?"
 
-Link it to an initiative (or create one in I-Initiatives/). The initiative should reference the hypothesis it's testing. Then:
+Link it to an initiative (or create one in I-Initiatives/). The initiative should reference the hypothesis it's testing, and the hypothesis should list the epics that test it under Tested By. Then:
 
 1. Run Discovery Readiness Checker before writing a PRD — it gates you from moving to build prematurely
 2. Once ready: run PRD Builder
 3. After building: run Performance Tracker with data to validate or invalidate the hypothesis
 4. Close the loop: update Learning.md with what you learned
+
+### "My team works in epics, not hypotheses"
+
+Keep your epics. Run Epic Import: it reads the epics you already have in Jira or Linear, groups them under initiatives, and drafts the bet behind each group for you to confirm. You end up with 1 to 3 hypotheses per initiative, not one per epic, and nothing changes in how the team works in the ticket tool.
+
+Every epic you prioritized already carries a bet. You just never wrote it down. The hypothesis is that bet in one sentence, with the signal that will tell you whether it paid off.
+
+Work with no bet behind it (compliance, a contractual promise) is a Commitment and needs no hypothesis.
+
+The full picture, including how Jira and Linear map, is in `Working-with-Epics.md`.
 
 ### "I have a lot of ideas. How do I prioritize?"
 

@@ -257,8 +257,10 @@ After generating all 8 files, list any fields marked "[Missing — add manually]
 Read Part 9 of the worksheet. If it is blank, skip this step silently — connections are an upgrade, never a setup gate.
 
 1. In `Settings.md`, update the `Integrations` block from the answers: flip `tickets:`, `github:`, `slack:` / `teams:`, `email:` to `active` where the PM named a tool, and set `meeting_tool:` (`zoom` / `fireflies` / `tldv` / `granola` / `manual`). Do not add new keys — tools with no matching key (docs, analytics, research) are handled by `Connections.md`, not Settings.
+   Then set the `Work Hierarchy` block from the three planning-unit answers: `ticket_tool:` (`jira` / `linear` / `none`; any other tool is `none`, and the PM lists epics by name), `epic_term:` and `story_term:` in the PM's own words, and `goal_source: okrs` only if they named OKRs as what sits above the unit (otherwise leave `bets`). Leave `commitment_alert` at its default. If the planning-unit answers are blank, leave the block at its defaults.
 2. Output a **personal connection checklist** built from `Connections.md`: only the categories the PM actually named, ordered by their `product_stage` (discovery → docs/research/workspace first; building → tickets/code first; launched/iterating → analytics first; team modes → docs first). For each: the tool they named, the live-connection option, the drop-zone fallback, and the compliance question from the table in `Connections.md`.
 3. Close the checklist with: connect one, use it for a week, then add the next — and none of this blocks Day 2.
+4. If the PM named a ticket tool and a planning unit: add one line saying that on Day 4 `Epic-Import` will bring their existing epics in, group them under initiatives, and draft the bet behind each group. If they said nothing sits above the unit, say that the initiative is the layer AI-SHIPR adds.
 
 **If `team_mode: lead` (Question 2 answer was "Team lead"):**
 Also run the **Lead Mode — The Org Layer** section near the end of this file, then generate the following from Part 8 of the worksheet:

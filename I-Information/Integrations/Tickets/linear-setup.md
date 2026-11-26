@@ -70,12 +70,33 @@ Once connected, open `Settings.md` in your AI-SHIPR folder and set:
 
 ```
 tickets: active
-source: linear
 ```
 
-That tells the agents to look for ticket data when running `/today`, `/sprint`, and related workflows.
+And in the `Work Hierarchy` block of the same file:
 
-If you previously had `source: jira`, change it to `linear`. AI-SHIPR uses one ticket source at a time per vault.
+```
+ticket_tool: linear
+epic_term: project
+story_term: issue
+```
+
+That tells the agents to look for ticket data when running `/today`, `/sprint`, and related workflows, and to say "project" and "issue" the way your team does.
+
+If you previously had `ticket_tool: jira`, change it to `linear`. AI-SHIPR uses one ticket tool at a time per vault.
+
+---
+
+## How Linear maps to AI-SHIPR
+
+| Linear | AI-SHIPR | Where it lives |
+|--------|----------|----------------|
+| (no such object) | Goal (Strategic Bet, or Objective when `goal_source: okrs`) | AI-SHIPR |
+| Initiative | Initiative | AI-SHIPR, one file each |
+| (no such object) | Hypothesis, 1 to 3 per initiative | AI-SHIPR |
+| Project | Linked from the initiative, names the hypothesis it tests | Linear |
+| Issue, sub-issue | The source ticket on a proof record | Linear |
+
+Linear has no epics. Projects take that place. Projects and issues are linked, never copied.
 
 ---
 
@@ -85,9 +106,10 @@ If you previously had `source: jira`, change it to `linear`. AI-SHIPR uses one t
 |----------|------------------------------------|
 | `/today` | Morning brief includes what is in progress, blocked, or due in your current cycle |
 | `/sprint` | Sprint Planner reads your current cycle as the starting point |
+| `Epic-Import` | Reads your active projects, groups them under initiatives, and drafts the bet behind each group for you to confirm |
 | `Build_Review` | Sees what shipped vs what was committed to the cycle |
 | `Sprint_Summarizer` | Compares current cycle snapshot to the previous one automatically |
-| `/today` (write mode) | If approved per Governance.md Tier 2, the agent can also create or update issues — e.g. file a Hypothesis as a Linear issue, log a Fire incident |
+| `/today` (write mode) | If approved per Governance.md Tier 2, the agent can also write to Linear — e.g. add the bet and its success metric to a project description, log a Fire incident |
 
 ---
 
@@ -113,7 +135,7 @@ You can do this manually by copying key issues, or automate it with an n8n/Zapie
 
 **"Workspace not found" after auth** — Confirm the Linear account you authenticated with belongs to the workspace you want to query
 
-**No Linear data visible** — Confirm `tickets: active` AND `source: linear` are set in `Settings.md`
+**No Linear data visible** — Confirm `tickets: active` AND `ticket_tool: linear` are set in `Settings.md`
 
 **MCP is not set up at all / never used before** — If you have never used MCP with Claude Code, the config file may not exist yet. Create it manually:
 1. Open Terminal and run: `mkdir -p ~/.claude && touch ~/.claude/claude_desktop_config.json`
@@ -127,7 +149,10 @@ You can verify MCP is active by typing `/mcp` in Claude Code. If the Linear serv
 ## Linear-specific notes
 
 - **Cycles, not sprints** — Linear calls them cycles. AI-SHIPR workflows treat them as sprints in language but read them from the cycle endpoint.
-- **Projects vs Initiatives** — Linear "Projects" map roughly to AI-SHIPR "Initiatives." Use Linear Project IDs in your initiative files for tighter linkage.
+- **Projects and initiatives** — A Linear initiative maps to an AI-SHIPR initiative. A Linear project is what other tools call an epic: link it from the initiative's Linked Epics table. A Linear initiative never maps to the Goal.
+- **Initiatives through the connection** — The Linear connection lists each project with the initiatives it belongs to, and can filter projects by initiative. `Epic-Import` uses that as its starting grouping. Projects that belong to no initiative get a proposed grouping for you to confirm.
+- **Health** — Linear project health (On track, At risk, Off track) maps to initiative Status (`Active`, `At Risk`).
+- **Customer requests** — Requests attached to an issue or project are proof. File them in a signal log with the issue as the source ticket.
 - **Triage state** — If your workspace uses Linear's Triage, agents will surface untriaged items in `/today` so you don't lose them.
 
 ---

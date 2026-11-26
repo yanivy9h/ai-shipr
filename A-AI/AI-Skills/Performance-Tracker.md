@@ -24,6 +24,9 @@ Feed findings back into H-Hypotheses and surface signals for the next iteration.
 - Do not declare invalidation without checking for confounding factors first
 - If results are mixed, say so — partial confirmation is a real outcome
 - Update the hypothesis file status after running this skill
+- Every read is logged on the hypothesis: add a Proof Log row with the source ticket and a direction (Supports / Weakens / Inconclusive), then update the hypothesis Confidence by the rubric in its file
+- Direction and Status are different things. One read moves Confidence. Status changes to Validated or Invalidated only when the threshold is met or crossed and the measurement window is complete
+- When the data follows a single story or issue, name that ticket. Proof often comes from one ticket, not a whole epic
 - Surface at least one signal for the next iteration — even a failed hypothesis teaches something
 - Flag if the metric defined in the hypothesis was never instrumented — this is a P-Proof gap
 
@@ -37,6 +40,7 @@ Provide:
   - Measurement window
 
 Optional:
+- The story or issue the data relates to, if the read follows a single ticket
 - Any known confounding factors (other changes that launched at the same time)
 - Qualitative signals (support tickets, user feedback, sales comments)
 
@@ -59,7 +63,10 @@ Optional:
 | Time window | [Duration] | [Elapsed] | Complete / Partial |
 
 **Hypothesis status:** Validated / Partially Validated / Invalidated / Inconclusive
-**Confidence:** High / Medium / Low — [reason]
+**Strength of this read:** [concrete observation: sample per arm, share of the window elapsed, significance if computed. No High/Medium/Low here; the only rubric is the hypothesis Confidence below]
+**Direction:** Supports / Weakens / Inconclusive
+**Hypothesis Confidence after this read:** Low / Medium / High — [per the rubric in the hypothesis file]
+**Source ticket:** [story or issue, linked, or "whole initiative"]
 
 ---
 
@@ -92,7 +99,9 @@ Optional:
 ---
 
 #### Actions Required
-- [ ] Update hypothesis status in `H-Hypotheses/[file]` to: [Validated / Invalidated]
+- [ ] Add a Proof Log row in `H-Hypotheses/[file]`: date, this record, source ticket, direction
+- [ ] Update Confidence in `H-Hypotheses/[file]` to: [Low / Medium / High]
+- [ ] Update hypothesis status in `H-Hypotheses/[file]` to: [Validated / Invalidated], only if the window is complete
 - [ ] Add learning to `Learning.md`: "[What this launch taught us]"
 - [ ] Run `Iteration-Planner` if cycle is complete
 - [ ] Flag for `Metric-Investigator` if result is unexpected and cause is unclear

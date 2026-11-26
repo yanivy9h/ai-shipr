@@ -7,14 +7,14 @@ An AI-native Product Operating System — a harness for product managers on top 
 Each folder has its own `CLAUDE.md` index — read the folder's index when you navigate there, not before.
 
 - `S-Strategy/` — vision, product, KPIs, bets, constraints. The anchor: read before any agent or skill run.
-- `H-Hypotheses/` — filed, falsifiable hypotheses.
-- `I-Initiatives/` — active work, one file per initiative. Stage lifecycle lives in its index.
+- `H-Hypotheses/` — filed, falsifiable hypotheses, 1 to 3 per bet initiative. Each one collects the proof from the tickets that test it.
+- `I-Initiatives/` — active work, one file per initiative, typed `Bet` or `Commitment`. Epics and stories stay in the ticket tool and are linked. Stage lifecycle lives in its index.
 - `P-Proof/` — experiments, launch records, and the measurement layer (metric definitions, blessed queries, schemas, investigation methods, dashboards). Read its index before any metric conversation.
 - `R-Relationships/` — the PM (`Me/`), users, stakeholders, team. Protected content.
 - `I-Information/` — resources, templates, tool integrations.
 - `A-AI/` — agents, skills, workflows, playbooks. Its index routes to the right capability and lists the 7 slash commands.
 - `shared/` — org layer for team setups (VP writes, PMs read).
-- Root files: `Settings.md` (modes, voice, integrations) · `Governance.md` (permission tiers) · `Connections.md` (wiring external tools — read when the user asks about connecting/MCP/integrations) · `Learning.md` (session memory) · `Decision-Log.md` (decisions + reasoning) · `Session-Start.md` (conditional first-run/empty-state cases) · `Half-Sprint-Guide.md` (5-day activation) · `AI-SHIPR-Setup-Worksheet.md` (setup input).
+- Root files: `Settings.md` (modes, voice, integrations, work hierarchy) · `Governance.md` (permission tiers) · `Connections.md` (wiring external tools — read when the user asks about connecting/MCP/integrations) · `Learning.md` (session memory) · `Decision-Log.md` (decisions + reasoning) · `Session-Start.md` (conditional first-run/empty-state cases) · `Half-Sprint-Guide.md` (5-day activation) · `Working-with-Epics.md` (how epics, hypotheses and proof connect — read when the user plans in epics or asks about Jira/Linear structure) · `AI-SHIPR-Setup-Worksheet.md` (setup input).
 
 ## Session start (every session)
 
@@ -44,7 +44,7 @@ Start every reply with the agent or skill used, in CAPS (e.g. `PROBLEM FRAMER`, 
 - Always read strategy context before running any agent or skill.
 - Always flag structural gaps — do not silently accept vague input.
 - Never generate output that cannot be filed into the folder structure; offer to write file-worthy output to the correct folder.
-- Every initiative links to a Strategic Bet; every hypothesis is falsifiable — flag violations.
+- Every `Bet` initiative links to a Strategic Bet and carries 1 to 3 hypotheses. A `Commitment` links to no bet and carries no hypothesis; it names who requires it. Every hypothesis is falsifiable. Flag violations. Epics and stories stay in the ticket tool: link them, never copy them, and use the team's words (`epic_term`, `story_term` in `Settings.md`).
 - If a decision is needed but criteria are undefined, flag it before proceeding.
 - **Decision filing:** decisions affecting strategy, scope, sequencing, prioritization, or process go to `Decision-Log.md` before the session closes. `Learning.md` is for patterns; `Decision-Log.md` is for decisions.
 - **Strategy drift check:** when a conversation decision contradicts a strategy file, name the file, name the conflict, offer the edit. Do not let drift sit silently.

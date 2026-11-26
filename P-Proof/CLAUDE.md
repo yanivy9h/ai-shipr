@@ -16,4 +16,6 @@ The evidence layer: experiments, data reads, launch records, research, post-mort
 
 ## Key context
 
+**Proof rolls up through the hypothesis.** An evidence record names the hypothesis it bears on, the source ticket it came from when there is one (proof often comes from a single story, not an epic), and a direction: `Supports | Weakens | Inconclusive`. When a record is filed, add a row to that hypothesis's Proof Log and update its Confidence. The ticket tool rolls up completion; this folder rolls up learning.
+
 Escalation ladder — load only as deep as the question requires: definition (`Metrics/`) → query (`Queries/`) → schema (`Schemas/`) → live data connection (last resort, see `Connections.md`). The launch gate in `Launch-Coordinator` blocks "Launched" until the feature's metrics, queries, and dashboard links are filed here, so the layer fills as a side effect of shipping. In `team_mode: lead`, org-wide metric definitions may live in `shared/` — check there before duplicating locally.

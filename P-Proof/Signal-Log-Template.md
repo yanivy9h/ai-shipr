@@ -5,14 +5,15 @@ One sentence: what pattern or question this log is accumulating signals around.
 
 ## Linked Hypothesis (if any)
 - [[HYP - ...]]
+- Direction so far: Supports | Weakens | Inconclusive
 
 ---
 
 ## Signal Entries
 
-| Date | Source | Signal | Strength | Notes |
-|------|--------|--------|----------|-------|
-| YYYY-MM-DD | Customer call / CS ticket / Sales / Review / Other | What was said or observed | Weak / Medium / Strong | Context |
+| Date | Source | Signal | Strength | Ticket | Notes |
+|------|--------|--------|----------|--------|-------|
+| YYYY-MM-DD | Customer call / CS ticket / Sales / Review / Other | What was said or observed | Weak / Medium / Strong | Story or issue it relates to, if any | Context |
 
 ---
 

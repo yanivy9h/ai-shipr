@@ -1,6 +1,6 @@
 # AI-Skills — Index
 
-52 single-task skills. Find the group that matches the work, then read only that skill's file. Six are typeable slash commands (marked); the rest are invoked by name or auto-invoked.
+53 single-task skills. Find the group that matches the work, then read only that skill's file. Six are typeable slash commands (marked); the rest are invoked by name or auto-invoked.
 
 ## Daily rhythms (typeable)
 
@@ -43,7 +43,7 @@
 
 ## Setup & system
 
-`Create-PM-Voice` (writing samples → PM-Voice.md) · `close-session-protocol` (session-close sweep — fired by the root CLAUDE.md rule, never typed)
+`Epic-Import` (existing epics or Linear projects → grouped initiatives + drafted hypotheses, linked not copied; the entry point for teams that plan in epics) · `Create-PM-Voice` (writing samples → PM-Voice.md) · `close-session-protocol` (session-close sweep — fired by the root CLAUDE.md rule, never typed)
 
 ## Lead mode only (`team_mode: lead`)
 

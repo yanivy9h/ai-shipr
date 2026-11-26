@@ -46,12 +46,23 @@ Include last updated date if available.
 - [ ] Each bet has a time horizon
 
 ### Initiative
-- [ ] Linked to a specific Strategic Bet
-- [ ] Outcome is measurable with a defined metric
-- [ ] Outcome has a time horizon
-- [ ] Hypotheses are linked
+- [ ] Type is set: Bet or Commitment
+- [ ] Bet: linked to a specific Strategic Bet
+- [ ] Bet, if `goal_source: okrs`: the OKR Objective is named and the outcome metric is one of its Key Results
+- [ ] Bet: Outcome is measurable with a defined metric
+- [ ] Bet: Outcome has a time horizon
+- [ ] Commitment: Strategic Link reads "None (Commitment)", not a bet stretched to cover it
+- [ ] Bet: 1 to 3 hypotheses are linked (flag zero, flag more than 3)
+- [ ] Bet: every linked epic names the hypothesis it tests, and a primary one if it tests two
+- [ ] Commitment: "Required by" names a specific regulation, contract or policy
+- [ ] Commitment: "Done when" is defined
+- [ ] Commitment: the work is not a bet in disguise (a customer request with no contract behind it is a bet)
 - [ ] Stakeholders are named
 - [ ] Decision criteria defined if decision is required
+
+### Portfolio (when auditing the I-Initiatives folder)
+- [ ] Commitments are at or below `commitment_alert` percent of Active initiatives (Settings.md)
+- [ ] No epic is copied into the folder instead of linked
 
 ### Hypothesis
 - [ ] Falsifiable (can be proven wrong)
@@ -59,10 +70,15 @@ Include last updated date if available.
 - [ ] Success threshold is defined
 - [ ] Failure threshold is defined
 - [ ] Test plan exists
+- [ ] Metric and threshold were defined before the linked epics started
+- [ ] Confidence is set and matches the rubric and the Proof Log
+- [ ] Every proof record in P-Proof that links here has a row in the Proof Log
 - [ ] Status is current
 
 ### Experiment
 - [ ] Linked to a hypothesis
+- [ ] Source ticket is named when the proof came from a single story or issue
+- [ ] Direction is set (Supports / Weakens / Inconclusive)
 - [ ] Metric and threshold defined
 - [ ] Results recorded
 - [ ] Interpretation exists

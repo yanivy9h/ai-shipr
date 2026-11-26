@@ -3,6 +3,10 @@
 ## Linked Hypothesis
 - [[HYP - ...]]
 
+## Source Ticket
+The story or issue this proof came from, if any. Proof often comes from a single ticket, not a whole epic.
+- [Ticket ID](link)
+
 ## Setup
 - Variant(s):
 - Audience:
@@ -19,6 +23,11 @@
 ## Interpretation
 - What it suggests:
 - Confidence level:
+
+## Direction
+Supports | Weakens | Inconclusive
+
+What this record does to the linked hypothesis. Add a row to that hypothesis's Proof Log and update its Confidence.
 
 ## Decision
 Continue | Iterate | Kill

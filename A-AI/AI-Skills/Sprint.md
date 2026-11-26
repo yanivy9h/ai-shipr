@@ -72,11 +72,13 @@ Then generate the Sprint Plan below.
 
 #### Hypothesis Coverage
 
-| Initiative | Linked Hypothesis | What this sprint enables | Measurement window starts |
-|-----------|------------------|--------------------------|--------------------------|
-| [Name] | [HYP-XXX] | [What the sprint ships] | [After this sprint / After next sprint] |
+| Initiative | Linked Hypothesis | Epic in this sprint | What this sprint enables | Measurement window starts |
+|-----------|------------------|---------------------|--------------------------|--------------------------|
+| [Name] | [HYP-XXX] | [Epic or project, linked] | [What the sprint ships] | [After this sprint / After next sprint] |
 
-If no hypotheses are covered: flag — the sprint is purely operational.
+If no hypotheses are covered: flag — the sprint is purely operational. `Commitment` work is expected to have none, so flag only when the `Bet` work in the sprint tests nothing.
+
+Flag any epic starting this sprint whose hypothesis has no metric and threshold yet. This is the last moment to define the signal before the build.
 
 ---
 

@@ -68,10 +68,33 @@ Once connected, open `Settings.md` in your AI-SHIPR folder and set:
 
 ```
 tickets: active
-source: jira
 ```
 
-That tells the agents to look for ticket data when running `/today`, `/sprint`, and related workflows.
+And in the `Work Hierarchy` block of the same file:
+
+```
+ticket_tool: jira
+epic_term: epic
+story_term: story
+```
+
+That tells the agents to look for ticket data when running `/today`, `/sprint`, and related workflows, and to use your team's words.
+
+---
+
+## How Jira maps to AI-SHIPR
+
+| Jira | AI-SHIPR | Where it lives |
+|------|----------|----------------|
+| Goal or OKR | Goal (Strategic Bet, or Objective when `goal_source: okrs`) | AI-SHIPR |
+| Initiative (Premium and Enterprise only) | Initiative | AI-SHIPR, one file each |
+| (no such object) | Hypothesis, 1 to 3 per initiative | AI-SHIPR |
+| Epic | Linked from the initiative, names the hypothesis it tests | Jira |
+| Story, Task, Bug | The source ticket on a proof record | Jira |
+
+On Jira Standard there is no level above the epic. The initiative is the layer AI-SHIPR adds: `Epic-Import` groups the epics that serve the same bet under one initiative.
+
+Epics and stories are linked, never copied. Jira tells you what got done. AI-SHIPR tells you what you learned.
 
 ---
 
@@ -81,6 +104,7 @@ That tells the agents to look for ticket data when running `/today`, `/sprint`, 
 |----------|----------------------------------|
 | `/today` | Morning brief includes what is in progress, blocked, or due today |
 | `/sprint` | Sprint Planner reads your current board state as the starting point |
+| `Epic-Import` | Reads your active epics, groups them under initiatives, and drafts the bet behind each group for you to confirm |
 | `Build_Review` | Sees what actually shipped vs what was committed |
 | `Sprint_Summarizer` | Compares current snapshot to last week automatically |
 
@@ -106,7 +130,7 @@ You can do this manually by copying key tickets, or automate it with an n8n/Zapi
 
 **OAuth window does not open** — Try restarting Claude Code after saving the config file
 
-**No Jira data visible** — Confirm `tickets: active` is set in `Settings.md` and that your Atlassian account has access to the relevant Jira project
+**No Jira data visible** — Confirm `tickets: active` and `ticket_tool: jira` are set in `Settings.md` and that your Atlassian account has access to the relevant Jira project
 
 **MCP is not set up at all / never used before** — If you have never used MCP with Claude Code, the config file may not exist yet. Create it manually:
 1. Open Terminal and run: `mkdir -p ~/.claude && touch ~/.claude/claude_desktop_config.json`

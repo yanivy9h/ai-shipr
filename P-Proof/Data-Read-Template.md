@@ -6,6 +6,7 @@ Post-launch | Weekly review | Hypothesis check | Stakeholder request | Other
 ## Linked To
 - Hypothesis: [[HYP - ...]]
 - Initiative: [[INI - ...]]
+- Source ticket (if the read follows one story or issue): [Ticket ID](link)
 
 ## Period
 - From:
@@ -28,6 +29,8 @@ Post-launch | Weekly review | Hypothesis check | Stakeholder request | Other
 
 ## Decision
 Validates hypothesis | Invalidates hypothesis | Inconclusive — need more data
+
+Add a row to the linked hypothesis's Proof Log (Validates = Supports, Invalidates = Weakens) and update its Confidence.
 
 ## Next Step
 - [ ] Action:

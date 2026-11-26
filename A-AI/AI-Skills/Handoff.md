@@ -29,6 +29,7 @@ Optional: add `for [name/role]` to switch to Handoff mode and personalize the ou
 - Read all files in `I-Initiatives/` (or `[product-name]/I-Initiatives/` in multi mode) — identify what is active, blocked, or awaiting a decision.
 - Read `R-Relationships/Stakeholders/Meeting-Log.md` — surface anything discussed today that affects ongoing work.
 - Read `H-Hypotheses/` (or `[product-name]/H-Hypotheses/` in multi mode) — flag any hypothesis awaiting a result or decision.
+- In Handoff mode, for each linked epic that changes hands: name the hypothesis it tests and the signal to watch. The new owner must know what the work is meant to prove, not only what is left to build. For a `Commitment` initiative, name who requires it and when it is done.
 - If `pm_voice: active` in Settings.md AND `R-Relationships/Me/PM-Voice.md` exists: write the handoff in the PM's voice.
   If not: use AI-SHIPR default tone (direct, structured, no fluff).
 - Do not invent status. If a field is empty or missing, flag it explicitly.

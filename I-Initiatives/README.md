@@ -10,10 +10,19 @@ This folder is the bridge between strategy (what you're betting on) and proof (w
 ## Role in the system
 
 ```
-S-Strategy (why) → I-Initiatives (what) → H-Hypotheses (how we'll know) → P-Proof (did it work)
+S-Strategy (the goal) → I-Initiatives (what) → H-Hypotheses (the bet) → epics and stories in the ticket tool (the test) → P-Proof (what the test showed)
 ```
 
-An initiative is not a feature. It is a bet on an outcome. Every initiative must trace back to a Strategic Bet and forward to at least one Hypothesis.
+An initiative is not a feature and it is not an epic. It sits above the epics: a bet on an outcome, tested by the epics and stories your team builds.
+
+What an initiative links to depends on its type:
+
+- **Bet:** traces back to a Strategic Bet (or an OKR Objective, when `goal_source: okrs`) and carries 1 to 3 hypotheses. Not one per epic. Several epics usually test the same hypothesis.
+- **Commitment:** no bet and no hypothesis. This is work that happens whatever you believe: a regulation, a contractual promise, a security fix, tech debt. It names who requires it and when it is done.
+
+A feature a customer asked for is a Commitment only if it was promised in a contract. Otherwise it is a bet that the customer will renew or expand, and it carries a hypothesis.
+
+Epics and stories stay in your ticket tool (Jira, Linear). The initiative links to them. If your tool has no level above the epic, the initiative is the layer AI-SHIPR adds: group the epics that serve the same bet under one initiative.
 
 ---
 
@@ -32,7 +41,10 @@ Add one file per initiative: `initiative-[name].md`
 Each initiative file tracks:
 - **Strategic Link** — which bet this serves and why now
 - **Outcome** — the metric, desired change, and time horizon (measurable, not vague)
-- **Linked Hypotheses** — the H-Hypotheses files that define how this initiative will be validated
+- **Type** — `Bet | Commitment`
+- **Linked Hypotheses** — the H-Hypotheses files that define how this initiative will be validated (Bet only, 1 to 3)
+- **Linked Epics** — links to the epics or projects in the ticket tool, each naming the hypothesis it tests
+- **Commitment** — who requires the work and when it is done (Commitment only)
 - **Stakeholders** — who is involved or needs to sign off
 - **Stage** — where in the Agile loop this sits: `Defined | In Sprint | In Development | Testing | Launched | Monitoring | Iterating`
 - **Status** — health: `Active | At Risk | Paused | Completed`
@@ -50,7 +62,7 @@ Each initiative file tracks:
 | `Roadmap-Planner` workflow | Reads all initiatives to surface sequencing conflicts and coverage gaps |
 | `Launch-Coordinator` workflow | Reads the specific initiative being launched |
 | `Build-Review` skill | Reads the sprint's committed initiatives |
-| `Structural-Integrity-Auditor` agent | Checks each initiative for missing links, vague outcomes, missing hypotheses |
+| `Structural-Integrity-Auditor` agent | Checks each initiative for missing links, vague outcomes, missing hypotheses, and too many Commitments |
 
 ---
 

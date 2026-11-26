@@ -40,9 +40,9 @@ AI-SHIPR gives Claude **persistent, structured context** across your entire prod
 It organizes your work into a system Claude can read and update:
 
 * Strategy → vision, bets, KPIs
-* Hypotheses → structured, falsifiable
-* Initiatives → linked to bets
-* Proof → experiments with decision thresholds, plus metric definitions and blessed queries
+* Hypotheses → structured, falsifiable, 1 to 3 per initiative
+* Initiatives → linked to bets, and to the epics in your ticket tool
+* Proof → experiments with decision thresholds, plus metric definitions and blessed queries. Each result rolls back up to the hypothesis it tested
 * Relationships → users, stakeholders, PM profile
 * Learning → accumulates across sessions
 
@@ -82,6 +82,7 @@ Agents and workflows write back into the system after each session. Decisions la
 
 * hypotheses must be falsifiable
 * initiatives must link to bets
+* every bet carries 1 to 3 hypotheses, with the signal defined before the build starts
 * experiments must have failure thresholds
 
 Claude flags the gap instead of quietly filling it with something plausible.
@@ -102,6 +103,22 @@ The more you use it, the more it knows. That is the difference between a prompt 
 A system fed by copy-paste is a system that goes stale. `Connections.md` walks six categories: code, tickets, docs, analytics, user research, and workspace. For each one it names the live connection, what it unlocks inside AI-SHIPR, a fallback if you cannot connect it, and the question to take to your compliance team.
 
 Analytics is the one with the highest ceiling. Unconnected, every metric conversation starts with pasted numbers.
+
+---
+
+## It works with the epics you already have
+
+Most teams plan in epics, not in hypotheses. AI-SHIPR does not ask them to stop.
+
+```
+Goal → Initiative → Hypothesis → Epic → Story → Proof
+```
+
+AI-SHIPR holds the first three. Your epics and stories stay in Jira or Linear and are linked, never copied. Proof names the ticket it came from and rolls back up to the hypothesis.
+
+Every epic your team prioritized already carries a bet. It was just never written down. `Epic-Import` reads the epics you have, groups them under initiatives, and drafts that bet for you to confirm: 1 to 3 hypotheses per initiative, not one per epic. Work with no bet behind it, such as compliance or a contractual promise, is typed as a Commitment and needs no hypothesis.
+
+Your ticket tool tells you what got done. AI-SHIPR tells you what you learned. Details: [Working-with-Epics.md](Working-with-Epics.md)
 
 ---
 
@@ -139,9 +156,10 @@ AI-SHIPR/
 ├── CLAUDE.md          → the 73-line root index
 ├── Session-Start.md   → first-run and empty-state cases
 ├── Connections.md     → the six tool connections
+├── Working-with-Epics.md → how your epics, hypotheses and proof connect
 ├── S-Strategy/        → vision, bets, KPIs
-├── H-Hypotheses/      → structured hypotheses
-├── I-Initiatives/     → execution layer
+├── H-Hypotheses/      → structured hypotheses, 1 to 3 per initiative
+├── I-Initiatives/     → bets and commitments, linked to your epics
 ├── P-Proof/           → experiments, metrics, queries, schemas
 ├── R-Relationships/   → users, stakeholders
 ├── Learning.md        → accumulated knowledge

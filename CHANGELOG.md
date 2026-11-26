@@ -6,6 +6,27 @@ Upgrading is always the same shape: unzip over your existing folder, keep your o
 
 ---
 
+## Unreleased
+
+**AI-SHIPR now works with the epics you already have.**
+
+Teams told us they plan in epics and projects, not in hypotheses. The model now meets them there: `Goal → Initiative → Hypothesis → Epic → Story → Proof`. AI-SHIPR holds the first three. Epics and stories stay in Jira or Linear and are linked, never copied.
+
+* **1 to 3 hypotheses per initiative, not one per epic.** Several epics usually test the same bet. The old rule, at least one hypothesis per initiative with no upper bound, is replaced.
+* **New `Epic-Import` skill.** Reads your active epics (or Linear projects), groups them under initiatives, and drafts the bet behind each group for you to confirm. Nothing is written before you confirm. Skills go from 52 to 53.
+* **Initiatives are typed `Bet` or `Commitment`.** A Commitment is work that happens whatever you believe: a regulation, a contractual promise, a security fix, tech debt. It carries no hypothesis and names who requires it and when it is done. The Auditor flags it when Commitments pass 40 percent of active initiatives (`commitment_alert` in `Settings.md`).
+* **Proof names its ticket and rolls up.** Proof templates gain a source ticket and a direction: Supports, Weakens or Inconclusive. Each record adds a row to the hypothesis's new Proof Log.
+* **Hypotheses carry Confidence, with a rubric.** Low, Medium or High, defined in the template and moved only by logged proof. One result moves Confidence. Status changes to Validated or Invalidated only when the threshold is met and the measurement window is complete.
+* **The signal comes before the build.** Sprint planning flags an epic about to start whose hypothesis has no metric and threshold.
+* **New `Work Hierarchy` block in `Settings.md`.** Your ticket tool, your team's words for epics and stories, and `goal_source: okrs` if your initiatives answer to OKRs. The setup worksheet asks three new questions in Part 9 to fill it.
+* **`PRD-Builder` prepares an epic handover.** One paste-ready block per epic with the bet and its success metric, so engineers see why the work exists. It is written to the ticket tool only if you say yes.
+* **New guide: `Working-with-Epics.md`.** The model on one page, with the mapping for Jira, Linear and Aha!.
+* **Updated:** the initiative, hypothesis and four proof templates, the Half-Sprint Guide (Days 4 and 5), the Jira and Linear setup guides, the Structural-Integrity-Auditor, and 16 skills and workflows that create or check these links.
+
+**Upgrading:** nothing to migrate. Every new field is optional and no existing field was renamed, so your current initiative and hypothesis files stay valid. Treat existing initiatives as `Bet` unless you retype them. If you keep your own `Settings.md`, copy the `Work Hierarchy` block into it. Run `bash setup.sh` again to install `Epic-Import`.
+
+---
+
 ## v4.1 (24 November 2026)
 
 **v4.1 matches each capability to a Claude model.** Run `bash setup.sh` again after upgrading, so the installed skills pick up the change.

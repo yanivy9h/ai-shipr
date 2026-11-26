@@ -92,6 +92,38 @@ When `active`, agents may reference latest files in that folder for context.
 
 ---
 
+## Work Hierarchy
+
+How your planning units map to AI-SHIPR:
+
+```
+Goal → Initiative → Hypothesis → Epic → Story → Proof
+```
+
+AI-SHIPR owns Goal, Initiative and Hypothesis. Epics and stories stay in your ticket tool and are linked, never copied. Proof is filed in `P-Proof/`, points at the ticket it came from, and rolls back up to the hypothesis.
+
+```
+ticket_tool: none        # jira | linear | none
+goal_source: bets        # bets | okrs
+epic_term: epic          # epic | project
+story_term: story        # story | issue | ticket
+commitment_alert: 40     # percent of active initiatives
+```
+
+`ticket_tool`: where epics and stories live. `none` means you link nothing and list the epics by name.
+
+`goal_source`: what an initiative answers to.
+- `bets`: the Goal is a Strategic Bet in `S-Strategy/Strategic-Bets.md`.
+- `okrs`: the Goal is an OKR Objective, and the initiative's outcome metric points at one of its Key Results. The initiative still names the Strategic Bet the Objective serves.
+
+`epic_term` and `story_term`: the words your team uses. Agents use these words in every output. Linear teams set `epic_term: project` and `story_term: issue`. A Linear initiative maps to an AI-SHIPR initiative, never to the Goal.
+
+`commitment_alert`: initiatives typed `Commitment` carry no hypothesis. When the share of active initiatives that are Commitments is above this number, the Structural-Integrity-Auditor flags it. At 40, one Commitment among three active initiatives passes and two among four are flagged.
+
+If your tool has no level above the epic (Jira Standard), the initiative is the layer AI-SHIPR adds: group the epics that serve the same bet under one initiative.
+
+---
+
 ## Product Stage
 
 ```

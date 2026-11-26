@@ -12,4 +12,4 @@ The permanent context layer. Read before almost every agent or skill run — wit
 
 ## Key context
 
-S is the anchor of the chain: S-Strategy (why) → I-Initiatives (what) → H-Hypotheses (how we'll know) → P-Proof (did it work). If a conversation decision contradicts a file here, name the conflict and offer the edit before continuing. In `product_mode: multi`, these files live per-product under `[product]/S-Strategy/` — check Settings.md first.
+S is the anchor of the chain: S-Strategy (the goal) → I-Initiatives (what) → H-Hypotheses (the bet) → epics and stories in the ticket tool (the test) → P-Proof (what the test showed). If a conversation decision contradicts a file here, name the conflict and offer the edit before continuing. In `product_mode: multi`, these files live per-product under `[product]/S-Strategy/` — check Settings.md first.
